@@ -5,6 +5,7 @@ import { CallLink } from "@/components/site/CallLink";
 import { ProofStats, BestResults, GoogleAdProof } from "@/components/blocks/Proof";
 import { GOOGLE_AD_RESULTS } from "@/content/results";
 import { GrandSlamOffer } from "@/components/blocks/Offer";
+import { ReviewDuo } from "@/components/blocks/ReviewDuo";
 import { Founder, BookingSection } from "@/components/blocks/Sales";
 import { SectionHeader, FAQList } from "@/components/blocks/Basics";
 import { HOME_FAQS } from "@/content/faqs";
@@ -28,12 +29,12 @@ export default function Home() {
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[1100px] -translate-x-1/2 glow-turbo" aria-hidden />
         <div className="container-x relative mx-auto max-w-4xl text-center">
           <div className="hero-rise relative z-10 min-w-0">
-            <p className="chip">Websites + ads for local businesses and online stores</p>
+            <p className="chip">Websites, ads and reviews for local businesses and online stores</p>
             <h1 id="hero" className="mt-4 text-[34px] font-bold leading-[1.05] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[60px]">
-              <span className="text-chrome-grad">Get found on Google and ChatGPT.</span> <span className="text-turbo-grad">Get booked solid.</span>
+              <span className="text-chrome-grad">We get you more customers, more sales</span> <span className="text-turbo-grad">and more reviews.</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
-              We build a fast website optimized for SEO, AEO and GEO so you show up in Google and in AI answers, then run Google, Meta and YouTube ads that send ready-to-buy customers to it. Shopify stores, contractors, handymen, restaurants and more.
+              An SEO, AEO and GEO website that gets you found on Google and ChatGPT, Google, Meta and YouTube ads that bring buyers to it, and a tap-to-review card so 5-star reviews keep coming. Built for Shopify stores, contractors, handymen, restaurants and more.
             </p>
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
               <BookButton note="Home hero" className="btn-shine">Book my free strategy call</BookButton>
@@ -42,7 +43,7 @@ export default function Home() {
               </Link>
             </div>
             <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
-              {["Free 30-minute call", "Fixed prices, no contracts", "Leads-or-free guarantee", "We work with businesses worldwide"].map((t) => (
+              {["Free 30-minute call", "Free review card with Launch", "Leads-or-free guarantee", "We work with businesses worldwide"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
                   {t}
@@ -73,12 +74,13 @@ export default function Home() {
       {/* WHAT YOU GET — three parts of one system. */}
       <section className="section border-t border-border" aria-labelledby="system">
         <div className="container-x">
-          <SectionHeader kicker="How it works" title={<span id="system">One system that turns searches into booked calls.</span>} lede="Most agencies sell you a site or ads. We build both to work together, and track every call back to its source." />
-          <ol className="mt-10 grid gap-4 md:grid-cols-3">
+          <SectionHeader kicker="How it works" title={<span id="system">One system: more customers, more sales, more reviews.</span>} lede="Most agencies sell you a site or ads. We build both to work together, and track every call back to its source." />
+          <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Globe, t: "1. A website built to convert", b: "Fast, mobile-first and written for SEO, AEO and GEO, with schema markup and llms.txt so Google, ChatGPT and Perplexity can read and recommend you." },
               { icon: Search, t: "2. Get found everywhere", b: "Google Business Profile, local SEO and answer-engine optimization put you in the map pack and in AI answers when people ask who to hire." },
               { icon: Megaphone, t: "3. Ads that fill the calendar", b: "Google, Meta and YouTube ads sent to your new site with call and form tracking, so you see what each dollar brings back." },
+              { icon: Star, t: "4. Reviews that keep coming", b: "A tap-to-review NFC card turns every happy customer into a Google review, so more people pick you and Maps ranks you higher." },
             ].map((x) => (
               <li key={x.t} className="panel p-6">
                 <x.icon className="h-6 w-6 text-turbo" aria-hidden />
@@ -92,6 +94,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ReviewDuo />
 
       <GrandSlamOffer note="Home offer" />
 
