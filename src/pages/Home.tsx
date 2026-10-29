@@ -42,7 +42,7 @@ export default function Home() {
               </Link>
             </div>
             <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
-              {["Free 30-minute call", "Fixed prices, no contracts", "Leads-or-free guarantee", "Founder-led, Atlanta GA"].map((t) => (
+              {["Free 30-minute call", "Fixed prices, no contracts", "Leads-or-free guarantee", "We work with businesses worldwide"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
                   {t}

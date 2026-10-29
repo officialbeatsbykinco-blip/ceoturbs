@@ -36,10 +36,10 @@ export const organization = (): JsonLd => ({
   telephone: SITE.phone.e164,
   email: SITE.email,
   contactPoint: [
-    { "@type": "ContactPoint", telephone: SITE.phone.e164, email: SITE.email, contactType: "sales", areaServed: "US", availableLanguage: ["English"] },
-    { "@type": "ContactPoint", telephone: SITE.phone.e164, email: SITE.email, contactType: "customer service", areaServed: "US", availableLanguage: ["English"] },
+    { "@type": "ContactPoint", telephone: SITE.phone.e164, email: SITE.email, contactType: "sales", areaServed: "Worldwide", availableLanguage: ["English"] },
+    { "@type": "ContactPoint", telephone: SITE.phone.e164, email: SITE.email, contactType: "customer service", areaServed: "Worldwide", availableLanguage: ["English"] },
   ],
-  areaServed: { "@type": "Country", name: "United States" },
+  areaServed: "Worldwide",
   sameAs: SITE.sameAs,
   knowsAbout: [
     "Search engine optimization",
@@ -132,7 +132,7 @@ export const service = (s: Service): JsonLd => ({
   serviceType: s.name,
   description: s.answer,
   provider: { "@id": ORG_ID },
-  areaServed: CALL_FIRST_SLUGS.includes(s.slug) ? ALL_SETUP_CITIES.map((name) => ({ "@type": "City", name, containedInPlace: { "@type": "State", name: "Georgia" } })) : { "@type": "Country", name: "United States" },
+  areaServed: CALL_FIRST_SLUGS.includes(s.slug) ? ALL_SETUP_CITIES.map((name) => ({ "@type": "City", name, containedInPlace: { "@type": "State", name: "Georgia" } })) : "Worldwide",
   url: abs(`/services/${s.slug}`),
   ...(pricesFor(s.slug).length ? { offers: pricesFor(s.slug).map(priceOffer) } : {}),
   hasOfferCatalog: {
@@ -379,7 +379,7 @@ export const devMarketing = (): JsonLd => ({
   url: abs("/app-marketing"),
   provider: { "@id": ORG_ID },
   audience: { "@type": "Audience", audienceType: "Software developers, indie hackers and small SaaS and app teams" },
-  areaServed: { "@type": "Country", name: "United States" },
+  areaServed: "Worldwide",
   offers: PACKAGES.map(priceOffer),
 });
 
@@ -393,7 +393,7 @@ export const brandBoost = (): JsonLd => ({
   description: "A free 30-minute growth call: CEO Turbo reviews your website, Google Business Profile, reviews, social profiles and ads live and gives you a fixed-price plan to get more customers, reviews and listeners.",
   url: abs("/brand-boost"),
   provider: { "@id": ORG_ID },
-  areaServed: { "@type": "Country", name: "United States" },
+  areaServed: "Worldwide",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD", url: abs("/brand-boost") },
 });
 
