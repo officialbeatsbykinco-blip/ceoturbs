@@ -24,7 +24,7 @@ export default function BrandBoost() {
         }
         lede={
           <>
-            Answer 6 quick questions, see your #1 money move instantly, then pick a time.<span className="hidden sm:inline"> {SITE.founder.name} reviews your website, Google profile, reviews, socials and ads with you — live — and hands you the fixes that bring customers fastest.</span>
+            Pick a time on the calendar. It takes 30 seconds.<span className="hidden sm:inline"> {SITE.founder.name} reviews your website, Google profile, reviews, socials and ads with you — live — and hands you the fixes that bring customers fastest.</span>
           </>
         }
       />
@@ -97,10 +97,10 @@ export default function BrandBoost() {
       <section className="section pt-0">
         <div className="container-x">
           <div className="cta-glow rounded-3xl p-8 text-center sm:p-12">
-            <h2 className="h-section">Your plan is 30 seconds away.</h2>
-            <p className="lede mx-auto">Five taps, your #1 money move, then a time that suits you. Free, no pressure.</p>
+            <h2 className="h-section">Your free plan is one call away.</h2>
+            <p className="lede mx-auto">Pick any open time. 30 minutes, free, no pressure.</p>
             <BookButton note={`${SOURCE} — final CTA`} className="btn-shine mt-8 !px-8 !py-4 !text-base">
-              Start my free plan
+              Schedule my free call
             </BookButton>
           </div>
         </div>

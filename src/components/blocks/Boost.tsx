@@ -6,13 +6,14 @@ import { BOOKING, SITE } from "@/config/site";
 import { AD_TOTALS, money } from "@/content/results";
 import { CLIENTS } from "@/content/clients";
 import { price } from "@/content/pricing";
-import { BrandBoostQuiz } from "@/components/quiz/BrandBoostQuiz";
+import { InlineBooking } from "@/components/booking/InlineBooking";
+import { CallLink } from "@/components/site/CallLink";
 import { ProofStats } from "@/components/blocks/Proof";
 import { SectionHeader } from "@/components/blocks/Basics";
 import { PlatformLogos } from "@/components/visuals/PlatformLogos";
 import { BookButton } from "@/components/cta/Actions";
 
-/** Headline + promise on the left, the quiz (first question visible) on the right — above the fold on phones. */
+/** Headline + promise on the left, the live calendar on the right (stacked under the headline on phones). Questions live on the Cal.com form. */
 export function BoostHero({ title, lede, source, top }: { title: ReactNode; lede: ReactNode; source: string; top?: ReactNode }) {
   return (
     <section className="relative overflow-hidden pt-24 sm:pt-32">
@@ -39,7 +40,19 @@ export function BoostHero({ title, lede, source, top }: { title: ReactNode; lede
               {AD_TOTALS.leads} Meta leads at {money(AD_TOTALS.avgCpl)} average · {CLIENTS.length} client sites live · {SITE.founder.name} runs every call himself
             </p>
           </div>
-          <BrandBoostQuiz source={source} primary />
+          <div className="panel p-4 sm:p-6">
+            <h2 className="font-display text-xl font-bold sm:text-2xl">Pick a time for your free call</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Free · {BOOKING.length} · {SITE.founder.name} runs every call
+            </p>
+            <InlineBooking source={source} className="mt-4" />
+            <p className="mt-4 text-center text-sm text-muted-foreground">
+              Rather talk now?{" "}
+              <CallLink location={`${source} — hero`} className="inline-flex min-h-[44px] items-center font-semibold text-turbo underline underline-offset-2">
+                Call {SITE.phone.display}
+              </CallLink>
+            </p>
+          </div>
         </div>
         <PlatformLogos className="mt-14" />
         <div className="mt-12">

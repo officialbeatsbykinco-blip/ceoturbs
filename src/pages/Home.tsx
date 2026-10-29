@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Globe, Megaphone, Phone, Play, Search, Star } from "lucide-react";
+import { ArrowRight, CalendarCheck, Check, Globe, Megaphone, Phone, Play, Search, Star } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
 import { CallLink } from "@/components/site/CallLink";
 import { ProofStats, BestResults, GoogleAdProof, AdResultsGrid, AdGallery } from "@/components/blocks/Proof";
@@ -14,8 +14,6 @@ import { price } from "@/content/pricing";
 import { SITE, fromPriceLabel } from "@/config/site";
 import { SiteWall } from "@/components/visuals/SiteWall";
 import { MobileMore } from "@/components/blocks/MobileMore";
-import { BrandBoostQuiz } from "@/components/quiz/BrandBoostQuiz";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 /**
  * Money model, top to bottom:
@@ -24,12 +22,10 @@ import { useIsMobile } from "@/hooks/use-mobile";
  * 3. Add-on — NFC Google review cards, kept small so they never compete with the booking.
  */
 export default function Home() {
-  // Phones get the question quiz right under the headline (one tap per question) instead of a wall of text.
-  const mobile = useIsMobile();
   return (
     <>
       <div className="theme-soft">
-      {/* HERO — outcome, offer, one button. */}
+      {/* HERO — outcome, offer, one button to the calendar (questions live on the Cal.com form). */}
       <section className="relative overflow-clip pt-24 sm:pt-28 lg:pt-32" aria-labelledby="hero">
         <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[1100px] -translate-x-1/2 glow-turbo" aria-hidden />
@@ -42,13 +38,18 @@ export default function Home() {
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground max-md:sr-only sm:mt-5 sm:text-lg">
               An SEO, AEO and GEO website that gets you found on Google and ChatGPT, Google, Meta and YouTube ads that bring buyers to it, and a tap-to-review card so 5-star reviews keep coming. Built for Shopify stores, contractors, handymen, restaurants and more.
             </p>
-            {mobile && <BrandBoostQuiz source="Home hero quiz" primary className="mt-5 text-left" />}
-            <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
-              {!mobile && <BookButton note="Home hero" className="btn-shine">Book my free strategy call</BookButton>}
-              <Link to="/results" className="btn-chrome">
-                See real results <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
+            <div className="mx-auto mt-7 flex max-w-md flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
+              <BookButton note="Home hero" className="btn-shine justify-center">
+                <CalendarCheck className="h-5 w-5" aria-hidden /> Schedule my free call
+              </BookButton>
+              <CallLink location="home hero" icon className="btn-chrome justify-center">
+                Talk to us now
+              </CallLink>
             </div>
+            <p className="mt-3 text-sm text-muted-foreground">Free 30 min · Pick any time · No pressure</p>
+            <Link to="/results" className="mt-2 inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-turbo underline-offset-4 hover:underline">
+              See real results <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
             <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 max-md:hidden gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
               {["Free 30-minute call", "Free review card with Launch", "Leads-or-free guarantee", "We work with businesses worldwide"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
@@ -191,7 +192,7 @@ export default function Home() {
             <h2 id="final" className="h-section mt-3">The business that shows up first gets the call. Make that you.</h2>
             <p className="lede mx-auto max-w-2xl">Book a free 30-minute call. We review your site, Google profile and ads live and tell you the biggest thing holding back customers.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <BookButton note="Home final CTA">Book my free strategy call</BookButton>
+              <BookButton note="Home final CTA">Schedule my free call</BookButton>
               <CallLink location="home final CTA" className="btn-chrome">
                 <Phone className="h-4 w-4" aria-hidden /> Call {SITE.phone.display}
               </CallLink>

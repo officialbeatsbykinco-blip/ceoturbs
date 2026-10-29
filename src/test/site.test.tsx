@@ -249,6 +249,18 @@ describe("review card store", () => {
   });
 });
 
+describe("hero booking", () => {
+  it("sends the home and Brand Boost heroes straight to the calendar, not the quiz", () => {
+    const read = (f: string) => readFileSync(path.resolve(__dirname, f), "utf8");
+    const home = read("../pages/Home.tsx");
+    expect(home).toContain("Schedule my free call");
+    expect(home).not.toContain("BrandBoostQuiz");
+    const boost = read("../components/blocks/Boost.tsx");
+    expect(boost).toContain("<InlineBooking");
+    expect(boost).not.toContain("BrandBoostQuiz");
+  });
+});
+
 describe("Brand Boost quiz", () => {
   it("renders the first question server-side with tappable answers", () => {
     render(
