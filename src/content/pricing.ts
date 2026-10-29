@@ -37,7 +37,7 @@ export const PACKAGES: PriceItem[] = [
   {
     id: "pkg-start",
     name: "Turbo Start",
-    price: 297,
+    price: 497,
     billing: "once",
     service: "google-business-profile",
     summary: "Keep the site you have. We fix everything around it so Google, Bing and AI can find you and your ads can be measured.",
@@ -56,7 +56,7 @@ export const PACKAGES: PriceItem[] = [
   {
     id: "pkg-launch",
     name: "Turbo Launch — the whole package",
-    price: 347,
+    price: 1997,
     billing: "once",
     service: "website-design",
     summary: "A new website built for Google, Bing and AI answers, every profile set up, every tag tracking, and ads switched on. Done for you.",
@@ -77,7 +77,7 @@ export const PACKAGES: PriceItem[] = [
   {
     id: "pkg-dominate",
     name: "Turbo Dominate",
-    price: 997,
+    price: 3997,
     billing: "once",
     service: "website-design",
     summary: "For businesses and brands ready to own their market: more pages, more keywords, more platforms.",
@@ -288,7 +288,7 @@ export const SETUP: PriceItem[] = [
   {
     id: "gbp-setup",
     name: "Google Business Profile setup & optimization",
-    price: 97,
+    price: 197,
     billing: "once",
     service: "google-business-profile",
     summary: "Your free Google listing, set up to win the map pack and turn searches into calls.",
@@ -298,7 +298,7 @@ export const SETUP: PriceItem[] = [
   {
     id: "social-setup",
     name: "Social profile setup & optimization",
-    price: 67,
+    price: 147,
     billing: "once",
     service: "social-media-optimization",
     summary: "Up to 3 profiles (Instagram, Facebook, TikTok, YouTube or LinkedIn) that make people trust you and click.",
@@ -307,7 +307,7 @@ export const SETUP: PriceItem[] = [
   {
     id: "visibility-foundation",
     name: "SEO, AEO & GEO foundation",
-    price: 147,
+    price: 497,
     billing: "once",
     service: "seo-aeo-geo",
     summary: "The technical groundwork that lets Google and Bing rank you and ChatGPT, Claude, Gemini and Perplexity name you.",
@@ -316,7 +316,7 @@ export const SETUP: PriceItem[] = [
   {
     id: "conversion-rescue",
     name: "Conversion Rescue",
-    price: 147,
+    price: 347,
     billing: "once",
     service: "conversion-tracking",
     summary: "Find out why your ads aren't converting, then fix it: every tag, pixel and conversion audited, repaired, valued and tested.",
@@ -332,7 +332,7 @@ export const SETUP: PriceItem[] = [
   {
     id: "tracking-setup",
     name: "Ads & tracking setup",
-    price: 97,
+    price: 197,
     billing: "once",
     service: "meta-ads",
     summary: "Ad accounts and conversion tracking set up right, so every dollar is measured and the platforms learn who buys.",
@@ -341,7 +341,7 @@ export const SETUP: PriceItem[] = [
   {
     id: "email-setup",
     name: "Email & SMS setup",
-    price: 147,
+    price: 297,
     billing: "once",
     service: "email-marketing",
     summary: "An email/SMS system that brings customers back and asks for reviews on autopilot.",
@@ -353,7 +353,7 @@ export const WEBSITES: PriceItem[] = [
   {
     id: "site-artist",
     name: "Artist website",
-    price: 297,
+    price: 997,
     billing: "once",
     service: "website-design",
     summary: "A home for your music that grows your fanbase — not just a link in bio.",
@@ -362,7 +362,7 @@ export const WEBSITES: PriceItem[] = [
   {
     id: "site-launch",
     name: "Launch website",
-    price: 297,
+    price: 1497,
     billing: "once",
     service: "website-design",
     summary: "A fast, mobile-first site for local service businesses that makes the phone ring.",
@@ -372,7 +372,7 @@ export const WEBSITES: PriceItem[] = [
   {
     id: "site-growth",
     name: "Growth website",
-    price: 497,
+    price: 2497,
     billing: "once",
     service: "website-design",
     summary: "For businesses ready to dominate their area: more pages, more keywords, more leads.",
@@ -381,7 +381,7 @@ export const WEBSITES: PriceItem[] = [
   {
     id: "site-shopify",
     name: "Shopify store",
-    price: 697,
+    price: 2997,
     billing: "once",
     service: "website-design",
     summary: "A Shopify store built to convert, with the tracking ads need to scale.",
@@ -393,7 +393,7 @@ export const MONTHLY: PriceItem[] = [
   {
     id: "care",
     name: "Turbo Care",
-    price: 35,
+    price: 97,
     billing: "month",
     service: "website-design",
     summary: "Your site and tracking stay fast, secure and working, for about the price of a lunch a week.",
@@ -402,7 +402,7 @@ export const MONTHLY: PriceItem[] = [
   {
     id: "growth",
     name: "Turbo Growth",
-    price: 97,
+    price: 497,
     billing: "month",
     service: "meta-ads",
     summary: "Care plus your ads managed every week. The plan most clients pick.",
@@ -412,7 +412,7 @@ export const MONTHLY: PriceItem[] = [
   {
     id: "scale",
     name: "Turbo Scale",
-    price: 297,
+    price: 997,
     billing: "month",
     service: "seo-aeo-geo",
     summary: "For competitive markets, multiple locations, stores and artists pushing releases on several platforms.",
@@ -421,7 +421,7 @@ export const MONTHLY: PriceItem[] = [
   {
     id: "tracking-watch",
     name: "Tracking Watch",
-    price: 25,
+    price: 49,
     billing: "month",
     service: "conversion-tracking",
     summary: "The small monthly plan that keeps your tracking honest and your ad spend from leaking. Already included in Turbo Care, Growth and Scale.",
@@ -430,7 +430,7 @@ export const MONTHLY: PriceItem[] = [
   {
     id: "ads-additional",
     name: "Each additional ad platform",
-    price: 47,
+    price: 147,
     billing: "month",
     service: "google-ads",
     summary: "Add Google, Microsoft, Meta, TikTok, X, Reddit, LinkedIn or Spotify on top of your plan.",
