@@ -172,7 +172,7 @@ export function Founder() {
         <h2 className="h-section mt-2">{SITE.founder.name}</h2>
         <p className="mt-1 text-chrome">Founder of CEO Turbo · known online as {SITE.founder.alternateName}</p>
         <p className="lede">
-          I left a career in tech and finance to help people make more money. I've built 50+ websites, including every client site on this page, and I run the Brand Boost calls myself.
+          I left a career in tech and finance to help people make more money. I built every client site on this page and I run the Brand Boost calls myself.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3">
           <BookButton note="Founder section">Book a call with Christopher</BookButton>

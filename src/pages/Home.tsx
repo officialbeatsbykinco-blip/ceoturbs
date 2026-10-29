@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Globe, MapPin, Megaphone, Phone, Search, Star } from "lucide-react";
+import { ArrowRight, Check, Globe, Megaphone, Phone, Play, Search, Star } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
 import { CallLink } from "@/components/site/CallLink";
 import { ProofStats, GoogleAdProof } from "@/components/blocks/Proof";
@@ -7,52 +7,46 @@ import { Founder, BookingSection } from "@/components/blocks/Sales";
 import { SectionHeader, FAQList } from "@/components/blocks/Basics";
 import { HOME_FAQS } from "@/content/faqs";
 import { price } from "@/content/pricing";
-import { SITE, REVIEW_CARD, fromPriceLabel } from "@/config/site";
-import { ReviewDuo } from "@/components/blocks/ReviewDuo";
+import { SITE, fromPriceLabel } from "@/config/site";
 import { SiteWall } from "@/components/visuals/SiteWall";
 
 /**
  * Money model, top to bottom:
- * 1. Entry offer — the NFC Google review card from $24.99 (checkout on the shop page).
- * 2. Step two — websites and ads that turn those reviews into calls (Launch $347 includes 2 cards).
- * 3. Backup action — the free 30-minute call, or the phone.
+ * 1. Primary action — the free 30-minute strategy call (Cal.com booking).
+ * 2. Offer — an SEO/AEO/GEO website plus Google, Meta and YouTube ads that bring the calls.
+ * 3. Add-on — NFC Google review cards, kept small so they never compete with the booking.
  */
 export default function Home() {
   return (
     <>
       <div className="theme-soft">
-      {/* HERO — who it's for, what they get, one button. */}
+      {/* HERO — outcome, offer, one button. */}
       <section className="relative overflow-clip pt-24 sm:pt-28 lg:pt-32" aria-labelledby="hero">
         <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[1100px] -translate-x-1/2 glow-turbo" aria-hidden />
-        <div className="container-x relative grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
+        <div className="container-x relative mx-auto max-w-4xl text-center">
           <div className="hero-rise relative z-10 min-w-0">
-            <p className="chip">Google review cards for local businesses</p>
+            <p className="chip">Websites + ads for local businesses and online stores</p>
             <h1 id="hero" className="mt-4 text-[34px] font-bold leading-[1.05] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[60px]">
-              <span className="text-chrome-grad">More Google reviews.</span> <span className="text-turbo-grad">More calls. One tap.</span>
+              <span className="text-chrome-grad">Get found on Google and ChatGPT.</span> <span className="text-turbo-grad">Get booked solid.</span>
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
-              Customers tap the card with their phone and land on your Google review page. More fresh reviews move you up in Google Maps, and Maps is where "near me" calls come from. Free US shipping on every order.
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
+              We build a fast website optimized for SEO, AEO and GEO so you show up in Google and in AI answers, then run Google, Meta and YouTube ads that send ready-to-buy customers to it. Shopify stores, contractors, handymen, restaurants and more.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link to="/google-review-cards" className="btn-ignite btn-shine">
-                Get my review cards · from {fromPriceLabel} <ArrowRight className="h-4 w-4" aria-hidden />
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
+              <BookButton note="Home hero" className="btn-shine">Book my free strategy call</BookButton>
+              <Link to="/results" className="btn-chrome">
+                See real results <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <CallLink location="home hero" className="btn-chrome">
-                <Phone className="h-4 w-4" aria-hidden /> Call {SITE.phone.display}
-              </CallLink>
             </div>
-            <ul className="mt-6 grid max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-sm text-muted-foreground">
-              {["Works on iPhone and Android", "No app for your customers", "Free US shipping", "5-day returns"].map((t) => (
+            <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
+              {["Free 30-minute call", "Fixed prices, no contracts", "You own your ad account", "Founder-led, Atlanta GA"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
                   {t}
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="min-w-0">
-            <img src={REVIEW_CARD.image} alt="White NFC Google review card: Review Us On Google" width={640} height={640} className="mx-auto w-full max-w-md rounded-3xl" decoding="async" />
           </div>
         </div>
       </section>
@@ -67,29 +61,25 @@ export default function Home() {
         </div>
       </section>
 
-      <ReviewDuo />
-
-      {/* HOW IT WORKS — three taps, nothing to install. */}
-      <section className="section border-t border-border" aria-labelledby="how">
+      {/* WHAT YOU GET — three parts of one system. */}
+      <section className="section border-t border-border" aria-labelledby="system">
         <div className="container-x">
-          <SectionHeader title={<span id="how">How the card gets you reviews</span>} lede="Nothing to install, nothing for your customer to learn." />
+          <SectionHeader kicker="How it works" title={<span id="system">One system that turns searches into booked calls.</span>} lede="Most agencies sell you a site or ads. We build both to work together, and track every call back to its source." />
           <ol className="mt-10 grid gap-4 md:grid-cols-3">
             {[
-              { t: "Customer taps the card", b: "They hold their phone near the card at checkout. Works on iPhone and Android, no app needed." },
-              { t: "Your review form opens", b: "Google's own rate-and-review screen for your business, ready for stars. No searching for your listing." },
-              { t: "You climb the map", b: "More fresh reviews build trust with the next customer, and Google uses review count and score in local results." },
-            ].map((x, i) => (
+              { icon: Globe, t: "1. A website built to convert", b: "Fast, mobile-first and written for SEO, AEO and GEO, with schema markup and llms.txt so Google, ChatGPT and Perplexity can read and recommend you." },
+              { icon: Search, t: "2. Get found everywhere", b: "Google Business Profile, local SEO and answer-engine optimization put you in the map pack and in AI answers when people ask who to hire." },
+              { icon: Megaphone, t: "3. Ads that fill the calendar", b: "Google, Meta and YouTube ads sent to your new site with call and form tracking, so you see what each dollar brings back." },
+            ].map((x) => (
               <li key={x.t} className="panel p-6">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-turbo/15 font-display font-bold text-turbo">{i + 1}</span>
+                <x.icon className="h-6 w-6 text-turbo" aria-hidden />
                 <h3 className="mt-4 font-display text-lg font-bold">{x.t}</h3>
                 <p className="mt-1.5 text-sm text-muted-foreground">{x.b}</p>
               </li>
             ))}
           </ol>
           <div className="mt-8">
-            <Link to="/google-review-cards" className="btn-ignite btn-shine">
-              Get my review cards <ArrowRight className="h-4 w-4" aria-hidden />
-            </Link>
+            <BookButton note="Home — how it works">Book my free strategy call</BookButton>
           </div>
         </div>
       </section>
@@ -98,16 +88,16 @@ export default function Home() {
       <section className="section border-t border-border" aria-labelledby="get">
         <div className="container-x">
           <SectionHeader
-            kicker="Step two"
-            title={<span id="get">Turn the reviews into calls.</span>}
-            lede="Reviews get you found. A site and ads make sure the person who finds you calls. Our Launch package ($347) bundles a new site, ads and 2 review cards."
+            kicker="Services"
+            title={<span id="get">Everything that brings in customers.</span>}
+            lede="Start with one piece or take the whole package. Every price is published on the pricing page."
           />
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: Globe, t: `Website · from ${price("site-launch")}`, b: "A fast site built to get calls and bookings, so the people your reviews send over actually reach out.", to: "/services/website-design" },
+              { icon: Globe, t: `Website · from ${price("site-launch")}`, b: "A fast, SEO/AEO/GEO-ready site built to get calls and bookings.", to: "/services/website-design" },
               { icon: Search, t: "Google Ads", b: "Search ads for people who need you today, junk searches blocked.", to: "/services/google-ads" },
               { icon: Megaphone, t: "Meta Ads", b: "Facebook and Instagram lead ads with leads straight to your phone.", to: "/services/meta-ads" },
-              { icon: MapPin, t: "Google Business Profile", b: "Set up and optimized so you show up in Google Maps.", to: "/services/google-business-profile" },
+              { icon: Play, t: "YouTube Ads", b: "Video ads in front of people searching and watching in your area. Ask about it on the call.", to: "/book" },
             ].map((x) => (
               <li key={x.t}>
                 <Link to={x.to} className="panel block h-full p-5 transition hover:ring-1 hover:ring-turbo/40">
@@ -121,10 +111,10 @@ export default function Home() {
           <div className="mt-8 grid items-start gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <GoogleAdProof compact />
             <div className="panel p-6">
-              <p className="font-display text-lg font-bold">Real ad accounts, real calls.</p>
-              <p className="mt-2 text-sm text-muted-foreground">Unedited Google Ads and Meta dashboards from local service businesses. Setup from {price("pkg-start")}, Launch bundle {price("pkg-launch")} with 2 cards included, ads management from {price("growth")}/mo. You own the ad account and there's no long-term contract.</p>
+              <p className="font-display text-lg font-bold">Real ad accounts, real leads.</p>
+              <p className="mt-2 text-sm text-muted-foreground">Unedited Google Ads and Meta dashboards from local service businesses. Setup from {price("pkg-start")}, the full Launch package {price("pkg-launch")}, ads management from {price("growth")}/mo. You own the ad account and there's no long-term contract.</p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                <BookButton note="Home — after reviews">Book my free 30-min call</BookButton>
+                <BookButton note="Home — after services">Book my free 30-min call</BookButton>
                 <Link to="/results" className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-turbo underline-offset-4 hover:underline">
                   See results <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
@@ -148,16 +138,17 @@ export default function Home() {
         <div className="container-x">
           <div className="cta-glow rounded-3xl p-8 text-center sm:p-12">
             <Star className="mx-auto h-8 w-8 text-turbo" aria-hidden />
-            <h2 id="final" className="h-section mt-3">The business with more Google reviews gets the call. Make that you.</h2>
-            <p className="lede mx-auto max-w-2xl">Get your cards this week. Free US shipping, 5-day returns, and a founder who picks up the phone.</p>
+            <h2 id="final" className="h-section mt-3">The business that shows up first gets the call. Make that you.</h2>
+            <p className="lede mx-auto max-w-2xl">Book a free 30-minute call. We review your site, Google profile and ads live and tell you the biggest thing holding back customers.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link to="/google-review-cards" className="btn-ignite btn-shine">
-                Get my review cards <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
+              <BookButton note="Home final CTA">Book my free strategy call</BookButton>
               <CallLink location="home final CTA" className="btn-chrome">
                 <Phone className="h-4 w-4" aria-hidden /> Call {SITE.phone.display}
               </CallLink>
             </div>
+            <p className="mt-6 text-sm text-muted-foreground">
+              Also: <Link to="/google-review-cards" className="text-turbo underline-offset-4 hover:underline">NFC Google review cards from {fromPriceLabel}</Link>
+            </p>
           </div>
         </div>
       </section>

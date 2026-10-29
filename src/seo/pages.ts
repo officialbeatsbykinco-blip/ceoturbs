@@ -41,9 +41,9 @@ function build(): PageMeta[] {
 
   pages.push({
     path: "/",
-    title: "Google Review Cards for Local Businesses | CEO Turbo",
+    title: "SEO, AEO & GEO Websites + Google, Meta & YouTube Ads | CEO Turbo",
     description:
-      "NFC Google review cards: customers tap, your review form opens. Free US shipping, 5-day returns. Plus Google and Meta ads for local businesses.",
+      "SEO, AEO and GEO websites that get you found on Google and ChatGPT, plus Google, Meta and YouTube ads that book calls. Free strategy call.",
     priority: 1,
     changefreq: "weekly",
     group: "Core",

@@ -21,6 +21,7 @@ import { reviewCardProduct, organization, founder } from "@/seo/schema";
 import { Footer } from "@/components/site/Footer";
 import { findVariant } from "@/lib/shopify";
 import { BookButton, ShopCardsButton } from "@/components/cta/Actions";
+import { MobileActionBar } from "@/components/site/MobileActionBar";
 import { OfficeIntake } from "@/components/blocks/OfficeIntake";
 import { checkReviewLink } from "@/lib/review-link";
 import { ALL_PRICES, PRICING_FAQS, pricesFor, usd } from "@/content/pricing";
@@ -135,6 +136,18 @@ describe("conversion buttons", () => {
       </MemoryRouter>,
     );
     expect(screen.getByRole("link", { name: "Book" })).toHaveAttribute("href", BOOKING.url);
+  });
+
+  it("mobile bar offers a Book action on the home page and generic pages", () => {
+    for (const route of ["/", "/pricing"]) {
+      const { unmount } = render(
+        <MemoryRouter initialEntries={[route]}>
+          <MobileActionBar />
+        </MemoryRouter>,
+      );
+      expect(screen.getByRole("link", { name: "Book a free call" })).toHaveAttribute("href", BOOKING.url);
+      unmount();
+    }
   });
 
   it("review card button links to the store", () => {

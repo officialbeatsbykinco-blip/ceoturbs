@@ -7,8 +7,6 @@ import { SERVICES } from "@/content/services";
 import { SITE, fromPriceLabel } from "@/config/site";
 import { CallLink } from "./CallLink";
 import { REVIEWS_AD_PATH, SHOP_PATH, SETUP_PATH } from "@/content/review-cards";
-import { SHIRTS_PATH, shirtFromLabel } from "@/content/company-shirts";
-import { ARTIST_MERCH_PATH, artistFromLabel } from "@/content/artist-merch";
 import { cn } from "@/lib/utils";
 
 type Item = { to: string; label: string; sub?: string; group?: string };
@@ -23,7 +21,7 @@ const SERVICE_GROUPS: Record<string, string> = {
   "pos-system-setup": "Tech & equipment",
 };
 const groupOf = (slug: string) => SERVICE_GROUPS[slug] ?? "Marketing & growth";
-const GROUP_ORDER = ["Start here", "Office & workspace", "Tech & equipment", "Marketing & growth"];
+const GROUP_ORDER = ["Start here", "Marketing & growth"];
 type Menu = { label: string; to: string; items: Item[]; wide?: boolean };
 
 // Home first, then three dropdowns, then the two money links. Fewer choices = more clicks on the ones that pay.
@@ -51,10 +49,9 @@ const MENUS: Menu[] = [
     items: [
       { to: "/brand-boost", label: "Brand Boost call", sub: "Free 30-min growth plan — start here", group: "Start here" },
       { to: "/pricing", label: "Pricing", sub: "Clear prices — setup once, monthly only where it pays", group: "Start here" },
-      { to: SHIRTS_PATH, label: "Custom company t-shirts", sub: `Upload your logo, preview it, order — from ${shirtFromLabel}`, group: "Start here" },
       { to: "/restaurants", label: "Restaurant growth", sub: "DoorDash & Uber Eats setup, TV menus, Maps, table review cards", group: "Start here" },
       { to: "/app-marketing", label: "Software & app distribution", sub: "Engineered growth for developers & SaaS", group: "Start here" },
-      ...SERVICES.map((s) => ({ to: `/services/${s.slug}`, label: s.short, sub: s.outcome, group: groupOf(s.slug) })),
+      ...SERVICES.filter((s) => groupOf(s.slug) === "Marketing & growth").map((s) => ({ to: `/services/${s.slug}`, label: s.short, sub: s.outcome, group: groupOf(s.slug) })),
     ].sort((a, b) => GROUP_ORDER.indexOf(a.group) - GROUP_ORDER.indexOf(b.group)),
   },
   {
@@ -68,12 +65,10 @@ const MENUS: Menu[] = [
     ],
   },
   {
-    label: "Review stands & cards",
+    label: "Review cards",
     to: SHOP_PATH,
     items: [
       { to: SHOP_PATH, label: "Shop review stands & cards", sub: `Tap-to-review NFC cards — from ${fromPriceLabel}` },
-      { to: SHIRTS_PATH, label: "Company t-shirts", sub: `Your logo on short & long sleeves — from ${shirtFromLabel}, no minimum` },
-      { to: ARTIST_MERCH_PATH, label: "Artist merch", sub: `Your cover art & tour dates on a tee — from ${artistFromLabel}, no minimum` },
       { to: SETUP_PATH, label: "Card setup guide", sub: "Program your card in 5 minutes" },
       { to: "/how-to-get-more-google-reviews", label: "Get more Google reviews", sub: "The playbook that works" },
     ],
@@ -166,11 +161,11 @@ export function Header({ focus = false }: { focus?: boolean }) {
               <span className="text-turbo" aria-hidden>›</span>
             </Link>
             <Link to={SHOP_PATH} onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
-              Review stands & cards — from {fromPriceLabel}
+              Review cards — from {fromPriceLabel}
               <span className="text-turbo" aria-hidden>›</span>
             </Link>
-            <Link to="/services/home-office-setup" onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
-              Office setup
+            <Link to="/results" onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
+              See our results
               <span className="text-turbo" aria-hidden>›</span>
             </Link>
           </div>
