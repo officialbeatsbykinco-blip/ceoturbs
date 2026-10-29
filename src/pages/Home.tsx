@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check, Globe, Megaphone, Phone, Play, Search, Star } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
 import { CallLink } from "@/components/site/CallLink";
-import { ProofStats, BestResults, GoogleAdProof } from "@/components/blocks/Proof";
-import { GOOGLE_AD_RESULTS } from "@/content/results";
+import { ProofStats, BestResults, GoogleAdProof, AdResultsGrid, AdGallery } from "@/components/blocks/Proof";
+import { ADS } from "@/content/ads";
+import { AD_RESULTS, AD_TOTALS, GOOGLE_AD_RESULTS, money } from "@/content/results";
 import { GrandSlamOffer } from "@/components/blocks/Offer";
 import { ReviewDuo } from "@/components/blocks/ReviewDuo";
 import { Founder, BookingSection } from "@/components/blocks/Sales";
@@ -67,6 +68,32 @@ export default function Home() {
           </div>
           <div className="mt-8">
             <ProofStats />
+          </div>
+        </div>
+      </section>
+
+      {/* META ADS FLEX — every dashboard and every creative. */}
+      <section className="section border-t border-border" aria-labelledby="meta">
+        <div className="container-x">
+          <SectionHeader
+            kicker="Meta ads (Facebook + Instagram)"
+            title={<span id="meta">{AD_TOTALS.leads} leads at {money(AD_TOTALS.avgCpl)} average. Every campaign, cheapest lead first.</span>}
+            lede={`Unedited Meta Ads Manager dashboards across ${AD_RESULTS.length} campaigns, lead campaigns first. The best: ${money(AD_TOTALS.lowestCpl)} per lead. We show the pricier ones too, because you should see all of it.`}
+          />
+          <div className="mt-10">
+            <AdResultsGrid cheapestFirst />
+          </div>
+          <div className="mt-10 text-center">
+            <BookButton note="Home — Meta results">Get results like these. Book my free call</BookButton>
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-t border-border" aria-labelledby="creative">
+        <div className="container-x">
+          <SectionHeader kicker="The ads behind the leads" title={<span id="creative">{ADS.length} ads we designed and launched.</span>} lede="Local services, stores and coaches. Each one built around a single hook and one action." />
+          <div className="mt-10">
+            <AdGallery ads={ADS} />
           </div>
         </div>
       </section>

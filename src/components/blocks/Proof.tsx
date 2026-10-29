@@ -207,8 +207,9 @@ export function BestResults() {
   );
 }
 
-export function AdResultsGrid({ keys }: { keys?: string[] }) {
-  const rows = keys ? AD_RESULTS.filter((r) => keys.includes(r.key)) : AD_RESULTS;
+export function AdResultsGrid({ keys, cheapestFirst = false }: { keys?: string[]; cheapestFirst?: boolean }) {
+  const base = keys ? AD_RESULTS.filter((r) => keys.includes(r.key)) : AD_RESULTS;
+  const rows = cheapestFirst ? [...base].sort((a, b) => Number(b.metric === "Leads") - Number(a.metric === "Leads") || a.costPer - b.costPer) : base;
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {rows.map((r) => (
