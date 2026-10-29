@@ -60,7 +60,7 @@ export default function Home() {
       <section className="pt-14 pb-8" aria-labelledby="proof">
         <div className="container-x">
           <h2 id="proof" className="h-section">Real leads on small budgets.</h2>
-          <p className="lede">Unedited dashboards from Appliance King, appliance repair in Macon GA: 2 Google Ads conversions for $6.57 in one day, and 14 website leads at $6.46 each on $5 a day.</p>
+          <p className="lede">Unedited dashboards from Appliance King, appliance repair in Macon GA: 2 Google Ads conversions for $6.57 in one day, 14 website leads at $6.46 each on $5 a day, and 71 free clicks from Google Search in 3 months.</p>
           <div className="mt-8">
             <BestResults />
           </div>

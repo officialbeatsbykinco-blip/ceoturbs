@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Check, Landmark, CreditCard } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
 import { CLIENTS, CATEGORY_LABEL, domainOf, type Category, type Client } from "@/content/clients";
-import { AD_RESULTS, AD_TOTALS, GSC, APPLIANCE_KING_PAGE, FEATURED_RESULT, GOOGLE_AD_RESULT, STRIPE, money, type AdResult, type GoogleAdResult } from "@/content/results";
+import { AD_RESULTS, AD_TOTALS, GSC, APPLIANCE_KING_PAGE, APPLIANCE_KING_GSC, FEATURED_RESULT, GOOGLE_AD_RESULT, STRIPE, money, type AdResult, type GoogleAdResult, type GscResult } from "@/content/results";
 import type { AdCreative } from "@/content/ads";
 import { cn } from "@/lib/utils";
 import { CountUp } from "@/components/visuals/CountUp";
@@ -200,6 +200,9 @@ export function BestResults() {
     <div className="grid items-start gap-5 lg:grid-cols-[1.25fr_0.75fr]">
       <GoogleAdProof compact />
       {meta && <ResultCard r={meta} />}
+      <div className="lg:col-span-2">
+        <GSCProof result={APPLIANCE_KING_GSC} />
+      </div>
     </div>
   );
 }
@@ -233,25 +236,37 @@ export function AdGallery({ ads }: { ads: AdCreative[] }) {
   );
 }
 
-export function GSCProof() {
+export function GSCProof({ result = GSC }: { result?: GscResult | typeof GSC }) {
+  const g = result;
+  const small = g.width > 900 ? g.image.replace(".webp", "-900.webp") : g.image;
   return (
     <figure className="panel overflow-hidden">
-      <img src={GSC.image} alt="Google Search Console performance for stackmode.net: 83 clicks, 3.34K impressions, 2.5% CTR, impressions climbing after CEO Turbo's SEO, AEO and GEO work" loading="lazy" decoding="async" width={1600} height={553} className="w-full" />
+      <img
+        src={g.image}
+        srcSet={g.image !== GSC.image ? `${small} 900w, ${g.image} ${g.width}w` : undefined}
+        sizes={g.image !== GSC.image ? "(min-width: 1024px) 1100px, 92vw" : undefined}
+        alt={`Google Search Console performance for ${g.property}: ${g.clicks} clicks, ${g.impressions} impressions, ${g.ctr} CTR, climbing after CEO Turbo's SEO, AEO and GEO work`}
+        loading="lazy"
+        decoding="async"
+        width={g.width}
+        height={g.height}
+        className="w-full bg-white"
+      />
       <figcaption className="grid gap-4 border-t border-border p-5 sm:grid-cols-[1fr_auto] sm:items-center">
         <p className="text-sm leading-relaxed text-muted-foreground">
-          Google Search Console, {GSC.property}, 12 months. Daily impressions were flat for most of the year, then climbed steeply once the SEO, AEO and GEO work went live.
+          Google Search Console, {g.property}, {g.period}. {g.caption}
         </p>
         <dl className="flex gap-6 text-sm">
           <div>
-            <dd className="font-display text-xl font-bold">{GSC.impressions}</dd>
+            <dd className="font-display text-xl font-bold">{g.impressions}</dd>
             <dt className="text-xs text-muted-foreground">impressions</dt>
           </div>
           <div>
-            <dd className="font-display text-xl font-bold">{GSC.clicks}</dd>
+            <dd className="font-display text-xl font-bold">{g.clicks}</dd>
             <dt className="text-xs text-muted-foreground">clicks</dt>
           </div>
           <div>
-            <dd className="font-display text-xl font-bold">{GSC.ctr}</dd>
+            <dd className="font-display text-xl font-bold">{g.ctr}</dd>
             <dt className="text-xs text-muted-foreground">CTR</dt>
           </div>
         </dl>

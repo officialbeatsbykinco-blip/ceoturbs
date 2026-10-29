@@ -28,7 +28,7 @@ export default function Results() {
       <section className="pb-8 pt-10" aria-labelledby="best">
         <div className="container-x">
           <h2 id="best" className="h-section">Our cheapest results right now</h2>
-          <p className="lede">Appliance King, appliance repair in Macon GA. Same client, two platforms, small budgets.</p>
+          <p className="lede">Appliance King, appliance repair in Macon GA. Same client: Google Ads, Meta ads and SEO, all on small budgets.</p>
           <div className="mt-8">
             <BestResults />
           </div>

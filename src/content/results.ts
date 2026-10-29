@@ -145,9 +145,28 @@ export const GSC = {
   property: "stackmode.net",
   clicks: 83,
   impressions: "3.34K",
+  period: "12 months",
+  width: 1600,
+  height: 553,
+  caption: "Daily impressions were flat for most of the year, then climbed steeply once the SEO, AEO and GEO work went live.",
   ctr: "2.5%",
   position: "25.4",
   image: "/img/results/gsc-stackmode.webp",
+};
+
+export type GscResult = { property: string; period: string; clicks: number | string; impressions: number | string; ctr: string; image: string; width: number; height: number; caption: string };
+
+/** Appliance King website, Google Search Console, last 3 months (Aug 26 – Oct 25, 2026). Keep exact; position was hidden in the screenshot. */
+export const APPLIANCE_KING_GSC: GscResult = {
+  property: "Appliance King website",
+  period: "3 months, Aug 26 – Oct 25, 2026",
+  clicks: 71,
+  impressions: 957,
+  ctr: "7.4%",
+  image: "/img/results/appliance-king-gsc.webp",
+  width: 2000,
+  height: 637,
+  caption: "No search traffic until early October, then clicks and impressions climbing steadily.",
 };
 
 export const money = (n: number) =>
@@ -193,7 +212,7 @@ export const GOOGLE_AD_RESULTS: GoogleAdResult[] = [
     client: "Appliance King",
     clientSlug: "appliance-king",
     campaign: "Appliance repair, Macon GA: Google Search",
-    period: "One day, Oct 2026",
+    period: "One day, Oct 2026 (conversions shown as pending in Google Ads)",
     headline: "3 clicks. 2 conversions. $6.57 spent.",
     clicks: 3,
     cpc: 2.19,

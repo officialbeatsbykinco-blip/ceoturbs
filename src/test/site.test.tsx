@@ -6,7 +6,7 @@ import { MemoryRouter } from "react-router-dom";
 import { PAGES } from "@/seo/pages";
 import { CLIENTS } from "@/content/clients";
 import { ADS } from "@/content/ads";
-import { AD_RESULTS, AD_TOTALS, GOOGLE_AD_RESULTS } from "@/content/results";
+import { AD_RESULTS, AD_TOTALS, APPLIANCE_KING_GSC, GOOGLE_AD_RESULTS } from "@/content/results";
 import * as FAQS from "@/content/faqs";
 import { GUIDES } from "@/content/guides";
 import { AUDIENCES, PRODUCERS, VISUAL_ARTISTS } from "@/content/audiences";
@@ -126,6 +126,11 @@ describe("reported numbers", () => {
       expect(g.costPer, g.key).toBeCloseTo(g.spent / g.conversions, 2);
       expect(existsSync(pub(g.image)), g.key).toBe(true);
     });
+  });
+
+  it("matches the Appliance King Search Console screenshot", () => {
+    expect(APPLIANCE_KING_GSC).toMatchObject({ clicks: 71, impressions: 957, ctr: "7.4%" });
+    expect(existsSync(pub(APPLIANCE_KING_GSC.image))).toBe(true);
   });
 
   it("states one guarantee everywhere and never denies it", () => {
