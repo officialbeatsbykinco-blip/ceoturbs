@@ -13,6 +13,9 @@ import { HOME_FAQS } from "@/content/faqs";
 import { price } from "@/content/pricing";
 import { SITE, fromPriceLabel } from "@/config/site";
 import { SiteWall } from "@/components/visuals/SiteWall";
+import { MobileMore } from "@/components/blocks/MobileMore";
+import { BrandBoostQuiz } from "@/components/quiz/BrandBoostQuiz";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 /**
  * Money model, top to bottom:
@@ -21,6 +24,8 @@ import { SiteWall } from "@/components/visuals/SiteWall";
  * 3. Add-on — NFC Google review cards, kept small so they never compete with the booking.
  */
 export default function Home() {
+  // Phones get the question quiz right under the headline (one tap per question) instead of a wall of text.
+  const mobile = useIsMobile();
   return (
     <>
       <div className="theme-soft">
@@ -34,16 +39,17 @@ export default function Home() {
             <h1 id="hero" className="mt-4 text-[34px] font-bold leading-[1.05] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[60px]">
               <span className="text-chrome-grad">We get you more customers, more sales</span> <span className="text-turbo-grad">and more reviews.</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground max-md:sr-only sm:mt-5 sm:text-lg">
               An SEO, AEO and GEO website that gets you found on Google and ChatGPT, Google, Meta and YouTube ads that bring buyers to it, and a tap-to-review card so 5-star reviews keep coming. Built for Shopify stores, contractors, handymen, restaurants and more.
             </p>
+            {mobile && <BrandBoostQuiz source="Home hero quiz" primary className="mt-5 text-left" />}
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
-              <BookButton note="Home hero" className="btn-shine">Book my free strategy call</BookButton>
+              {!mobile && <BookButton note="Home hero" className="btn-shine">Book my free strategy call</BookButton>}
               <Link to="/results" className="btn-chrome">
                 See real results <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
             </div>
-            <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
+            <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 max-md:hidden gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
               {["Free 30-minute call", "Free review card with Launch", "Leads-or-free guarantee", "We work with businesses worldwide"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
@@ -80,9 +86,9 @@ export default function Home() {
             title={<span id="meta">{AD_TOTALS.leads} leads at {money(AD_TOTALS.avgCpl)} average. Every campaign, cheapest lead first.</span>}
             lede={`Unedited Meta Ads Manager dashboards across ${AD_RESULTS.length} campaigns, lead campaigns first. The best: ${money(AD_TOTALS.lowestCpl)} per lead. We show the pricier ones too, because you should see all of it.`}
           />
-          <div className="mt-10">
+          <MobileMore label="See every campaign" className="mt-10">
             <AdResultsGrid cheapestFirst />
-          </div>
+          </MobileMore>
           <div className="mt-10 text-center">
             <BookButton note="Home — Meta results">Get results like these. Book my free call</BookButton>
           </div>
@@ -92,9 +98,9 @@ export default function Home() {
       <section className="section border-t border-border" aria-labelledby="creative">
         <div className="container-x">
           <SectionHeader kicker="The ads behind the leads" title={<span id="creative">{ADS.length} ads we designed and launched.</span>} lede="Local services, stores and coaches. Each one built around a single hook and one action." />
-          <div className="mt-10">
+          <MobileMore label={`See all ${ADS.length} ads`} className="mt-10">
             <AdGallery ads={ADS} />
-          </div>
+          </MobileMore>
         </div>
       </section>
 
@@ -102,7 +108,8 @@ export default function Home() {
       <section className="section border-t border-border" aria-labelledby="system">
         <div className="container-x">
           <SectionHeader kicker="How it works" title={<span id="system">One system: more customers, more sales, more reviews.</span>} lede="Most agencies sell you a site or ads. We build both to work together, and track every call back to its source." />
-          <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <MobileMore label="See how it works" className="mt-10">
+          <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Globe, t: "1. A website built to convert", b: "Fast, mobile-first and written for SEO, AEO and GEO, with schema markup and llms.txt so Google, ChatGPT and Perplexity can read and recommend you." },
               { icon: Search, t: "2. Get found everywhere", b: "Google Business Profile, local SEO and answer-engine optimization put you in the map pack and in AI answers when people ask who to hire." },
@@ -116,6 +123,7 @@ export default function Home() {
               </li>
             ))}
           </ol>
+          </MobileMore>
           <div className="mt-8">
             <BookButton note="Home — how it works">Book my free strategy call</BookButton>
           </div>
