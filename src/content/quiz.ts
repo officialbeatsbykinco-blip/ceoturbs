@@ -123,7 +123,9 @@ export const TIMELINES: { id: Timeline; label: string; icon: IconKey }[] = [
 ];
 
 /** The tap steps before contact details; the progress bar counts these plus business + contact. */
-export const QUIZ_STEPS = ["audience", "stage", "goal", "blockers", "budget", "timeline", "business", "contact"] as const;
+// Three taps/fields to the calendar: what you do, what you want, who you are. Stage defaults to "grow" and
+// budget/timeline/blockers are left to the call itself (every extra question costs bookings).
+export const QUIZ_STEPS = ["audience", "goal", "contact"] as const;
 export type QuizStep = (typeof QUIZ_STEPS)[number] | "result";
 
 export const leadValue = (b?: Budget) => BUDGETS.find((x) => x.id === b)?.value ?? 10;

@@ -275,8 +275,8 @@ describe("Brand Boost quiz", () => {
         }
   });
 
-  it("asks starting vs growing second, with questions that change by answer", () => {
-    expect(QUIZ_STEPS.slice(0, 3)).toEqual(["audience", "stage", "goal"]);
+  it("is three steps to the calendar, with goals that change by answer", () => {
+    expect(QUIZ_STEPS).toEqual(["audience", "goal", "contact"]);
     for (const a of QUIZ_AUDIENCES) {
       expect(STAGES[a.id].map((s) => s.id)).toEqual(["start", "grow"]);
       expect(GOALS[a.id].start.length).toBeGreaterThanOrEqual(4);

@@ -243,16 +243,10 @@ export function BrandBoostQuiz({
     save({ answers: { ...EMPTY_ANSWERS, name: answers.name, email: answers.email, phone: answers.phone, smsOptIn: answers.smsOptIn }, step: "audience", quizId: "", startedAt: 0 });
   };
 
-  const submitBusiness = (e: FormEvent) => {
-    e.preventDefault();
-    if (answers.business.trim().length < 2) return setErrors({ business: isArtist ? "Enter your artist name." : "Enter your business name." });
-    setErrors({});
-    go("contact");
-  };
-
   const submitContact = async (e: FormEvent) => {
     e.preventDefault();
     const errs: typeof errors = {};
+    if (answers.business.trim().length < 2) errs.business = isArtist ? "Enter your artist name." : "Enter your business name.";
     if (answers.name.trim().length < 2) errs.name = "Enter your name.";
     if (!EMAIL.test(answers.email.trim())) errs.email = "Enter a valid email.";
     const digits = answers.phone.replace(/\D/g, "");
@@ -350,103 +344,30 @@ export function BrandBoostQuiz({
             <Question title="What do you do?" hint="Pick one — we'll tailor your plan.">
               <Options cols={2}>
                 {AUDIENCES.map((o, i) => (
-                  <Option key={o.id} n={i + 1} icon={o.icon} label={o.label} sub={o.sub} on={answers.audience === o.id} first={i === 0} onClick={() => choose(answers.audience === o.id ? { audience: o.id } : { audience: o.id, stage: undefined, goal: undefined, blockers: [] }, "stage")} />
-                ))}
-              </Options>
-            </Question>
-          )}
-
-          {step === "stage" && (
-            <Question title={isArtist ? "Where are you in your music career?" : answers.audience === "store" ? "Where is your store right now?" : "Where is your business right now?"} hint="Your plan is different for launching vs. growing." onBack={back}>
-              <Options cols={2}>
-                {STAGES[audience].map((o, i) => (
-                  <Option key={o.id} n={i + 1} icon={o.icon} label={o.label} sub={o.sub} on={answers.stage === o.id} first={i === 0} onClick={() => choose(answers.stage === o.id ? { stage: o.id } : { stage: o.id, goal: undefined, blockers: [] }, "goal")} />
+                  <Option key={o.id} n={i + 1} icon={o.icon} label={o.label} sub={o.sub} on={answers.audience === o.id} first={i === 0} onClick={() => choose(answers.audience === o.id ? { audience: o.id, stage: "grow" } : { audience: o.id, stage: "grow", goal: undefined, blockers: [] }, "goal")} />
                 ))}
               </Options>
             </Question>
           )}
 
           {step === "goal" && (
-            <Question title={stage === "start" ? "What do you need most to get going?" : "What do you want most in the next 90 days?"} hint="Your #1 goal decides what we look at first." onBack={back}>
+            <Question title="What do you want most in the next 90 days?" hint="Your #1 goal decides what we look at first." onBack={back}>
               <Options cols={2}>
                 {goalsFor(audience, stage).map((o, i) => (
-                  <Option key={o.key} n={i + 1} icon={o.icon} label={o.label} on={answers.goal === o.key} first={i === 0} onClick={() => choose({ goal: o.key }, "blockers")} />
+                  <Option key={o.key} n={i + 1} icon={o.icon} label={o.label} on={answers.goal === o.key} first={i === 0} onClick={() => choose({ goal: o.key }, "contact")} />
                 ))}
               </Options>
-            </Question>
-          )}
-
-          {step === "blockers" && (
-            <Question title="What's holding you back?" hint="Pick all that apply." onBack={back}>
-              <div className="flex flex-wrap gap-2.5" role="group" aria-label="What's holding you back?">
-                {blockersFor(audience, stage).map((b, i) => {
-                  const on = answers.blockers.includes(b);
-                  return (
-                    <button
-                      key={b}
-                      type="button"
-                      data-quiz-opt
-                      data-quiz-focus={i === 0 ? "" : undefined}
-                      aria-pressed={on}
-                      onClick={() => {
-                        tap();
-                        set("blockers", on ? answers.blockers.filter((x) => x !== b) : [...answers.blockers, b]);
-                      }}
-                      className={cn("choice quiz-tap min-h-[44px]", on && "choice-on")}
-                    >
-                      {on && <Check className="h-4 w-4 text-turbo" aria-hidden />}
-                      {b}
-                    </button>
-                  );
-                })}
-              </div>
-              <button type="button" onClick={() => go("budget")} disabled={!answers.blockers.length} className="btn-ignite btn-shine mt-6 w-full disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
-                {answers.blockers.length ? "Next" : "Pick at least one"} <ArrowRight className="h-4 w-4" aria-hidden />
-              </button>
-            </Question>
-          )}
-
-          {step === "budget" && (
-            <Question title="What can you invest in growth each month?" hint="Ads, website and marketing together. No wrong answer — it shapes the plan." onBack={back}>
-              <Options cols={1}>
-                {BUDGETS.map((o, i) => (
-                  <Option key={o.id} n={i + 1} icon="wallet" label={o.label} on={answers.budget === o.id} first={i === 0} compact onClick={() => choose({ budget: o.id }, "timeline")} />
-                ))}
-              </Options>
-            </Question>
-          )}
-
-          {step === "timeline" && (
-            <Question title="How soon do you want results?" onBack={back}>
-              <Options cols={2}>
-                {TIMELINES.map((o, i) => (
-                  <Option key={o.id} n={i + 1} icon={o.icon} label={o.label} on={answers.timeline === o.id} first={i === 0} onClick={() => choose({ timeline: o.id }, "business")} />
-                ))}
-              </Options>
-            </Question>
-          )}
-
-          {step === "business" && (
-            <Question title={isArtist ? "What's your artist name?" : "What's your business called?"} hint={`${SITE.founder.name.split(" ")[0]} looks you up before the call, so the 30 minutes are about you.`} onBack={back}>
-              <form onSubmit={submitBusiness} className="grid gap-4" noValidate>
-                <Field id={`${uid}-biz`} label={isArtist ? "Artist name" : "Business name"} error={errors.business}>
-                  <input id={`${uid}-biz`} data-clarity-mask="true" data-quiz-focus className="field" value={answers.business} onChange={(e) => set("business", e.target.value)} placeholder={isArtist ? "e.g. Yari Beats" : "e.g. Mor Handy"} autoComplete="organization" maxLength={140} aria-invalid={!!errors.business} />
-                </Field>
-                <Field id={`${uid}-web`} label={isArtist ? "Website, Spotify or main social (optional)" : "Website or main social (optional)"}>
-                  <input id={`${uid}-web`} data-clarity-mask="true" className="field" value={answers.website} onChange={(e) => set("website", e.target.value)} placeholder={isArtist ? "Spotify, Instagram or yoursite.com" : "yourbusiness.com — blank if none"} inputMode="url" autoComplete="url" maxLength={200} />
-                </Field>
-                <button type="submit" className="btn-ignite btn-shine w-full sm:w-auto">
-                  Almost done <ArrowRight className="h-4 w-4" aria-hidden />
-                </button>
-              </form>
             </Question>
           )}
 
           {step === "contact" && (
-            <Question title="Where should we send your plan?" hint="Last step. You'll see your #1 money move and pick a call time next." onBack={back}>
+            <Question title="Where should we send your plan?" hint="Last step. Then pick your call time." onBack={back}>
               <form onSubmit={submitContact} className="grid gap-4" noValidate>
+                <Field id={`${uid}-biz`} label={isArtist ? "Artist name" : "Business name"} error={errors.business}>
+                  <input id={`${uid}-biz`} data-clarity-mask="true" data-quiz-focus className="field" value={answers.business} onChange={(e) => set("business", e.target.value)} placeholder={isArtist ? "e.g. Yari Beats" : "e.g. Mor Handy"} autoComplete="organization" maxLength={140} aria-invalid={!!errors.business} />
+                </Field>
                 <Field id={`${uid}-name`} label="Your name" error={errors.name}>
-                  <input id={`${uid}-name`} data-clarity-mask="true" data-quiz-focus className="field" value={answers.name} onChange={(e) => set("name", e.target.value)} autoComplete="name" maxLength={100} aria-invalid={!!errors.name} />
+                  <input id={`${uid}-name`} data-clarity-mask="true" className="field" value={answers.name} onChange={(e) => set("name", e.target.value)} autoComplete="name" maxLength={100} aria-invalid={!!errors.name} />
                 </Field>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field id={`${uid}-email`} label="Email" error={errors.email}>
