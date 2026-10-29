@@ -23,7 +23,7 @@ const HOME: Card[] = [
   { icon: Smartphone, title: "iPhone screens", price: itPrice("it-iphone-screen"), items: ["Cracked or black screen", "Touch not working", "Replaced at your door, same visit", "Your data stays on the phone"] },
   { icon: Battery, title: "iPhone batteries", price: itPrice("it-iphone-battery"), items: ["Dies by lunch or shuts off at 20%", "Swollen or 'Service' battery", "About 30 minutes on site"] },
   { icon: Tablet, title: "iPad & tablet screens", price: itPrice("it-tablet-screen"), items: ["Cracked glass or dead touch", "iPad, Samsung Galaxy Tab and more", "Batteries too"] },
-  { icon: Tv, title: "TV mounting & setup", price: itPrice("it-tv-mount"), items: ["Wall mount, level and secure", "Wires hidden where the wall allows", "Sound bar, streaming apps and remotes", `Setup only ${itPrice("it-tv-setup")}`] },
+  { icon: Tv, title: "TV mounting & setup", price: `${itPrice("it-tv-mount")}/TV`, items: ["Up to 65\", level and secure", `Each extra TV same visit ${itPrice("it-tv-extra")}`, "Sound bar, streaming apps and remotes", `Setup only, no mount ${itPrice("it-tv-setup")}`] },
   { icon: Router, title: "Internet & Wi-Fi", price: itPrice("it-wifi"), items: ["Slow, dropping or dead spots", "New router or modem set up", `Mesh Wi-Fi for every room ${itPrice("it-mesh")}`, "Printers and smart devices connected"] },
 ];
 
@@ -31,7 +31,7 @@ const BUSINESS: Card[] = [
   { icon: Network, title: "Office network & Wi-Fi", price: itPrice("it-mesh"), items: ["Staff and guest Wi-Fi kept apart", "Dead zones and dropouts fixed", "Routers, switches and access points"] },
   { icon: Monitor, title: "Workstations & laptops", price: itPrice("it-pc-repair"), items: ["Repairs and upgrades on site", "New computers set up and files moved", "Virus cleanup and updates"] },
   { icon: Printer, title: "Printers & devices", items: ["Network printers and scanners", "Phones and tablets for staff", "Card readers and peripherals"] },
-  { icon: Tv, title: "Conference room & lobby TVs", price: itPrice("it-tv-mount"), items: ["Mounted and wired clean", "Screen sharing that just works", "Menu and lobby displays"] },
+  { icon: Tv, title: "Conference room & lobby TVs", price: `${itPrice("it-tv-mount")}/TV`, items: ["Mounted and wired clean", "Screen sharing that just works", "Menu and lobby displays"] },
   { icon: ClipboardCheck, title: "POS systems", items: ["Square, Clover and Toast hardware", "Receipt printers and cash drawers"], link: { to: "/services/pos-system-setup", label: "POS setup details" } },
   { icon: Wrench, title: "On-call IT by the hour", price: `${itPrice("it-business-hour")}/hr`, items: ["Call when something breaks", "Regular visits if you want them", "Invoice to your business"] },
 ];
@@ -42,6 +42,16 @@ const STEPS = [
   { icon: Home, title: "Fixed at your place", body: "We come to your home or office, fix it, test it with you, then you pay." },
 ];
 
+/** The offer stack shown under the hero buttons and in the price promise section. */
+const PROMISES = ["Free house call when we do the repair", "We beat any local written quote by $10", "Flat price in writing before we start", "Pay only after it works"];
+
+/** Typical prices around Atlanta vs ours, so the value is obvious at a glance. */
+const COMPARE = [
+  { job: "Diagnosis", them: "Around $100 at big-box stores", us: `Free with the repair (${itPrice("it-visit")} if you pass)` },
+  { job: "TV wall mount", them: "$70–$150 per TV in Atlanta", us: `${itPrice("it-tv-mount")}, extra TVs ${itPrice("it-tv-extra")}` },
+  { job: "Getting there", them: "Drive over, drop it off, come back", us: "We come to you" },
+];
+
 const AREA = ["Duluth", "Lawrenceville", "Suwanee", "Norcross", "Johns Creek", "Peachtree Corners", "Buford", "Snellville", "Alpharetta", "Roswell", "Sandy Springs", "Dunwoody", "Decatur", "Marietta", "Atlanta"];
 
 const FAQS = [
@@ -49,7 +59,10 @@ const FAQS = [
   { q: "Do you really come to me, even for phone repairs?", a: "Yes. Computers, phones, tablets, TVs and Wi-Fi are all fixed at your home or office. You don't drop anything off or wait at a store." },
   { q: "Where do you work?", a: `Duluth and about 40 miles around it, including ${AREA.slice(1, -1).join(", ")} and Atlanta. Call or text ${SITE.phone.display} and we'll confirm your address.` },
   { q: "How fast can you come?", a: "Usually the same day or the next day. Call or text for the soonest time, or pick a slot on the calendar." },
+  { q: "Is the house call really free?", a: `Yes, when we do the repair. If we diagnose it and you decide not to go ahead, it's ${itPrice("it-visit")} and that's it.` },
+  { q: "Will you beat another quote?", a: "Yes. Show us a written quote from a local repair shop for the same job and we'll beat it by $10." },
   { q: "What if it can't be fixed?", a: "We tell you before any repair starts, and you don't pay for a repair we don't do. If a new device makes more sense, we'll say so and can set it up for you." },
+  { q: "Do you bring the TV mount?", a: "Use your own, or tell us the TV size and we'll bring one and charge what it cost us. Brick, stone and over-the-fireplace installs get a price before we start." },
   { q: "Is my data safe?", a: "We don't need to open your files, photos or messages to fix a device, and we don't copy anything unless you ask us to move it." },
   { q: "Do you work with businesses?", a: `Yes. Offices, shops, restaurants and salons: networks, Wi-Fi, workstations, printers, TVs and POS. On-call help is ${itPrice("it-business-hour")} an hour and we invoice your business.` },
   { q: "How do I pay?", a: "After the job is done and you've checked it works. Card or cash." },
@@ -123,7 +136,7 @@ export default function ItServices() {
             </p>
             <Ctas where="hero" className="mt-7" />
             <ul className="mt-6 grid max-w-xl gap-x-4 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2">
-              {["Flat price in writing before we start", "We come to you, nothing to drop off", "Same or next-day visits", "Homes and small businesses"].map((t) => (
+              {PROMISES.map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
                   {t}
@@ -178,9 +191,32 @@ export default function ItServices() {
             ))}
           </div>
           <p className="mt-6 text-sm text-muted-foreground">
-            Not sure what's wrong? A house call and diagnosis is <span className="font-semibold text-foreground">{itPrice("it-visit")}</span>, and it comes off the repair price.
+            Not sure what's wrong? The house call is <span className="font-semibold text-foreground">free when we do the repair</span>. If you decide not to, the diagnosis is {itPrice("it-visit")}.
           </p>
           <Ctas where={`services ${tab}`} business={business} className="mt-6" />
+        </div>
+      </section>
+
+      <section className="section border-t border-border" aria-labelledby="compare">
+        <div className="container-x">
+          <SectionHeader title={<span id="compare">Why pay more and wait longer?</span>} lede="We beat any local written quote by $10, and you never leave the house." />
+          <div className="panel mt-8 overflow-hidden">
+            <div className="hidden grid-cols-[1fr_1.2fr_1.2fr] gap-4 border-b border-border px-5 py-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground sm:grid">
+              <span>Job</span>
+              <span>Typical</span>
+              <span className="text-turbo">With us</span>
+            </div>
+            {COMPARE.map((r) => (
+              <div key={r.job} className="grid gap-1 border-b border-border/60 px-5 py-4 last:border-0 sm:grid-cols-[1fr_1.2fr_1.2fr] sm:gap-4">
+                <span className="font-semibold">{r.job}</span>
+                <span className="text-sm text-muted-foreground">{r.them}</span>
+                <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                  <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
+                  {r.us}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -250,7 +286,7 @@ export default function ItServices() {
           <div className="panel relative overflow-hidden p-6 text-center sm:p-10">
             <div className="pointer-events-none absolute -top-32 left-1/2 h-72 w-[700px] -translate-x-1/2 glow-turbo" aria-hidden />
             <h2 id="final" className="h-section relative">Broken right now? Get it fixed today.</h2>
-            <p className="lede relative mx-auto">Call or text {SITE.phone.display}. Send a photo and get a price in minutes.</p>
+            <p className="lede relative mx-auto">Call or text {SITE.phone.display}. Free house call with any repair, and we beat any local written quote by $10.</p>
             <Ctas where="final" business={business} className="relative mt-7 sm:justify-center" />
           </div>
         </div>
