@@ -26,6 +26,7 @@ const GetMoreReviews = lazy(() => import("./pages/GetMoreReviews"));
 const AdsNotConverting = lazy(() => import("./pages/AdsNotConverting"));
 const GoogleAdsLocal = lazy(() => import("./pages/GoogleAdsLocal"));
 const PcTechnician = lazy(() => import("./pages/PcTechnician"));
+const ItServices = lazy(() => import("./pages/ItServices"));
 const AppMarketing = lazy(() => import("./pages/AppMarketing"));
 const Restaurants = lazy(() => import("./pages/Restaurants"));
 const Salons = lazy(() => import("./pages/Salons"));
@@ -63,6 +64,7 @@ export default function App() {
           <Route path="/ads-not-converting" element={<AdsNotConverting />} />
           <Route path="/google-ads-for-local-business" element={<GoogleAdsLocal />} />
           <Route path="/pc-technician-duluth-ga" element={<PcTechnician />} />
+          <Route path="/it-services-duluth-ga" element={<ItServices />} />
           <Route path="/app-marketing" element={<AppMarketing />} />
           <Route path="/restaurants" element={<Restaurants />} />
           <Route path="/salons" element={<Salons />} />

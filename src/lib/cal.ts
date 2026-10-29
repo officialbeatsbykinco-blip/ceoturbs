@@ -1,6 +1,6 @@
 // Cal.com embed loader. The script loads on idle (or on first click) so it never
 // competes with the page's first paint, and every booking shows as an inline calendar on the page.
-import { BOOKING, INSTALL_BOOKING } from "@/config/site";
+import { BOOKING, INSTALL_BOOKING, type CalEvent } from "@/config/site";
 import { attribution, track, trackBooked } from "@/lib/track";
 
 export { track, trackBooked };
@@ -270,28 +270,28 @@ function bookerFrom(d: Record<string, unknown>) {
   return email || phone ? { email, name, phone } : undefined;
 }
 
-/** Install/build pages: opens the office-studio-setup calendar in Cal's modal, falling back to its booking page. */
-export async function openInstallBooking(source?: string) {
+/** Install/build pages: opens the office-studio-setup calendar (or another `event`) in Cal's modal, falling back to its booking page. */
+export async function openInstallBooking(source?: string, event: CalEvent = INSTALL_BOOKING) {
   track("booking_open", { source: `${source ?? "install"} — install calendar` });
-  const ns = INSTALL_BOOKING.namespace;
-  const url = `${INSTALL_BOOKING.url}?${new URLSearchParams({ "metadata[source]": source ?? "install", "metadata[page]": window.location.pathname })}`;
+  const ns = event.namespace;
+  const url = `${event.url}?${new URLSearchParams({ "metadata[source]": source ?? "install", "metadata[page]": window.location.pathname })}`;
   const ok = await loadCalWithin(ns);
   if (!ok || !getCal()?.ns[ns]) return goToBookingPage(url, source);
   const shown = waitForLink(ns, 20000);
-  getCal()!.ns[ns]("modal", { calLink: INSTALL_BOOKING.calLink, config: calConfig({ source }) });
+  getCal()!.ns[ns]("modal", { calLink: event.calLink, config: calConfig({ source }) });
   if ((await shown) === "failed") goToBookingPage(url, source);
 }
 
 /** Install/setup calendar mounted inline into an element by id, through the same loader as the page's other calendars. */
-export async function mountInstallBooking(elementId: string, source?: string, instance = "modal"): Promise<LinkResult> {
+export async function mountInstallBooking(elementId: string, source?: string, instance = "modal", event: CalEvent = INSTALL_BOOKING): Promise<LinkResult> {
   // One namespace per mounted calendar: Cal keeps a single embed per namespace, so sharing one leaves the second empty.
-  const ns = `${INSTALL_BOOKING.namespace}-${instance}`;
+  const ns = `${event.namespace}-${instance}`;
   const ok = await loadCalWithin(ns);
   if (!ok || !getCal()?.ns[ns]) return "failed";
   const shown = waitForLink(ns, 12000);
   getCal()!.ns[ns]("inline", {
     elementOrSelector: `#${elementId}`,
-    calLink: INSTALL_BOOKING.calLink,
+    calLink: event.calLink,
     config: calConfig({ source }),
   });
   return shown;

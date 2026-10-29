@@ -1,5 +1,5 @@
 import { MessageSquare, Phone, ShieldCheck } from "lucide-react";
-import { INSTALL_BOOKING, SITE } from "@/config/site";
+import { INSTALL_BOOKING, SITE, type CalEvent } from "@/config/site";
 import { InstallCalEmbed } from "@/components/booking/InstallCalEmbed";
 import { cn } from "@/lib/utils";
 
@@ -28,6 +28,10 @@ const SERVICE_TITLES: Record<string, { title: string; sms: string }> = {
     title: "Book your custom PC build & setup",
     sms: "Hi, I'd like a quote for a custom computer build.",
   },
+  "it-services": {
+    title: "Book your tech visit",
+    sms: "Hi, I need tech help. Device and problem: ",
+  },
   "pos-system-setup": {
     title: "Book your POS system installation",
     sms: "Hi, I'd like a quote for POS system installation.",
@@ -38,10 +42,12 @@ export function OfficeIntake({
   id = "quote",
   service = "home-office-setup",
   className,
+  booking = INSTALL_BOOKING,
 }: {
   id?: string;
   service?: string;
   className?: string;
+  booking?: CalEvent;
 }) {
   const info = SERVICE_TITLES[service] ?? {
     title: "Book your setup & installation",
@@ -91,7 +97,7 @@ export function OfficeIntake({
       </div>
 
       {/* Direct Bulletproof Cal.com Embed */}
-      <InstallCalEmbed note={`${service}-inline`} minHeight="580px" />
+      <InstallCalEmbed note={`${service}-inline`} minHeight="580px" booking={booking} />
 
       {/* Assurance footer & direct link */}
       <div className="mt-3 flex flex-col items-center justify-between gap-2 pt-1 text-center text-xs text-muted-foreground sm:flex-row sm:text-left">
@@ -102,7 +108,7 @@ export function OfficeIntake({
         <p className="text-[11px]">
           Calendar taking a second?{" "}
           <a
-            href={INSTALL_BOOKING.url}
+            href={booking.url}
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-turbo underline underline-offset-2 hover:text-white"

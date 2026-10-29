@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { CalendarDays, MessageSquare } from "lucide-react";
 import { BookButton, InstallBookButton, TextQuoteButton } from "@/components/cta/Actions";
 import { isInstallPath } from "@/content/services";
+import { techBooking } from "@/content/tech-pages";
 import { SHOP_PATH } from "@/content/review-cards";
 import { SHIRTS_PATH } from "@/content/company-shirts";
 import { ARTIST_MERCH_PATH } from "@/content/artist-merch";
@@ -13,6 +14,17 @@ const HIDDEN = new Set(["/book", "/booked", "/google-ads-for-local-business", SH
 export function FloatingBookButton() {
   const { pathname } = useLocation();
   if (HIDDEN.has(pathname.replace(/\/$/, ""))) return null;
+  // Tech-repair ad pages book a tech visit; their hero already has call and text.
+  const tech = techBooking(pathname);
+  if (tech)
+    return (
+      <div className="fixed bottom-6 right-6 z-40 hidden sm:block">
+        <InstallBookButton variant="ignite" note="Floating tech button" booking={tech.booking} title={tech.title} className="flex items-center gap-2 !rounded-full !px-5 !py-3 !text-sm shadow-xl">
+          <CalendarDays className="h-4 w-4" aria-hidden />
+          Book a visit
+        </InstallBookButton>
+      </div>
+    );
   if (isInstallPath(pathname))
     return (
       <div className="fixed bottom-6 right-6 z-40 hidden items-center gap-2 sm:flex">

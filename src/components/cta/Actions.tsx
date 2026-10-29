@@ -2,7 +2,7 @@ import { useState, type MouseEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { InstallCalModal } from "@/components/booking/InstallCalModal";
 import { TextQuoteModal } from "@/components/cta/TextQuoteModal";
-import { BOOKING, INSTALL_BOOKING, SITE, fromPriceLabel } from "@/config/site";
+import { BOOKING, INSTALL_BOOKING, SITE, fromPriceLabel, type CalEvent } from "@/config/site";
 import { SHOP_PATH } from "@/content/review-cards";
 import { openBooking } from "@/lib/cal";
 import { track } from "@/lib/track";
@@ -63,11 +63,15 @@ export function InstallBookButton({
   note,
   variant = "chrome",
   className,
+  booking = INSTALL_BOOKING,
+  title,
 }: {
   children?: ReactNode;
   note?: string;
   variant?: Variant;
   className?: string;
+  booking?: CalEvent;
+  title?: string;
 }) {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -80,14 +84,14 @@ export function InstallBookButton({
   return (
     <>
       <a
-        href={INSTALL_BOOKING.url}
+        href={booking.url}
         onClick={onClick}
         className={cn(variantClass[variant], className)}
         rel="noopener"
       >
         {children}
       </a>
-      <InstallCalModal open={modalOpen} onOpenChange={setModalOpen} note={note} />
+      <InstallCalModal open={modalOpen} onOpenChange={setModalOpen} note={note} booking={booking} title={title} />
     </>
   );
 }

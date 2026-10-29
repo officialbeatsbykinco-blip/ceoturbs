@@ -82,6 +82,17 @@ export const INSTALL_BOOKING = {
   namespace: "ceo-turbo-office-studio-setup",
 } as const;
 
+/** On-site tech help (/it-services-duluth-ga): computer, phone, TV and Wi-Fi visits book on their own Cal.com event. */
+export const IT_BOOKING = {
+  calLink: "stackmodechris/i.t-consultation",
+  url: "https://cal.com/stackmodechris/i.t-consultation",
+  // No dot: the namespace ends up in element ids and selectors.
+  namespace: "it-consultation",
+} as const;
+
+/** Any Cal.com event the install-style calendar (embed, modal, button) can show. */
+export type CalEvent = { calLink: string; url: string; namespace: string };
+
 /** Founder video used on the homepage, Brand Boost and ad landing pages. */
 export const PITCH_VIDEO = {
   src: "/media/brand-boost.mp4",

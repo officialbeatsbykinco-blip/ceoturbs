@@ -1,6 +1,6 @@
 import { useEffect, useId, useState } from "react";
 import { ExternalLink, Loader2, MessageSquare, ShieldCheck } from "lucide-react";
-import { INSTALL_BOOKING, SITE } from "@/config/site";
+import { INSTALL_BOOKING, SITE, type CalEvent } from "@/config/site";
 import { mountInstallBooking } from "@/lib/cal";
 import { track } from "@/lib/track";
 
@@ -8,10 +8,12 @@ export function InstallCalEmbed({
   className = "",
   minHeight = "560px",
   note = "install-embed",
+  booking = INSTALL_BOOKING,
 }: {
   className?: string;
   minHeight?: string;
   note?: string;
+  booking?: CalEvent;
 }) {
   const uid = useId().replace(/:/g, "");
   const calId = `install-cal-${uid}`;
@@ -22,7 +24,7 @@ export function InstallCalEmbed({
     track("booking_open", { source: `${note} — native cal embed` });
     let active = true;
 
-    mountInstallBooking(calId, note, uid).then((r) => {
+    mountInstallBooking(calId, note, uid, booking).then((r) => {
       if (!active) return;
       setCalReady(true);
       setShowFallback(r !== "ready");
@@ -38,7 +40,7 @@ export function InstallCalEmbed({
       active = false;
       clearTimeout(timer);
     };
-  }, [note, calId, uid]);
+  }, [note, calId, uid, booking]);
 
   return (
     <div className={`relative flex min-h-[460px] w-full flex-col overflow-hidden rounded-xl border border-border/80 bg-black/40 ${className}`}>
@@ -79,7 +81,7 @@ export function InstallCalEmbed({
             </a>
             <span className="text-border" aria-hidden>•</span>
             <a
-              href={INSTALL_BOOKING.url}
+              href={booking.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-10 items-center gap-1 font-semibold text-turbo underline underline-offset-2 hover:text-white"

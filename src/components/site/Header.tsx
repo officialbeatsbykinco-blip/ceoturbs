@@ -2,7 +2,8 @@ import { Fragment, useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { BookButton } from "@/components/cta/Actions";
+import { BookButton, InstallBookButton } from "@/components/cta/Actions";
+import { techBooking } from "@/content/tech-pages";
 import { SERVICES } from "@/content/services";
 import { SITE, fromPriceLabel } from "@/config/site";
 import { CallLink } from "./CallLink";
@@ -78,10 +79,13 @@ const MENUS: Menu[] = [
 const linkCls = ({ isActive }: { isActive: boolean }) =>
   cn("whitespace-nowrap rounded-lg px-2 py-2 text-[13px] font-medium transition-colors hover:bg-white/5 hover:text-foreground xl:px-2.5 xl:text-sm", isActive ? "text-foreground" : "text-muted-foreground");
 
-export function Header({ focus = false }: { focus?: boolean }) {
+export function Header({ focus: focusProp = false }: { focus?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
+  // Tech-repair ad pages run in focus mode (no nav to wander off into) and book a tech visit instead of the agency call.
+  const tech = techBooking(pathname);
+  const focus = focusProp || !!tech;
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -124,7 +128,11 @@ export function Header({ focus = false }: { focus?: boolean }) {
             <Phone className="h-[18px] w-[18px]" aria-hidden />
             <span className="sr-only">Call {SITE.name} at {SITE.phone.display}</span>
           </CallLink>
-          {pathname === REVIEWS_AD_PATH ? (
+          {tech ? (
+            <InstallBookButton variant="ignite" note="Tech page header" booking={tech.booking} title={tech.title} className="inline-flex whitespace-nowrap !px-3 !py-2.5 !text-[13px] sm:!px-4 sm:!text-sm">
+              Book a visit
+            </InstallBookButton>
+          ) : pathname === REVIEWS_AD_PATH ? (
             <a href="#buy" className="btn-ignite whitespace-nowrap !px-4 !py-2.5 !text-sm">
               Get cards<span className="hidden sm:inline"> · {fromPriceLabel}</span>
             </a>

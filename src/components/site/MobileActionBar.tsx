@@ -3,6 +3,7 @@ import { BookButton, InstallBookButton } from "@/components/cta/Actions";
 import { CALL_FIRST_SLUGS } from "@/content/services";
 import { Calendar, MessageSquare, Phone } from "lucide-react";
 import { SITE, fromPriceLabel } from "@/config/site";
+import { techBooking } from "@/content/tech-pages";
 import { CallLink } from "./CallLink";
 import { REVIEWS_AD_PATH, SHOP_PATH } from "@/content/review-cards";
 import { SHIRTS_PATH } from "@/content/company-shirts";
@@ -51,6 +52,33 @@ export function MobileActionBar() {
             variant="chrome"
             className="flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap !py-3.5 !px-2 !text-sm"
           >
+            <Calendar className="h-4 w-4 shrink-0" aria-hidden />
+            <span>Book</span>
+          </InstallBookButton>
+        </div>
+      </div>
+    );
+  }
+  // Tech-repair ad pages: call first, then text, then the visit calendar (not the agency Brand Boost call).
+  const tech = techBooking(pathname);
+  if (tech) {
+    const where = pathname.split("/").pop();
+    return (
+      <div className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-background/90 px-2.5 pt-2.5 backdrop-blur-xl sm:hidden">
+        <div className="flex items-center gap-1.5">
+          <CallLink location={`${where}-sticky-mobile`} className="btn-ignite flex flex-[1.4] items-center justify-center gap-1.5 whitespace-nowrap !py-3.5 !px-2 !text-sm font-bold shadow-lg">
+            <Phone className="h-4 w-4 shrink-0" aria-hidden />
+            <span>Call now</span>
+          </CallLink>
+          <a
+            href={`sms:${SITE.phone.e164}?&body=${encodeURIComponent(tech.sms)}`}
+            data-call-location={`${where}-sticky-mobile-sms`}
+            className="btn-chrome flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap !py-3.5 !px-2 !text-sm font-bold text-foreground"
+          >
+            <MessageSquare className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
+            <span>Text</span>
+          </a>
+          <InstallBookButton note={`${where}-sticky-mobile`} booking={tech.booking} title={tech.title} className="flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap !py-3.5 !px-2 !text-sm">
             <Calendar className="h-4 w-4 shrink-0" aria-hidden />
             <span>Book</span>
           </InstallBookButton>

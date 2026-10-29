@@ -1,16 +1,20 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { X, Calendar as CalendarIcon, Phone, MessageSquare } from "lucide-react";
-import { SITE, INSTALL_BOOKING } from "@/config/site";
+import { SITE, INSTALL_BOOKING, type CalEvent } from "@/config/site";
 import { InstallCalEmbed } from "./InstallCalEmbed";
 
 export function InstallCalModal({
   open,
   onOpenChange,
   note = "service-page",
+  booking = INSTALL_BOOKING,
+  title = "Book Your Setup & Installation Date",
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   note?: string;
+  booking?: CalEvent;
+  title?: string;
 }) {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -25,7 +29,7 @@ export function InstallCalModal({
               </span>
               <div>
                 <Dialog.Title className="text-base font-bold text-foreground sm:text-lg">
-                  Book Your Setup & Installation Date
+                  {title}
                 </Dialog.Title>
                 <Dialog.Description className="text-xs text-muted-foreground sm:text-sm">
                   Pick a day and time that works for you. Flat-rate labor confirmed before we start.
@@ -40,7 +44,7 @@ export function InstallCalModal({
 
           {/* Calendar Embed Body */}
           <div className="relative flex-1 overflow-y-auto p-2 sm:p-3 bg-black/40">
-            <InstallCalEmbed note={note} className="h-full border-0" />
+            <InstallCalEmbed note={note} booking={booking} className="h-full border-0" />
           </div>
 
           {/* Direct Assistance Bar */}

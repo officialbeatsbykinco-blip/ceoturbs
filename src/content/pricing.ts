@@ -440,6 +440,29 @@ export const MONTHLY: PriceItem[] = [
 
 export const ALL_PRICES = [...PACKAGES, ...SETUP, ...WEBSITES, ...MONTHLY];
 
+/**
+ * On-site tech help (/it-services-duluth-ga): repairs and setups for homes and small businesses.
+ * Kept out of ALL_PRICES so the agency /pricing page doesn't list them; read them with itPrice().
+ */
+export const IT_SERVICES: PriceItem[] = [
+  { id: "it-visit", name: "House call & diagnosis", price: 49, billing: "once", summary: "We come out, find the problem and quote the fix. Credited toward the repair.", includes: [] },
+  { id: "it-pc-repair", name: "Computer & laptop repair", price: 99, from: true, billing: "once", summary: "Slow, crashing, virus or won't turn on.", includes: [] },
+  { id: "it-iphone-screen", name: "iPhone screen replacement", price: 99, from: true, billing: "once", summary: "Cracked or dead screen replaced at your door.", includes: [] },
+  { id: "it-iphone-battery", name: "iPhone battery replacement", price: 69, from: true, billing: "once", summary: "Phone dies by lunch? New battery.", includes: [] },
+  { id: "it-tablet-screen", name: "iPad & tablet screen", price: 119, from: true, billing: "once", summary: "Cracked glass or touch that stopped working.", includes: [] },
+  { id: "it-tv-mount", name: "TV wall mount", price: 99, from: true, billing: "once", summary: "Up to 65\", level, wires hidden where the wall allows.", includes: [] },
+  { id: "it-tv-setup", name: "TV & streaming setup", price: 59, from: true, billing: "once", summary: "Apps, sound bar, remotes and accounts working.", includes: [] },
+  { id: "it-wifi", name: "Internet & Wi-Fi fix", price: 89, from: true, billing: "once", summary: "Dead spots, drops, slow speeds or a new router.", includes: [] },
+  { id: "it-mesh", name: "Mesh Wi-Fi install", price: 149, from: true, billing: "once", summary: "Strong signal in every room.", includes: [] },
+  { id: "it-business-hour", name: "Business on-site IT", price: 95, from: true, billing: "once", summary: "Per hour. Networks, workstations, printers, TVs.", includes: [] },
+];
+/** "from $99" style label for an IT_SERVICES item. */
+export const itPrice = (id: string) => {
+  const item = IT_SERVICES.find((p) => p.id === id);
+  if (!item) throw new Error(`Unknown IT price id ${id}`);
+  return `${item.from ? "from " : ""}$${item.price}`;
+};
+
 export const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
 export const byId = (id: string) => {
   const item = ALL_PRICES.find((p) => p.id === id);
