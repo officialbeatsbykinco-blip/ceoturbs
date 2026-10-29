@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { AD_RESULTS, AD_TOTALS, money } from "@/content/results";
+import { AD_RESULTS, AD_TOTALS, GOOGLE_AD_RESULT, GOOGLE_AD_RESULTS, money } from "@/content/results";
 import { ADS } from "@/content/ads";
-import { AdResultsGrid, AdGallery, GSCProof, FeaturedResult, GoogleAdProof, StripeProof } from "@/components/blocks/Proof";
+import { AdResultsGrid, AdGallery, BestResults, GSCProof, FeaturedResult, GoogleAdProof, StripeProof } from "@/components/blocks/Proof";
 import { BookingSection } from "@/components/blocks/Sales";
 import { SectionHeader, Breadcrumbs, DirectAnswer } from "@/components/blocks/Basics";
 import { BookButton } from "@/components/cta/Actions";
@@ -17,11 +17,21 @@ export default function Results() {
           <SectionHeader
             as="h1"
             title="Real results, straight from the dashboards"
-            lede="No cherry-picked case-study graphics. These are unedited Meta Ads Manager and Google Search Console screenshots from client and in-house campaigns, July–October 2026."
+            lede="No cherry-picked case-study graphics. These are unedited Google Ads, Meta Ads Manager and Google Search Console screenshots from client and in-house campaigns, July–October 2026."
           />
           <DirectAnswer label="The numbers">
-            Across {AD_TOTALS.campaigns} Meta lead campaigns, CEO Turbo clients got {AD_TOTALS.leads} leads for {money(AD_TOTALS.leadSpend)} — {money(AD_TOTALS.avgCpl)} per lead on average, with the best at {money(AD_TOTALS.lowestCpl)}. An artist profile campaign drove 165 visits at $0.32 each, and stackmode.net reached 3.34K Google impressions.
+            Across {AD_TOTALS.campaigns} Meta lead campaigns, CEO Turbo clients got {AD_TOTALS.leads} leads for {money(AD_TOTALS.leadSpend)} — {money(AD_TOTALS.avgCpl)} per lead on average, with the best at {money(AD_TOTALS.lowestCpl)}. On Google Search, {GOOGLE_AD_RESULT.client} got {GOOGLE_AD_RESULT.conversions} conversions for {money(GOOGLE_AD_RESULT.spent)} in one day ({money(GOOGLE_AD_RESULT.costPer)} each). An artist profile campaign drove 165 visits at $0.32 each, and stackmode.net reached 3.34K Google impressions.
           </DirectAnswer>
+        </div>
+      </section>
+
+      <section className="pb-8 pt-10" aria-labelledby="best">
+        <div className="container-x">
+          <h2 id="best" className="h-section">Our cheapest results right now</h2>
+          <p className="lede">Appliance King, appliance repair in Macon GA. Same client, two platforms, small budgets.</p>
+          <div className="mt-8">
+            <BestResults />
+          </div>
         </div>
       </section>
 
@@ -35,7 +45,7 @@ export default function Results() {
         <div className="container-x">
           <FeaturedResult />
           <div className="mt-12">
-            <GoogleAdProof />
+            <GoogleAdProof result={GOOGLE_AD_RESULTS[1]} />
           </div>
         </div>
       </section>

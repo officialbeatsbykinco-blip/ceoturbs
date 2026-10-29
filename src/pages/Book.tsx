@@ -7,7 +7,7 @@ import { SITE } from "@/config/site";
 import { BOOK_FAQS } from "@/content/faqs";
 import { AD_TOTALS, money } from "@/content/results";
 import { Founder, VideoPitch } from "@/components/blocks/Sales";
-import { AdResultsGrid, GoogleAdProof, StripeProof } from "@/components/blocks/Proof";
+import { AdResultsGrid, BestResults, StripeProof } from "@/components/blocks/Proof";
 import { FAQList, SectionHeader } from "@/components/blocks/Basics";
 import { FitCheck } from "@/components/blocks/Boost";
 import { ShopCardsButton } from "@/components/cta/Actions";
@@ -33,7 +33,7 @@ export default function Book() {
               Pick a time. {SITE.founder.name} looks at your ads, Google profile and website with you, live, and tells you what would bring in more customers. No pressure.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-              {["Google, Microsoft & Meta ads", "Google Business Profile & social media", "Every call and booking tracked"].map((t) => (
+              {["We review your website, Google profile and ads with you, live", "You leave with a written plan, whether you hire us or not", "Every ad campaign we run is backed by our leads-or-free guarantee"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
                   {t}
@@ -55,7 +55,7 @@ export default function Book() {
         <div className="container-x">
           <SectionHeader title={<span id="proof">Does this actually work?</span>} lede={`Unedited ad dashboards from client campaigns. On Meta alone: ${AD_TOTALS.leads} leads for ${money(AD_TOTALS.leadSpend)} total.`} />
           <div className="mt-12">
-            <GoogleAdProof />
+            <BestResults />
           </div>
           <div className="mt-8">
             <AdResultsGrid keys={["appliance-king", "mor-handy-carpet", "stackmode-repair"]} />

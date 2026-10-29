@@ -6,7 +6,8 @@ import { MemoryRouter } from "react-router-dom";
 import { PAGES } from "@/seo/pages";
 import { CLIENTS } from "@/content/clients";
 import { ADS } from "@/content/ads";
-import { AD_RESULTS, AD_TOTALS } from "@/content/results";
+import { AD_RESULTS, AD_TOTALS, GOOGLE_AD_RESULTS } from "@/content/results";
+import * as FAQS from "@/content/faqs";
 import { GUIDES } from "@/content/guides";
 import { AUDIENCES, PRODUCERS, VISUAL_ARTISTS } from "@/content/audiences";
 import { price } from "@/content/pricing";
@@ -24,7 +25,7 @@ import { BookButton, ShopCardsButton } from "@/components/cta/Actions";
 import { MobileActionBar } from "@/components/site/MobileActionBar";
 import { OfficeIntake } from "@/components/blocks/OfficeIntake";
 import { checkReviewLink } from "@/lib/review-link";
-import { ALL_PRICES, PRICING_FAQS, pricesFor, usd } from "@/content/pricing";
+import { ALL_PRICES, PRICING_FAQS, PRICING_TERMS, pricesFor, usd } from "@/content/pricing";
 import { HOME_FAQS, BOOK_FAQS } from "@/content/faqs";
 import { BrandBoostQuiz } from "@/components/quiz/BrandBoostQuiz";
 import { AUDIENCES as QUIZ_AUDIENCES, BUDGETS, CAL_GOAL_OPTIONS, calGoal, moneyMove, EMPTY_ANSWERS, GOALS, BLOCKERS, STAGES, QUIZ_STEPS, labelOf } from "@/content/quiz";
@@ -114,9 +115,23 @@ describe("assets", () => {
 
 describe("reported numbers", () => {
   it("matches the Meta dashboards", () => {
-    expect(AD_TOTALS.leads).toBe(147);
-    expect(AD_TOTALS.leadSpend).toBeCloseTo(1103.43, 2);
+    expect(AD_TOTALS.leads).toBe(161);
+    expect(AD_TOTALS.leadSpend).toBeCloseTo(1193.92, 2);
     expect(AD_TOTALS.lowestCpl).toBe(4.31);
+  });
+
+  it("matches the Google Ads screenshots, with cost per conversion = spend / conversions", () => {
+    expect(GOOGLE_AD_RESULTS[0]).toMatchObject({ clicks: 3, conversions: 2, spent: 6.57, cpc: 2.19 });
+    GOOGLE_AD_RESULTS.forEach((g) => {
+      expect(g.costPer, g.key).toBeCloseTo(g.spent / g.conversions, 2);
+      expect(existsSync(pub(g.image)), g.key).toBe(true);
+    });
+  });
+
+  it("states one guarantee everywhere and never denies it", () => {
+    const all = Object.values(FAQS).flat() as { a: string }[];
+    expect(all.some((f) => f.a.includes(PRICING_TERMS.guarantee))).toBe(true);
+    all.forEach((f) => expect(f.a).not.toMatch(/No honest agency can/));
   });
 });
 

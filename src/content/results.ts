@@ -62,6 +62,17 @@ export const AD_RESULTS: AdResult[] = [
     image: "/img/results/appliance-king.webp",
   },
   {
+    key: "appliance-king-website",
+    client: "Appliance King",
+    clientSlug: "appliance-king",
+    campaign: "Website leads — $5/day, last 30 days (Oct 2026)",
+    metric: "Leads",
+    count: 14,
+    costPer: 6.46,
+    spent: 90.49,
+    image: "/img/results/appliance-king-website.webp",
+  },
+  {
     key: "stackmode-set-1",
     client: "Stackmode",
     campaign: "Lead form (set 1)",
@@ -153,23 +164,65 @@ export const APPLIANCE_KING_PAGE = {
   image: "/img/results/appliance-king-page.webp",
 };
 
-/**
- * Appliance King Google Ads (Search), read from the Ads screenshot, Oct 16–22 2026. Keep exact.
- * Conversions are as reported by Google Ads. Kept out of AD_RESULTS so the Meta AD_TOTALS stay Meta-only.
- */
-export const GOOGLE_AD_RESULT = {
-  client: "Appliance King",
-  clientSlug: "appliance-king",
-  campaign: "Appliance repair, Macon GA: Google Search",
-  period: "Oct 16–22, 2026",
-  clicks: 18,
-  ctr: "8.78%",
-  conversions: 3,
-  convRate: "16.67%",
-  costPer: 16.89,
-  spent: 50.66,
-  image: "/img/results/appliance-king-google.webp",
+export type GoogleAdResult = {
+  key: string;
+  client: string;
+  clientSlug: string;
+  campaign: string;
+  period: string;
+  headline: string;
+  clicks: number;
+  ctr?: string;
+  cpc?: number;
+  conversions: number;
+  costPer: number;
+  spent: number;
+  image: string;
+  width: number;
+  height: number;
 };
+
+/**
+ * Appliance King Google Ads (Search), read from the Ads screenshots. Keep exact.
+ * Conversions are as reported by Google Ads. Kept out of AD_RESULTS so the Meta AD_TOTALS stay Meta-only.
+ * The first entry is the featured (best) result.
+ */
+export const GOOGLE_AD_RESULTS: GoogleAdResult[] = [
+  {
+    key: "appliance-king-google-day",
+    client: "Appliance King",
+    clientSlug: "appliance-king",
+    campaign: "Appliance repair, Macon GA: Google Search",
+    period: "One day, Oct 2026",
+    headline: "3 clicks. 2 conversions. $6.57 spent.",
+    clicks: 3,
+    cpc: 2.19,
+    conversions: 2,
+    costPer: 3.29,
+    spent: 6.57,
+    image: "/img/results/appliance-king-google-day.webp",
+    width: 690,
+    height: 255,
+  },
+  {
+    key: "appliance-king-google-week",
+    client: "Appliance King",
+    clientSlug: "appliance-king",
+    campaign: "Appliance repair, Macon GA: Google Search",
+    period: "Oct 16–22, 2026",
+    headline: "First week on Google Search: 3 conversions at $16.89 each.",
+    clicks: 18,
+    ctr: "8.78%",
+    conversions: 3,
+    costPer: 16.89,
+    spent: 50.66,
+    image: "/img/results/appliance-king-google.webp",
+    width: 2000,
+    height: 879,
+  },
+];
+
+export const GOOGLE_AD_RESULT = GOOGLE_AD_RESULTS[0];
 
 /** Featured proof. The revenue line is the owner's own statement, not a dashboard number. */
 export const FEATURED_RESULT = {

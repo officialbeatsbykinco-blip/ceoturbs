@@ -14,7 +14,7 @@ export function About() {
   const milestones = [
     { v: "50+", l: "websites built" },
     { v: String(CLIENTS.length), l: "client sites live today" },
-    { v: String(AD_TOTALS.leads), l: "Meta leads for clients, Jul–Aug 2026" },
+    { v: String(AD_TOTALS.leads), l: "Meta leads for clients, Jul–Oct 2026" },
     { v: "2", l: "companies founded" },
   ];
   return (

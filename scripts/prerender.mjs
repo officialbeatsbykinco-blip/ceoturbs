@@ -84,7 +84,8 @@ const llms = `# CEO Turbo
 
 Key facts:
 - 19 live client websites, including Mor Handy, Appliance King, OJ Junk Removal, Kingstone Landscaping, BIGZO, 7UVHAVIN and Beyond Labels Gifts.
-- Meta lead campaigns (Jul–Oct 2026): 147 leads for $1,103.43, $7.51 average cost per lead, lowest $4.31.
+- Meta lead campaigns (Jul–Oct 2026): 161 leads for $1,193.92, $7.42 average cost per lead, lowest $4.31.
+- Google Ads (Appliance King, one day, Oct 2026): 2 conversions for $6.57, $3.29 per conversion.
 - Artist profile campaign (BIGZO): 165 profile visits at $0.32 each.
 - Based at 8735 Dunwoody Place #12143, Atlanta, GA 30350; serves clients across the United States.
 - Phone: (470) 502-9543 (call or text).

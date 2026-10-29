@@ -29,6 +29,7 @@ export const PRICING_TERMS = {
   payment: "Setup is paid up front. Monthly plans are billed on the same day each month.",
   adSpend: "Ad spend is paid by you, directly to Google, Microsoft, Meta, TikTok, X, Reddit or LinkedIn, from your own ad account — we never mark it up.",
   ownership: "You own your website, domain, ad accounts, pixel data, content and email list. If you leave, it all stays yours.",
+  guarantee: "Leads-or-free guarantee: if the ad campaigns we launch for you don't bring in a lead in their first 30 days live, we keep managing them with no management fee until they do. Ad spend is paid to the platform, isn't refunded, and has to stay on for the guarantee to apply.",
   results: "SEO, AEO and GEO compound: most clients see movement in 30–90 days and the biggest gains after 3–6 months — and every month builds on the last.",
 } as const;
 
@@ -440,7 +441,7 @@ export const MONTHLY: PriceItem[] = [
 export const ALL_PRICES = [...PACKAGES, ...SETUP, ...WEBSITES, ...MONTHLY];
 
 export const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
-const byId = (id: string) => {
+export const byId = (id: string) => {
   const item = ALL_PRICES.find((p) => p.id === id);
   if (!item) throw new Error(`Unknown price id ${id}`);
   return item;

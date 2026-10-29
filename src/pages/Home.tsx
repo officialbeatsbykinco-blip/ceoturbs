@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check, Globe, Megaphone, Phone, Play, Search, Star } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
 import { CallLink } from "@/components/site/CallLink";
-import { ProofStats, GoogleAdProof } from "@/components/blocks/Proof";
+import { ProofStats, BestResults, GoogleAdProof } from "@/components/blocks/Proof";
+import { GOOGLE_AD_RESULTS } from "@/content/results";
+import { GrandSlamOffer } from "@/components/blocks/Offer";
 import { Founder, BookingSection } from "@/components/blocks/Sales";
 import { SectionHeader, FAQList } from "@/components/blocks/Basics";
 import { HOME_FAQS } from "@/content/faqs";
@@ -40,7 +42,7 @@ export default function Home() {
               </Link>
             </div>
             <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
-              {["Free 30-minute call", "Fixed prices, no contracts", "You own your ad account", "Founder-led, Atlanta GA"].map((t) => (
+              {["Free 30-minute call", "Fixed prices, no contracts", "Leads-or-free guarantee", "Founder-led, Atlanta GA"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
                   {t}
@@ -55,9 +57,16 @@ export default function Home() {
         <SiteWall />
       </div>
 
-      <section className="pt-14 pb-8" aria-label="Results at a glance">
+      <section className="pt-14 pb-8" aria-labelledby="proof">
         <div className="container-x">
-          <ProofStats />
+          <h2 id="proof" className="h-section">Real leads on small budgets.</h2>
+          <p className="lede">Unedited dashboards from Appliance King, appliance repair in Macon GA: 2 Google Ads conversions for $6.57 in one day, and 14 website leads at $6.46 each on $5 a day.</p>
+          <div className="mt-8">
+            <BestResults />
+          </div>
+          <div className="mt-8">
+            <ProofStats />
+          </div>
         </div>
       </section>
 
@@ -84,6 +93,8 @@ export default function Home() {
         </div>
       </section>
 
+      <GrandSlamOffer note="Home offer" />
+
       {/* STEP TWO — the calls that come with the reviews. Kept short; the services pages carry the detail. */}
       <section className="section border-t border-border" aria-labelledby="get">
         <div className="container-x">
@@ -109,7 +120,7 @@ export default function Home() {
             ))}
           </ul>
           <div className="mt-8 grid items-start gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <GoogleAdProof compact />
+            <GoogleAdProof compact result={GOOGLE_AD_RESULTS[1]} />
             <div className="panel p-6">
               <p className="font-display text-lg font-bold">Real ad accounts, real leads.</p>
               <p className="mt-2 text-sm text-muted-foreground">Unedited Google Ads and Meta dashboards from local service businesses. Setup from {price("pkg-start")}, the full Launch package {price("pkg-launch")}, ads management from {price("growth")}/mo. You own the ad account and there's no long-term contract.</p>

@@ -120,9 +120,9 @@ export const GUIDES: Guide[] = [
     title: "How much do Facebook ads cost per lead for a local business? (Real 2026 data)",
     metaTitle: "Facebook Ads Cost Per Lead for Local Businesses — Real 2026 Data",
     metaDescription:
-      "Real Meta lead-form results from 7 campaigns: $4.31 to $19.91 per lead, $7.51 average across 147 leads — and what drove the cheapest ones.",
+      "Real Meta lead-form results from 8 campaigns: $4.31 to $19.91 per lead, $7.42 average across 161 leads — and what drove the cheapest ones.",
     summary:
-      "Across seven Meta lead-form campaigns we ran in July–October 2026, clients got 147 leads for $1,103.43 — an average of $7.51 per lead. The cheapest was $4.31 (computer repair); the most expensive was $19.91 (outlet replacement).",
+      "Across eight Meta lead campaigns we ran in July–October 2026, clients got 161 leads for $1,193.92 — an average of $7.42 per lead. The cheapest was $4.31 (computer repair); the most expensive was $19.91 (outlet replacement).",
     audience: "local",
     published: DATE,
     updated: DATE,
@@ -131,7 +131,7 @@ export const GUIDES: Guide[] = [
       {
         h2: "What does a Facebook lead cost for a local service business?",
         answer:
-          "In our July–October 2026 campaigns, Meta lead-form ads for local services cost between $4.31 and $19.91 per lead, averaging $7.51 across 147 leads and $1,103.43 in spend. Meta's own peer benchmarks on those dashboards showed median costs of $7.26 and $12.75 per lead for similar ad sets.",
+          "In our July–October 2026 campaigns, Meta lead-form ads for local services cost between $4.31 and $19.91 per lead, averaging $7.42 across 161 leads and $1,193.92 in spend. Meta's own peer benchmarks on those dashboards showed median costs of $7.26 and $12.75 per lead for similar ad sets.",
         table: {
           head: ["Campaign", "Leads", "Cost per lead", "Spend"],
           rows: [

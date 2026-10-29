@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/blocks/Basics";
 import { Link } from "react-router-dom";
 import { SITE, REVIEW_CARD, SHIRT } from "@/config/site";
+import { PRICING_TERMS } from "@/content/pricing";
 
 function LegalShell({ title, path, updated, children }: { title: string; path: string; updated: string; children: ReactNode }) {
   return (
@@ -97,8 +98,9 @@ export function Terms() {
         <p>Prices are in USD. Payments are processed by third-party providers such as Stripe. Service packages require payment upfront or as set out in your written quote or service agreement. Advertising spend is billed by the ad platforms directly to your own ad account.</p>
       </section>
       <section>
-        <h2>4. No guaranteed results</h2>
-        <p>Search rankings, AI-assistant recommendations, ad performance and lead volume depend on factors outside our control, including platform algorithms and competition. We do not guarantee specific rankings, citations, leads or sales. Results shown on this site are real past results and are not a promise of future results.</p>
+        <h2>4. Results and our leads-or-free guarantee</h2>
+        <p>Search rankings, AI-assistant recommendations, ad performance and lead volume depend on factors outside our control, including platform algorithms and competition. We do not guarantee specific rankings, citations, lead counts or sales. Results shown on this site are real past results and are not a promise of future results.</p>
+        <p>{PRICING_TERMS.guarantee}</p>
       </section>
       <section>
         <h2>5. Intellectual property</h2>
