@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, Check, Globe, Megaphone, Phone, Play, Search, Star } from "lucide-react";
+import { ArrowRight, CalendarCheck, Check, Globe, Megaphone, Music, Phone, Play, Search, Star } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
 import { CallLink } from "@/components/site/CallLink";
 import { ProofStats, BestResults, GoogleAdProof, AdResultsGrid, AdGallery } from "@/components/blocks/Proof";
@@ -31,12 +31,12 @@ export default function Home() {
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[1100px] -translate-x-1/2 glow-turbo" aria-hidden />
         <div className="container-x relative mx-auto max-w-4xl text-center">
           <div className="hero-rise relative z-10 min-w-0">
-            <p className="chip">Websites, ads and reviews for local businesses and online stores</p>
+            <p className="chip">Websites, ads and reviews for local businesses, online stores and artists</p>
             <h1 id="hero" className="mt-4 text-[34px] font-bold leading-[1.05] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[60px]">
               <span className="text-chrome-grad">We get you more customers, more sales</span> <span className="text-turbo-grad">and more reviews.</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground max-md:sr-only sm:mt-5 sm:text-lg">
-              An SEO, AEO and GEO website that gets you found on Google and ChatGPT, Google, Meta and YouTube ads that bring buyers to it, and a tap-to-review card so 5-star reviews keep coming. Built for Shopify stores, contractors, handymen, restaurants and more.
+              An SEO, AEO and GEO website that gets you found on Google and ChatGPT, Google, Meta and YouTube ads that bring buyers to it, and a tap-to-review card so 5-star reviews keep coming. Built for local businesses, Shopify stores and restaurants. For artists and producers, we put your music in front of more listeners.
             </p>
             <div className="mx-auto mt-7 flex max-w-md flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
               <BookButton note="Home hero" className="btn-shine justify-center">
@@ -59,6 +59,33 @@ export default function Home() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section className="pt-12 pb-2 sm:pt-14" aria-labelledby="who">
+        <div className="container-x">
+          <h2 id="who" className="h-section text-center">Pick what you need. We handle the rest.</h2>
+          <ul className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-3">
+            {[
+              { icon: Megaphone, t: "Local businesses", b: "More calls, bookings and Google reviews from people searching near you.", to: "/local-business", cta: "See local business plans" },
+              { icon: Globe, t: "Online stores", b: "More visitors and more of them buying, from Google, Meta and YouTube ads.", to: "/shopify", cta: "See store plans" },
+              { icon: Music, t: "Artists & producers", b: "More listeners, more shows and more beat sales, with ads and a site that turns plays into fans.", to: "/artist", cta: "See artist plans" },
+            ].map((x) => (
+              <li key={x.t}>
+                <Link to={x.to} className="panel block h-full p-6 transition hover:ring-1 hover:ring-turbo/40">
+                  <x.icon className="h-6 w-6 text-turbo" aria-hidden />
+                  <h3 className="mt-3 font-display text-lg font-bold">{x.t}</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{x.b}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-turbo">{x.cta} <ArrowRight className="h-4 w-4" aria-hidden /></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ol className="mx-auto mt-8 grid max-w-3xl gap-3 text-sm text-muted-foreground sm:grid-cols-3">
+            {["1. Book a free 30-minute call. We look at your site, Google profile and ads.", "2. We build it: your website, your ads and your review card.", "3. Calls, sales and reviews start coming in. You see every number."].map((t) => (
+              <li key={t} className="rounded-xl border border-border bg-card/40 px-4 py-3 text-center">{t}</li>
+            ))}
+          </ol>
         </div>
       </section>
 
