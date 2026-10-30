@@ -2,7 +2,7 @@
 ## Conversion Settings, Geo-Targeting, Sitelinks & One-Shot Manus Execution Prompt
 
 > **TARGET ACCOUNT:** `AW-18468746701` / Account ID: `232-066-4335`  
-> **PHONE:** `(470) 502-9543`  
+> **PHONE:** `(678) 558-4327`  
 > **BOOKING CALENDAR:** `https://cal.com/stackmodechris/ceo-turbo-office-studio-setup`  
 > **7 TARGET SERVICE URLS:**
 > 1. `https://www.ceoturbo.com/services/home-office-setup`
@@ -25,7 +25,7 @@ All 7 pages use the unified `CALL_FIRST_SLUGS` architecture in CEO Turbo's React
 |---|---|---|---|---|---|---|
 | **Booked call** | Book appointment | Website (Google Tag) | **Primary** | **$150.00** | One | Fires when a visitor confirms an appointment on Cal.com (via inline embed, modal, or `/booked` redirect). Conversion label: `5K_sCJuH55odEM3ryuZE`. Enhanced conversions send email & phone. |
 | **Calls from ads** | Phone call leads | Google Hosted (Call Assets & Call Ads) | **Primary** | **$100.00** | One | Fires when a mobile or desktop user clicks the Google Call Asset or Call-Only ad and speaks on the phone for **≥ 60 seconds**. |
-| **Calls to website number** | Phone call leads | Phone calls (Website forwarding number) | **Primary** | **$100.00** | One | Fires when a visitor clicks a Google Ad to any of the 7 service pages, sees Google dynamic forwarding replacing `(470) 502-9543`, and calls for **≥ 60 seconds**. |
+| **Calls to website number** | Phone call leads | Phone calls (Website forwarding number) | **Primary** | **$100.00** | One | Fires when a visitor clicks a Google Ad to any of the 7 service pages, sees Google dynamic forwarding replacing `(678) 558-4327`, and calls for **≥ 60 seconds**. |
 | **Phone call click** | Contact | Website (Google Tag) | **Secondary** | None | One | Fires whenever a mobile visitor taps any `tel:` button or sticky call bar on the site. Kept **Secondary** to avoid double-counting actual 60-second completed calls. Label: `eAzECKGH55odEM3ryuZE`. |
 | **Lead** | Submit lead form | Website (Google Tag) | **Primary** | **$25.00** | One | Fires on form quotes and office consultation intakes. Conversion label: `6XuTCJ6H55odEM3ryuZE`. |
 
@@ -177,7 +177,7 @@ You are an Elite Google Ads Implementation Engineer and Autonomous Browser Execu
 
 TARGET ACCOUNT:
 - Google Ads Account Tag: AW-18468746701
-- Phone Number: (470) 502-9543
+- Phone Number: (678) 558-4327
 - Website: https://www.ceoturbo.com
 - Booking Calendar: https://cal.com/stackmodechris/ceo-turbo-office-studio-setup
 
@@ -210,7 +210,7 @@ PHASE 1: AUDIT & CONFIGURE GOOGLE ADS CONVERSION ACTIONS
    - Goal Category: "Phone call leads"
    - Action Source: Phone calls -> Calls to a phone number on your website
    - Status: Primary action used for bidding optimization
-   - Phone number: (470) 502-9543
+   - Phone number: (678) 558-4327
    - Call length: 60 seconds
    - Value: $100.00 USD
    - Count: One
@@ -311,17 +311,17 @@ PHASE 3: CONFIGURE CALL ASSET & CALL-ONLY AD
 
 1. Call Asset:
    - Navigate to Ads & assets -> Assets -> Call.
-   - Attach Call Asset with phone number: (470) 502-9543 (United States +1).
+   - Attach Call Asset with phone number: (678) 558-4327 (United States +1).
    - Call reporting: ON.
    - Conversion Action: Linked to "Calls from ads".
 
 2. Call Ad (Mobile Call-Only):
-   - Phone Number: (470) 502-9543
+   - Phone Number: (678) 558-4327
    - Business Name: CEO Turbo
    - Headline 1: Home Office Setup Atlanta (25 chars)
    - Headline 2: From $99 Flat Labor Rate (24 chars)
    - Description 1: We assemble desks, mount dual monitors & setup PCs cleanly. (63 chars)
-   - Description 2: Fast in-home setup across Atlanta & Duluth. Call (470) 502-9543 now! (70 chars)
+   - Description 2: Fast in-home setup across Atlanta & Duluth. Call (678) 558-4327 now! (70 chars)
    - Verification URL: https://www.ceoturbo.com
 
 ============================================================
@@ -385,7 +385,7 @@ PHASE 5: CALLOUT ASSETS & STRUCTURED SNIPPETS
 ============================================================
 
 1. Callout Assets:
-   - "Call (470) 502-9543"
+   - "Call (678) 558-4327"
    - "From $99 Flat Labor"
    - "Zero Hidden Fees"
    - "Finished In 2-4 Hours"

@@ -2,7 +2,7 @@
 ## Autonomous Manus Execution Prompt for 1080x1350, 1080x1920, and 1080x1080
 
 > **TARGET BUSINESS:** CEO Turbo (`ceoturbo.com`)  
-> **PHONE:** `(470) 502-9543`  
+> **PHONE:** `(678) 558-4327`  
 > **BOOKING CALENDAR:** `https://cal.com/stackmodechris/ceo-turbo-office-studio-setup`  
 > **CORE SERVICE URL:** `https://www.ceoturbo.com/services/home-office-setup`  
 > **TARGET AUDIENCE:** Homeowners, remote workers, busy parents, seniors, and gamers across Metro Atlanta & North Georgia (Duluth, Buckhead, Alpharetta, Marietta, Gwinnett).
@@ -45,7 +45,7 @@ You are an Elite Direct-Response Creative Director, Visual Designer, and Perform
 
 ACCOUNT CONTEXT:
 - Business: CEO Turbo (In-Home Computer, Desk Assembly & Office Tech Installations)
-- Direct Phone: (470) 502-9543
+- Direct Phone: (678) 558-4327
 - Website: https://www.ceoturbo.com
 - Booking Page: https://cal.com/stackmodechris/ceo-turbo-office-studio-setup
 - Flat Rates: Basic PC Setup from $99 | Standard Desk & PC $129 | Complete Office $169 | Office Transformation $1,599
@@ -149,7 +149,7 @@ def create_feed_ad():
     # 4. Big High-Trust Direct CTA Card (Y = 960 to 1180)
     draw.rounded_rectangle([108, 960, 972, 1070], radius=24, fill=C_ORANGE)
     f_cta_btn = get_font(40, bold=True)
-    draw.text((220, 990), "📞 CALL (470) 502-9543 NOW", fill=C_WHITE, font=f_cta_btn)
+    draw.text((220, 990), "📞 CALL (678) 558-4327 NOW", fill=C_WHITE, font=f_cta_btn)
 
     # Direct Calendar Link Pill (Y = 1095)
     f_cal = get_font(26, bold=True)
@@ -210,7 +210,7 @@ def create_reels_stories_ad():
     # Direct CTA Card (Y = 1200 to 1340)
     draw.rounded_rectangle([108, 1200, 972, 1330], radius=24, fill=C_ORANGE)
     f_call = get_font(42, bold=True)
-    draw.text((190, 1240), "📞 CALL (470) 502-9543", fill=C_WHITE, font=f_call)
+    draw.text((190, 1240), "📞 CALL (678) 558-4327", fill=C_WHITE, font=f_call)
 
     # Calendar Link (Y = 1370)
     f_link = get_font(28, bold=True)
@@ -250,7 +250,7 @@ def create_search_ad():
     # Big Giant Action Button
     draw.rounded_rectangle([108, 720, 972, 860], radius=28, fill=C_ORANGE)
     f_btn = get_font(46, bold=True)
-    draw.text((180, 765), "CALL (470) 502-9543", fill=C_WHITE, font=f_btn)
+    draw.text((180, 765), "CALL (678) 558-4327", fill=C_WHITE, font=f_btn)
 
     # URL Footer
     f_url = get_font(30, bold=True)
@@ -274,7 +274,7 @@ STEP 2: DEPLOY ON META ADS MANAGER
    - Buying Type: Auction.
    - Budget: **$5.00/day**.
 3. Ad Set Settings:
-   - Conversion Location: **Website** (`https://www.ceoturbo.com/services/home-office-setup`) or **Calls** (`(470) 502-9543`).
+   - Conversion Location: **Website** (`https://www.ceoturbo.com/services/home-office-setup`) or **Calls** (`(678) 558-4327`).
    - Location: Duluth, Georgia (+20 mile radius) AND Metro Atlanta.
    - Age: 28 – 65+.
    - Languages: English.
@@ -290,12 +290,12 @@ STEP 2: DEPLOY ON META ADS MANAGER
      ✓ Flat labor rate from $99 confirmed upfront  
      ✓ Done in 2 to 4 hours  
      ✓ Desks built, monitors mounted, Wi-Fi tested, boxes cleaned up  
-     Call (470) 502-9543 to get on today's schedule, or book online in 30 seconds at ceoturbo.com/services/home-office-setup.
+     Call (678) 558-4327 to get on today's schedule, or book online in 30 seconds at ceoturbo.com/services/home-office-setup.
    - **Headline:** In-Home Desk Assembly & PC Setup ($99 Flat)
-   - **Description:** Serving Duluth, Atlanta & 50-Mi Radius. Call (470) 502-9543.
+   - **Description:** Serving Duluth, Atlanta & 50-Mi Radius. Call (678) 558-4327.
    - **Call to Action Button:** Call Now (or Book Now / Learn More).
    - **Website URL:** `https://www.ceoturbo.com/services/home-office-setup`
-   - **Phone Number:** `(470) 502-9543`
+   - **Phone Number:** `(678) 558-4327`
 
 ============================================================
 STEP 3: VERIFICATION REPORT

@@ -44,6 +44,6 @@ geek squad, best buy, support number, phone number, remote, remote access, free,
 
 ## Settings
 - Search only, no Display network. Location: people in your area, 40 miles around Duluth/Atlanta (presence only).
-- Call extension (470) 502-9543 and a location or address extension if offered. Show ads only when you can answer.
+- Call extension (678) 558-4327 and a location or address extension if offered. Show ads only when you can answer.
 - Manual CPC or Maximize clicks with a cap to start. Final URL: `/computers`. Turn off final URL expansion.
 - Microsoft: import from Google, then recheck each ad for the same wording rules. UET tag and conversion tracking are already on the site.

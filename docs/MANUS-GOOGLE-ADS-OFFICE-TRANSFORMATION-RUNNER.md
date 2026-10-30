@@ -3,10 +3,10 @@
 ### Autonomous Browser Prompt for Manus AI (Zero-Error, Production-Ready)
 
 > **CONFIDENTIAL CAMPAIGN SPECIFICATION — CEO TURBO (ceoturbo.com)**  
-> **Campaign Mission:** Maximum Inbound Phone Calls to `(470) 502-9543` and Instant Cal.com Bookings for **Office Transformation (Homes & Businesses), Computer Setup, Desk/Furniture Assembly, Custom PC Builds, Clean Cable Management, Network/Internet Installs, and POS Setup** across Metro Atlanta & Duluth HQ.  
+> **Campaign Mission:** Maximum Inbound Phone Calls to `(678) 558-4327` and Instant Cal.com Bookings for **Office Transformation (Homes & Businesses), Computer Setup, Desk/Furniture Assembly, Custom PC Builds, Clean Cable Management, Network/Internet Installs, and POS Setup** across Metro Atlanta & Duluth HQ.  
 > **Daily Budget:** **$5.00/day** ($150/month) with **Maximize Clicks** and a hard **Max CPC Bid Limit of $1.50** (Strict Micro-Budget Optimization).  
 > **Targeting:** **"Presence: People in or regularly in your targeted locations"** across Metro Atlanta, Duluth base, North Fulton, Cobb, Gwinnett, DeKalb, and Athens, GA. (Display & Search Partners strictly OFF).  
-> **Primary Phone:** **(470) 502-9543**  
+> **Primary Phone:** **(678) 558-4327**  
 > **Final URLs:**  
 > - Core Landing Page: `https://www.ceoturbo.com/services/home-office-setup`  
 > - POS System Landing Page: `https://www.ceoturbo.com/services/pos-system-setup`  
@@ -32,7 +32,7 @@ ROLE & OBJECTIVE:
 You are an Elite Google Ads PPC Specialist and Autonomous Browser Execution Agent. Your task is to build, configure, and publish a high-converting, call-first Google Search Campaign for "CEO Turbo" (https://www.ceoturbo.com).
 
 PRIMARY GOAL:
-Drive maximum direct inbound phone calls to (470) 502-9543 and instant online bookings from homeowners, remote professionals, seniors, and local businesses who need:
+Drive maximum direct inbound phone calls to (678) 558-4327 and instant online bookings from homeowners, remote professionals, seniors, and local businesses who need:
 1. Office Transformation (Home & Business ergonomic desk setups, standing desk builds, furniture assembly, monitor arm mounting).
 2. Workstation Cable Management (100% clean, zero visible wires, under-desk raceway channels, power strip isolation so they can use their workstation cleanly).
 3. Computer Setup for Homes & Businesses (PC & Mac configuration, multi-monitor display setups, printer/scanner hookup, software & email connections).
@@ -51,7 +51,7 @@ CAMPAIGN ARCHITECTURE & MICRO-BUDGET CONTROLS:
 - Maximum CPC Bid Limit: $1.50 (CRITICAL: Prevents wasting the $5/day budget on single expensive clicks)
 - Location Target Option: "Presence: People in or regularly in your targeted locations" (CRITICAL: Do NOT select "Presence or interest")
 - Language: English
-- Primary Phone Number: (470) 502-9543
+- Primary Phone Number: (678) 558-4327
 - Final Landing Page URL: https://www.ceoturbo.com/services/home-office-setup
 - Cal.com Booking URL: https://cal.com/stackmodechris/ceo-turbo-office-studio-setup
 
@@ -63,7 +63,7 @@ STEP 1: CAMPAIGN CREATION & BIDDING SETTINGS
 2. If prompted for a goal, select "Create a campaign without a goal's guidance" (or select "Leads" -> Continue).
 3. Select Campaign type: "Search".
 4. Select the ways you'd like to reach your goal:
-   - Check [x] "Phone calls" -> Country: United States (+1) -> Enter phone: 4705029543
+   - Check [x] "Phone calls" -> Country: United States (+1) -> Enter phone: 6785584327
    - Check [x] "Website visits" -> Enter URL: https://www.ceoturbo.com/services/home-office-setup
 5. Campaign Name:
    CEO Turbo | Office Transformation & Computer Setup | Calls & Leads
@@ -288,7 +288,7 @@ Tier 3: Price, Speed & Scope (Destroys Hesitation)
 12. Finished in 2 to 4 Hours (24 chars)
 
 Tier 4: Call Action & Trust (Pinned to Position 2)
-13. Call (470) 502-9543 (19 chars)
+13. Call (678) 558-4327 (19 chars)
     -> ACTION: Click Pin Icon 📌 -> Select "Show only in position 2"
     * CRITICAL POLICY SAFETY FALLBACK: If Google Ads UI flags "Phone number in headline text is not allowed", immediately change Headline 13 to:
       "Call Today For Fast Setup" (25 chars) pinned to Position 2, and add "Call For In-Home Tech Help" (26 chars).
@@ -301,20 +301,20 @@ THE 4 MASTER DESCRIPTIONS (ALL ≤ 90 CHARACTERS):
 1. We assemble desks, mount monitors, connect PCs & hide every wire. Flat rates from $99. (88 chars)
 2. Custom PC builds, fast Wi-Fi setup & business software config. Serving Atlanta & Duluth. (89 chars)
 3. Don't waste days in boxes or cable messes. We transform your workspace in 2 to 4 hours. (87 chars)
-4. Call (470) 502-9543 or book online. Professional office & computer setup for home & work. (89 chars)
+4. Call (678) 558-4327 or book online. Professional office & computer setup for home & work. (89 chars)
 
 ============================================================
 STEP 4: DEDICATED CALL-ONLY ADS (FOR SMARTPHONE SEARCHERS)
 ============================================================
 
 In Ad Group 1 and Ad Group 2, click "+ Add Ad" -> Select "Call Ad" (Call-Only):
-- Phone Number: (470) 502-9543
+- Phone Number: (678) 558-4327
 - Country: United States (+1)
 - Business Name: CEO Turbo
 - Headline 1: Office & PC Setup Atlanta (26 chars)
 - Headline 2: From $99 Flat Labor Rate (24 chars)
 - Description 1: Desks assembled, custom PCs built, dual monitors mounted & cables hidden cleanly. (81 chars)
-- Description 2: Serving Metro Atlanta & Duluth. Call (470) 502-9543 now for instant quote & booking! (86 chars)
+- Description 2: Serving Metro Atlanta & Duluth. Call (678) 558-4327 now for instant quote & booking! (86 chars)
 - Final URL (optional/verification): https://www.ceoturbo.com/services/home-office-setup
 - Verification URL: https://www.ceoturbo.com
 - Call Reporting: ON
@@ -324,7 +324,7 @@ STEP 5: EXTENSIONS / ASSETS CONFIGURATION (COMPLETE & AUDITED)
 ============================================================
 
 1. CALL ASSET (MANDATORY & HIGHEST PRIORITY):
-   - Phone Number: (470) 502-9543
+   - Phone Number: (678) 558-4327
    - Country: United States (+1)
    - Level: Campaign Level
    - Call Reporting: ON
@@ -364,7 +364,7 @@ STEP 5: EXTENSIONS / ASSETS CONFIGURATION (COMPLETE & AUDITED)
      * Final URL: https://www.ceoturbo.com/services/apartment-home-office-setup
 
 3. CALLOUT ASSETS (Add all 10 Callouts):
-   - "Call (470) 502-9543"
+   - "Call (678) 558-4327"
    - "From $99 Flat Labor"
    - "Clean Cable Routing"
    - "Desk & Chair Assembly"
@@ -461,11 +461,11 @@ STEP 8: FINAL AUDIT & PUBLISH
    - Daily Budget: $5.00/day ($1.50 Max CPC cap)
    - Search Partners & Display Network: OFF
    - Location Targeting: "Presence" enabled
-   - Call Asset: (470) 502-9543 Active with Call Reporting ON
+   - Call Asset: (678) 558-4327 Active with Call Reporting ON
    - Sitelinks: All 4 URLs active and working
    - Pinned Headlines:
      * Position 1: "Office & PC Setup Atlanta"
-     * Position 2: "Call (470) 502-9543" (or fallback "Call Today For Fast Setup")
+     * Position 2: "Call (678) 558-4327" (or fallback "Call Today For Fast Setup")
 2. Click "Publish Campaign".
 3. Verify status shows "Eligible" or "Under Review".
 4. Output a confirmation summary report with:
@@ -527,7 +527,7 @@ When Google Ads asks for *"Products or services to advertise"*, these tags seed 
 | **From $99 Flat Labor Rate** | 24 chars | Tier 3: Price Anchor | Position 3 Candidate | Destroys price hesitation with an accessible low anchor |
 | **Flat Price Confirmed 1st** | 24 chars | Tier 3: Trust Hook | Position 3 Candidate | Eliminates fear of hourly runaway charges |
 | **Finished in 2 to 4 Hours** | 24 chars | Tier 3: Speed Promise | Position 3 Candidate | Guarantees same-day rapid completion |
-| **Call (470) 502-9543** | 19 chars | Tier 4: Direct Action | **Position 2 📌** | Frictionless 1-tap phone call trigger |
+| **Call (678) 558-4327** | 19 chars | Tier 4: Direct Action | **Position 2 📌** | Frictionless 1-tap phone call trigger |
 | **Homes & Businesses Served** | 25 chars | Tier 4: Trust Hook | Unpinned | Broadens commercial & residential authority |
 | **Serving Atlanta & Duluth** | 24 chars | Tier 4: Local Trust | Unpinned | Reinforces local neighborhood proximity |
 
@@ -538,9 +538,9 @@ When Google Ads asks for *"Products or services to advertise"*, these tags seed 
 ### Rule 1: Google Ads Phone Number Policy in Ad Headlines
 - **Standard Policy:** Google automated ad review occasionally flags raw phone numbers in headline text (`Phone number in ad text is not allowed`).
 - **Autonomous Solution:**
-  1. Manus first enters `Call (470) 502-9543` pinned to **Position 2**.
+  1. Manus first enters `Call (678) 558-4327` pinned to **Position 2**.
   2. If Google's review displays the red alert, Manus replaces it with `Call Today For Fast Setup` (25 chars) pinned to **Position 2**.
-  3. The **Google Call Asset** with phone number `(470) 502-9543` displays the large, dedicated blue click-to-call button directly underneath the headline on mobile, capturing all phone leads with 100% compliance.
+  3. The **Google Call Asset** with phone number `(678) 558-4327` displays the large, dedicated blue click-to-call button directly underneath the headline on mobile, capturing all phone leads with 100% compliance.
 
 ### Rule 2: $5/Day Budget Protection (Strict CPC Cap)
 - With a $5/day budget, if Max CPC is unconstrained, Google can charge $4.80 for a single broad click.

@@ -88,7 +88,7 @@ Key facts:
 - Google Ads (Appliance King, one day, Oct 2026): 2 conversions for $6.57, $3.29 per conversion.
 - Artist profile campaign (BIGZO): 165 profile visits at $0.32 each.
 - Based at 8735 Dunwoody Place #12143, Atlanta, GA 30350; works with businesses all over the world.
-- Phone: (470) 502-9543 (call or text).
+- Phone: (678) 558-4327 (call or text).
 - Social: Instagram https://www.instagram.com/ceoturbo_/ · Facebook https://www.facebook.com/profile.php?id=61595439263484 · YouTube https://www.youtube.com/@CEOTurbo7 · X https://x.com/CEO_Turbo · LinkedIn https://www.linkedin.com/showcase/ceoturbo · Pinterest https://www.pinterest.com/ceoturbo/
 
 ${groups.map(section).filter(Boolean).join("\n")}

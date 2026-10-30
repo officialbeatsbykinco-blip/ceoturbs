@@ -14,7 +14,7 @@ Create a high-converting, policy-compliant local service page for Home Office & 
 
 **Service Name:** Home Office & Computer Setup
 **Slug:** home-office-setup
-**Phone:** 470-502-9543
+**Phone:** 678-558-4327
 **Service Area:** Atlanta metro area within 50-mile radius, extended up to 2 hours from Duluth for larger projects
 
 **What We Do:**
@@ -237,9 +237,9 @@ Create a high-converting, policy-compliant local service page for Home Office & 
 6. **src/config/site.ts** - Phone configuration (CHECK phone config)
 
 ### Phone Number Integration
-**Phone:** 470-502-9543
-**Format:** tel:4705029543
-**SMS Format:** sms:+14705029543?body=Hi%2C%20I%27d%20like%20a%20quote%20for%20office%20setup.
+**Phone:** 678-558-4327
+**Format:** tel:6785584327
+**SMS Format:** sms:+16785584327?body=Hi%2C%20I%27d%20like%20a%20quote%20for%20office%20setup.
 
 **Tracking Requirements:**
 - Add `data-call-location` attribute to all phone links
@@ -395,7 +395,7 @@ export const SETUP_AREAS = [
 
 **Events to Track:**
 - `view_item` - When user views home office setup service page
-- `contact` - When user clicks phone number (470-502-9543)
+- `contact` - When user clicks phone number (678-558-4327)
 - `schedule` - When user books consultation via Cal.com
 - `lead` - When user submits contact form
 
@@ -497,7 +497,7 @@ Add to service page head or via JSON-LD:
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "CEO Turbo - Home Office Setup",
-  "telephone": "470-502-9543",
+  "telephone": "678-558-4327",
   "areaServed": [
     {
       "@type": "City",
@@ -519,7 +519,7 @@ Add to service page head or via JSON-LD:
 
 ### Meta Tags (Already in services.ts)
 - **metaTitle:** "Home Office & Computer Setup — Atlanta Metro Area"
-- **metaDescription:** "Home office, computer, desk, Wi-Fi and device setup in Atlanta, Gwinnett and Athens. From $89. Call 470-502-9543."
+- **metaDescription:** "Home office, computer, desk, Wi-Fi and device setup in Atlanta, Gwinnett and Athens. From $89. Call 678-558-4327."
 
 ---
 
@@ -543,7 +543,7 @@ Add to service page head or via JSON-LD:
 
 **Headline 1:** Home Office Setup Atlanta
 **Headline 2:** From $89 - We Build Your Workspace
-**Description:** Professional desk assembly, computer setup, network configuration. Serving Atlanta metro. Call 470-502-9543.
+**Description:** Professional desk assembly, computer setup, network configuration. Serving Atlanta metro. Call 678-558-4327.
 
 **Headline 1:** Computer Installation Service
 **Headline 2:** Setup & Configuration - From $89
@@ -565,7 +565,7 @@ Similar structure to Google Ads, same keywords, same ad copy.
 **Ad Creative:**
 - Image: Professional home office setup
 - Headline: "We Build Your Home Office So You Can Get to Work"
-- Primary Text: "Desk assembly, computer setup, network configuration. From $89. Serving Atlanta metro. Call 470-502-9543."
+- Primary Text: "Desk assembly, computer setup, network configuration. From $89. Serving Atlanta metro. Call 678-558-4327."
 - CTA: "Call Now"
 
 ---
@@ -574,7 +574,7 @@ Similar structure to Google Ads, same keywords, same ad copy.
 
 Before marking complete, verify:
 - [ ] Service page renders correctly at `/services/home-office-setup`
-- [ ] Phone number displays and is clickable (470-502-9543)
+- [ ] Phone number displays and is clickable (678-558-4327)
 - [ ] Phone number fires click_to_call event (check DevTools)
 - [ ] SMS/text link works with pre-filled message
 - [ ] All 4 pricing tiers display correctly

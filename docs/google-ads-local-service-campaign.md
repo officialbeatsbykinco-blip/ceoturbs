@@ -2,7 +2,7 @@
 
 **Goal:** booked calls and phone calls from owners of local service businesses (appliance repair, HVAC, plumbing, cleaning, handymen) who are looking to hire someone to run their Google Ads. Not clicks.
 
-**Phone number:** (470) 502-9543. It matches the site (`SITE.phone` in `src/config/site.ts`).
+**Phone number:** (678) 558-4327. It matches the site (`SITE.phone` in `src/config/site.ts`).
 
 Every headline, description, sitelink and callout below is within Google's limits: headlines 30, descriptions 90, sitelink text 25, sitelink lines 35, callouts 25, snippet values 25.
 
@@ -16,7 +16,7 @@ Every headline, description, sitelink and callout below is within Google's limit
 
 ## Before you launch (do these first)
 - [ ] **Phone call conversion:** Goals → Conversions → New → Phone calls → "Calls from ads using call assets". Count a call after **60 seconds**. Set it to **Primary**.
-- [ ] **Call asset:** (470) 502-9543 with **Google forwarding number ON**, so calls are tracked, and **Call reporting ON**.
+- [ ] **Call asset:** (678) 558-4327 with **Google forwarding number ON**, so calls are tracked, and **Call reporting ON**.
 - [ ] **Primary conversions:** Book appointment, Submit lead form, Calls from ads (60s+). Set Contact (website phone click) to **Secondary**, since a tap isn't a real call.
 - [ ] **Remove old junk from the account:** the old call asset (678) 558-4327 and the old trading-school sitelinks.
 - [ ] **Pause:** CEO Turbo | NFC Review Cards and CEO Turbo | Calls | US Niche.
@@ -118,7 +118,7 @@ The last line keeps out homeowners looking for a plumber or a repair. They are n
 11. Full Setup Just $297
 12. Free 30-Min Strategy Call
 13. Talk to the Founder Free
-14. Call (470) 502-9543
+14. Call (678) 558-4327
 15. Founder-Run, Atlanta-Based
 
 Headline 14 is allowed as a headline; the call asset adds the actual call button.
@@ -155,7 +155,7 @@ The $16.89 figure is Appliance King's Google Ads dashboard (Oct 16–22, 2026), 
 **Structured snippet (Header: Services)**
 Google Search Ads · Call Tracking · Google Business Profile · Conversion Tracking · Landing Pages
 
-**Call asset:** (470) 502-9543, Google forwarding number on, scheduled for the same hours as the campaign.
+**Call asset:** (678) 558-4327, Google forwarding number on, scheduled for the same hours as the campaign.
 
 **Price asset:** Turbo Start $297 · Turbo Launch $347 · Conversion Rescue $147 · Tracking Watch $25/mo. All four link to /pricing.
 

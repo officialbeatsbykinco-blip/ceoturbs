@@ -42,7 +42,7 @@ CENTER DIVIDER:
 
 BOTTOM CENTER (in safe zone):
 - "Atlanta Metro • We Build Your Setup"
-- "Text 470-502-9543"
+- "Text 678-558-4327"
 - Orange CTA button: "Get Quote"
 
 COLORS:
@@ -136,7 +136,7 @@ Each card:
 BOTTOM SECTION (in safe zone):
 - "Atlanta Metro • Labor Only • One-Time Price"
 - "You supply parts, we do the work"
-- Phone: "470-502-9543"
+- Phone: "678-558-4327"
 - Orange CTA button: "Book Now"
 
 STYLE:

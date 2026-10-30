@@ -188,7 +188,7 @@ describe("conversion buttons", () => {
       );
     });
     expect(screen.getByText("Book your home office setup")).toBeInTheDocument();
-    expect(screen.getByText(/Call \(470\) 502-9543/)).toBeInTheDocument();
+    expect(screen.getByText(/Call \(678\) 558-4327/)).toBeInTheDocument();
     expect(screen.getByText("Text for quote")).toBeInTheDocument();
 
     // Verify all questionnaire questions are completely removed
@@ -331,9 +331,9 @@ describe("phone + social", () => {
         <Footer />
       </MemoryRouter>,
     );
-    const tel = screen.getAllByRole("link", { name: /\(470\) 502-9543/ });
+    const tel = screen.getAllByRole("link", { name: /\(678\) 558-4327/ });
     expect(tel.length).toBeGreaterThan(0);
-    for (const t of tel) expect(t).toHaveAttribute("href", "tel:+14705029543");
+    for (const t of tel) expect(t).toHaveAttribute("href", "tel:+16785584327");
     for (const s of SITE.social) {
       const a = screen.getByRole("link", { name: `CEO Turbo on ${s.label}` });
       expect(a).toHaveAttribute("href", s.href);
@@ -344,7 +344,7 @@ describe("phone + social", () => {
 
   it("puts the phone and brand profiles in Organization schema, personal ones on the founder", () => {
     const org = organization() as Record<string, unknown>;
-    expect(org.telephone).toBe("+14705029543");
+    expect(org.telephone).toBe("+16785584327");
     expect(org.sameAs).toEqual(SITE.social.map((s) => s.href));
     expect((founder() as Record<string, unknown>).sameAs).toEqual(SITE.founder.sameAs);
   });

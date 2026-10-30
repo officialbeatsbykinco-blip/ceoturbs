@@ -67,7 +67,7 @@
 **Use:** Mobile CTAs, explainer, ads
 
 **Scene Description:**
-1. **Phone icon** appears with "Call 470-502-9543"
+1. **Phone icon** appears with "Call 678-558-4327"
 2. **Arrow** points to "Free Quote"
 3. **Arrow** points to "Schedule Visit"
 4. **Arrow** points to "Office Built"

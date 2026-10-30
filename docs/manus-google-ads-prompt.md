@@ -8,7 +8,7 @@
 
 **Business Name:** CEO Turbo
 **Website:** https://ceoturbo.com
-**Phone:** 470-502-9543
+**Phone:** 678-558-4327
 **Service Area:** Atlanta metro + up to 2 hours from Duluth, GA
 **Daily Budget:** $5
 
@@ -21,7 +21,7 @@
 
 **Target Cities:** Atlanta, Athens, Gainesville, Newnan, Covington, Duluth, Marietta, Roswell, Alpharetta, Johns Creek, Sandy Springs, Buckhead, Decatur
 
-**Primary Conversion:** Phone calls (470-502-9543)
+**Primary Conversion:** Phone calls (678-558-4327)
 **Secondary Conversion:** Cal.com online bookings (https://cal.com/stackmodechris/ceo-turbo-office-studio-setup)
 **Warranty:** 30-day installation warranty
 
@@ -149,7 +149,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 - Framing, Cameras, Internet
 - Atlanta Metro Office Setup
 - No Monthly Contracts
-- Call 470-502-9543
+- Call 678-558-4327
 - Book Online Now
 - 30-Day Warranty
 
@@ -165,7 +165,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 - From $89 One-Time
 - We Build Your Workspace
 - Atlanta Home Office
-- Call 470-502-9543
+- Call 678-558-4327
 - Book Online Now
 
 **Descriptions (select 2):**
@@ -179,7 +179,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 - Desk Setup for Apartment
 - From $89 One-Time
 - Atlanta Apartment Setup
-- Call 470-502-9543
+- Call 678-558-4327
 - Book Online Now
 
 **Descriptions (select 2):**
@@ -193,7 +193,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 - Computer Room Atlanta
 - From $349 One-Time
 - Classroom Setup Atlanta
-- Call 470-502-9543
+- Call 678-558-4327
 - Book Online Now
 
 **Descriptions (select 2):**
@@ -207,7 +207,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 - Home Studio Installation
 - From $149 One-Time
 - Producer Desk Setup
-- Call 470-502-9543
+- Call 678-558-4327
 - Book Online Now
 
 **Descriptions (select 2):**
@@ -219,7 +219,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 ## EXTENSIONS
 
 ### Call Extensions
-- Phone: 470-502-9543
+- Phone: 678-558-4327
 - Enable call reporting
 - Conversion action: Phone Call - Office Services
 
@@ -292,7 +292,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 
 1. **Budget is very low ($5/day)** - Focus on high-intent keywords only
 2. **Use specific landing pages** - Don't send all traffic to homepage
-3. **Phone number is primary CTA** - 470-502-9543
+3. **Phone number is primary CTA** - 678-558-4327
 4. **Service area is limited** - Atlanta metro + 2 hours from Duluth only
 5. **Pricing is labor-only** - Mention "one-time" in ads
 6. **Warranty is 90 days** - Include in ads
@@ -315,7 +315,7 @@ jobs, careers, salary, employment, training, school, course, DIY, tutorial, how 
 - [ ] Location targeting set (Atlanta metro + specific cities)
 - [ ] Ad schedule aligned with business hours
 - [ ] Landing pages tested (all work correctly)
-- [ ] Phone number verified (470-502-9543)
+- [ ] Phone number verified (678-558-4327)
 - [ ] Campaign launched
 
 ---

@@ -10,8 +10,8 @@
 ### 1. Business Objectives
 - **Zero-Flicker Cal.com Booking:** Native month-view booking modal embedded via `@calcom/embed-react` matching brand dark mode (`#00cfff` accent).
 - **Mobile-First High Conversion:**
-  - **Desktop (`sm+`):** Glowing orange `Book online` (`btn-ignite`) + slate `Call (470) 502-9543` (`btn-chrome`).
-  - **Mobile (`<sm`):** 1-tap glowing dialer `Call (470) 502-9543` (`btn-ignite`) + slate `Book online` (`btn-chrome`).
+  - **Desktop (`sm+`):** Glowing orange `Book online` (`btn-ignite`) + slate `Call (678) 558-4327` (`btn-chrome`).
+  - **Mobile (`<sm`):** 1-tap glowing dialer `Call (678) 558-4327` (`btn-ignite`) + slate `Book online` (`btn-chrome`).
   - **No Button Text Wrapping:** `whitespace-nowrap` on `.btn-ignite` and `.btn-chrome` prevents awkward multi-line phone numbers on narrow mobile viewports.
 - **New High-Ticket Service:** `/services/pos-system-setup` (Toast, Square, Clover, Stripe, DoorDash, UberEats, cash drawers, thermal printers, network switch) with transparent pricing tiers ($149, $249, $399).
 - **Real-Time Google Spreadsheet Connection:** Every lead from intake forms (POS setup, office builds, DJ studios) and every booked call from Cal.com automatically flows into the Google Sheet (`FREE Lead Magnet Leads`) via Google Apps Script Webhook.
@@ -241,7 +241,7 @@ Service object:
     icon: "layout",
     metaTitle: "POS System Installation — Atlanta Metro | Square, Toast, Clover",
     metaDescription:
-      "We install Square, Toast, Clover, Stripe, DoorDash & UberEats POS systems, terminals, kitchen printers and cash drawers. From $149. Call 470-502-9543.",
+      "We install Square, Toast, Clover, Stripe, DoorDash & UberEats POS systems, terminals, kitchen printers and cash drawers. From $149. Call 678-558-4327.",
     h1: "POS system installation — terminals wired, printers connected, orders flowing",
     answer:
       "CEO Turbo installs and configures complete Point of Sale (POS) systems for restaurants, food trucks, retail stores, and salons across the Atlanta metro area. We mount card readers, wire cash drawers and receipt printers, configure network switches, integrate DoorDash and UberEats delivery tablets, and test credit card processing on Square, Toast, Clover, and Stripe. You supply the hardware; we do the installation and cabling at a transparent flat price.",
@@ -277,7 +277,7 @@ Service object:
       { q: "What POS systems do you support?", a: "We install and configure all major systems: Square, Toast, Clover, Stripe Terminal, Shopify POS, Lightspeed, TouchBistro, Revel, as well as delivery tablets for DoorDash, UberEats, and Grubhub." },
       { q: "How much does POS system installation cost?", a: "Flat labor pricing: Basic (1 terminal, printer, reader) is $149; Standard (2-3 terminals, delivery tablets, kitchen printer, cash drawer) is $249; Complete multi-station restaurant/retail setup is $399. Confirmed before we start." },
       { q: "Do you provide the POS hardware?", a: "No. You supply the hardware ordered from your processor (Square, Toast, etc.). If you need us to procure mounts, cables, or switches up front, we provide itemized receipts with zero markup." },
-      { q: "Can you install after business hours?", a: "Yes. We regularly install after closing or before opening so your business has zero downtime. Call 470-502-9543 to schedule." },
+      { q: "Can you install after business hours?", a: "Yes. We regularly install after closing or before opening so your business has zero downtime. Call 678-558-4327 to schedule." },
       { q: "What areas do you serve?", a: "Atlanta, Buckhead, Midtown, Decatur, Sandy Springs, Duluth, Norcross, Alpharetta, Marietta, Gwinnett County, and all cities within 50 miles of Duluth, GA." },
     ],
   },
@@ -410,8 +410,8 @@ Map `Service` and `Quote $` on the **Office Setup Leads** tab:
 Add `"pos-system-setup": "Tech & equipment"` to `SERVICE_GROUPS`.
 
 ### STEP 10: ServicePage Responsive CTAs (`src/pages/ServicePage.tsx`)
-- Desktop (`sm+`): `Book online` (`btn-ignite`) + `Call (470) 502-9543` (`btn-chrome`)
-- Mobile (`<sm`): `Call (470) 502-9543` (`btn-ignite`) + `Book online` (`btn-chrome`)
+- Desktop (`sm+`): `Book online` (`btn-ignite`) + `Call (678) 558-4327` (`btn-chrome`)
+- Mobile (`<sm`): `Call (678) 558-4327` (`btn-ignite`) + `Book online` (`btn-chrome`)
 - Sub-actions: `Text for a quote` (`sms:`) • `What's included` • `Atlanta & Gwinnett`
 - Aligned CTAs on Hero, Pricing, and Footer.
 

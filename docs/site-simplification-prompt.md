@@ -71,7 +71,7 @@
 - "Which do I need? Get my free plan"
 
 **Simplified:**
-- "Call Now: 470-502-9543"
+- "Call Now: 678-558-4327"
 - "Get a Free Quote"
 - "Book a Visit"
 
@@ -106,7 +106,7 @@
 **Hero Section:**
 - Headline: "We Build Your Office"
 - Subhead: "Framing, Cameras, Internet, Computers, Cleaning"
-- CTA: Large phone button "Call 470-502-9543"
+- CTA: Large phone button "Call 678-558-4327"
 - Secondary: "See Our Services"
 
 **Services Section:**
@@ -155,7 +155,7 @@
 
 **Sticky Phone Bar:**
 - Always visible at bottom
-- "Call 470-502-9543"
+- "Call 678-558-4327"
 - Large tappable area
 - High contrast
 
@@ -189,7 +189,7 @@
 ### FAQ Answers
 
 **BEFORE:**
-"We serve the Atlanta metro area and travel up to two hours from Duluth, GA for larger projects. Call 470-502-9543 and we will confirm your address the same day."
+"We serve the Atlanta metro area and travel up to two hours from Duluth, GA for larger projects. Call 678-558-4327 and we will confirm your address the same day."
 
 **AFTER:**
 "We serve Atlanta and cities within 2 hours of Duluth. Call us and we'll tell you if we can help."

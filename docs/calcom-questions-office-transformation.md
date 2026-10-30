@@ -362,7 +362,7 @@ If you want fewer questions (higher conversion, less information):
 
 **Confirmation Message:**
 ```
-Your consultation is booked! We'll call you at the scheduled time at 470-502-9543. If you need to reschedule, use the link in your confirmation email.
+Your consultation is booked! We'll call you at the scheduled time at 678-558-4327. If you need to reschedule, use the link in your confirmation email.
 ```
 
 ---

@@ -10,7 +10,7 @@
 
 **Business:** CEO Turbo
 **Website:** https://ceoturbo.com
-**Phone:** 470-502-9543
+**Phone:** 678-558-4327
 **Service Area:** Atlanta metro + up to 2 hours from Duluth, GA
 **Daily Budget:** $5
 **Primary Services:**
@@ -64,7 +64,7 @@
 ## TASK 3: Set Up Call Extensions
 
 **Requirements:**
-1. Add phone number: 470-502-9543
+1. Add phone number: 678-558-4327
 2. Enable call reporting
 3. Set call conversion action (from Task 2)
 4. Schedule: Business hours (9AM-6PM Mon-Fri, 10AM-4PM Sat)
@@ -184,7 +184,7 @@
 4. Framing, Cameras, Internet
 5. Atlanta Metro Office Setup
 6. No Monthly Contracts
-7. Call 470-502-9543
+7. Call 678-558-4327
 8. Office Construction Georgia
 9. Commercial Office Setup
 10. Turnkey Office Space
@@ -209,7 +209,7 @@
 4. We Build Your Workspace
 5. Atlanta Home Office
 6. Computer Setup Service
-7. Call 470-502-9543
+7. Call 678-558-4327
 8. Remote Worker Setup
 9. Office Assembly Atlanta
 10. WiFi & Network Setup
@@ -316,7 +316,7 @@
 - [ ] Location extensions linked
 - [ ] Conversion actions verified
 - [ ] Landing pages tested (all work)
-- [ ] Phone number correct (470-502-9543)
+- [ ] Phone number correct (678-558-4327)
 - [ ] Ad schedule aligned with business hours
 - [ ] Bidding strategy set to Maximize Clicks
 
@@ -413,11 +413,11 @@ Execute tasks in this exact order:
 - **CPC Limit:** $2 initially, increase if no impressions
 - **Ad Schedule:** Align with business hours for phone calls
 - **Landing Pages:** Use the specific service pages, not homepage
-- **Phone:** 470-502-9543 (prominent in ads)
+- **Phone:** 678-558-4327 (prominent in ads)
 - **Service Area:** Atlanta metro + 2 hours from Duluth only
 - Pricing: Labor-only, mention "one-time" in ads
 - Warranty: 30-day installation warranty
-- Phone: 470-502-9543
+- Phone: 678-558-4327
 - **Target:** Residential (mobile/calls) and Business (desktop/bookings)
 
 Begin Google Ads setup now.

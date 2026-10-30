@@ -24,9 +24,9 @@ export const SITE = {
   },
   /** Call or text the company. `href` is what every tel: link uses. */
   phone: {
-    display: "(470) 502-9543",
-    e164: "+14705029543",
-    href: "tel:+14705029543",
+    display: "(678) 558-4327",
+    e164: "+16785584327",
+    href: "tel:+16785584327",
   },
   email: "ceoturbo@proton.me",
   /** Site-ownership codes. Paste the content value from each service's "meta tag" option; empty = no tag. */

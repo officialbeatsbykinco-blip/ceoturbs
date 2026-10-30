@@ -8,12 +8,12 @@
 
 ### SUMMARY OF CHANGES IN THIS RUN
 1. **Package Dependency:** Install `@calcom/embed-react` for native, flicker-free Cal.com month-view booking modals.
-2. **Global CSS Fix (`src/index.css`):** Add `whitespace-nowrap` to `.btn-ignite` and `.btn-chrome` so phone numbers like `(470) 502-9543` never wrap into ugly multi-line text on mobile or narrow columns.
+2. **Global CSS Fix (`src/index.css`):** Add `whitespace-nowrap` to `.btn-ignite` and `.btn-chrome` so phone numbers like `(678) 558-4327` never wrap into ugly multi-line text on mobile or narrow columns.
 3. **Cal.com Modal Embed (`src/components/booking/InstallCalModal.tsx` & `src/components/cta/Actions.tsx`):** Build a native Radix Dialog modal wrapping `@calcom/embed-react` with month-view layout, `#00cfff` brand accents, and automatic slot loading.
 4. **New POS System Service (`src/content/services.ts` & `src/content/pricing.ts`):** Add `/services/pos-system-setup` (DoorDash, UberEats, Square, Stripe, Clover, Toast, receipt printers, cash drawers, network setup) with transparent pricing ($149, $249, $399).
 5. **CTA Architecture Overhaul Across All 7 Services (`src/pages/ServicePage.tsx`):**
-   - **Desktop Viewport (`sm+`):** Prioritizes **Book Online** (`btn-ignite` glowing orange) + **Call (470) 502-9543** (`btn-chrome`).
-   - **Mobile Viewport (`<sm`):** Prioritizes **Call (470) 502-9543** (`btn-ignite` 1-tap dialer) + **Book Online** (`btn-chrome`).
+   - **Desktop Viewport (`sm+`):** Prioritizes **Book Online** (`btn-ignite` glowing orange) + **Call (678) 558-4327** (`btn-chrome`).
+   - **Mobile Viewport (`<sm`):** Prioritizes **Call (678) 558-4327** (`btn-ignite` 1-tap dialer) + **Book Online** (`btn-chrome`).
    - **Sub-Actions:** Subtle text links (`Text for a quote` • `What's included` • `Atlanta & Gwinnett`).
    - **Pricing & Footer CTAs:** Aligned to the exact same responsive hierarchy, fixing the mobile `ml-3` misalignment bug.
 6. **Sticky Mobile Bar Update (`src/components/site/MobileActionBar.tsx`):** Clean 50/50 split between `Call now` (`btn-ignite`) and `Book online` (`btn-chrome`) with strict `whitespace-nowrap`.
@@ -228,7 +228,7 @@ export const CALL_FIRST_SLUGS = [
     icon: "layout",
     metaTitle: "POS System Installation & Setup — Atlanta Metro | Square, Toast, Clover",
     metaDescription:
-      "We install Square, Toast, Clover, Stripe, DoorDash and UberEats POS systems, card terminals, kitchen printers and cash drawers. From $149. Call 470-502-9543.",
+      "We install Square, Toast, Clover, Stripe, DoorDash and UberEats POS systems, card terminals, kitchen printers and cash drawers. From $149. Call 678-558-4327.",
     h1: "POS system installation — terminals wired, printers connected, orders flowing",
     answer:
       "CEO Turbo installs and configures complete Point of Sale (POS) systems for restaurants, food trucks, retail stores, and salons across the Atlanta metro area. We mount card readers, wire cash drawers and receipt printers, configure network switches, integrate DoorDash and UberEats delivery tablets, and test credit card processing on Square, Toast, Clover, and Stripe. You supply the hardware; we do the installation and cabling at a transparent flat price.",
@@ -264,7 +264,7 @@ export const CALL_FIRST_SLUGS = [
       { q: "What POS systems do you support?", a: "We install and configure all major systems: Square, Toast, Clover, Stripe Terminal, Shopify POS, Lightspeed, TouchBistro, Revel, as well as delivery tablets for DoorDash, UberEats, and Grubhub." },
       { q: "How much does POS system installation cost?", a: "Flat labor pricing: Basic (1 terminal, printer, reader) is $149; Standard (2-3 terminals, delivery tablets, kitchen printer, cash drawer) is $249; Complete multi-station restaurant/retail setup is $399. Confirmed before we start." },
       { q: "Do you provide the POS hardware?", a: "No. You supply the hardware ordered from your processor (Square, Toast, etc.). If you need us to procure mounts, cables, or switches up front, we provide itemized receipts with zero markup." },
-      { q: "Can you install after business hours?", a: "Yes. We regularly install after closing or before opening so your business has zero downtime. Call 470-502-9543 to schedule." },
+      { q: "Can you install after business hours?", a: "Yes. We regularly install after closing or before opening so your business has zero downtime. Call 678-558-4327 to schedule." },
       { q: "What areas do you serve?", a: "Atlanta, Buckhead, Midtown, Decatur, Sandy Springs, Duluth, Norcross, Alpharetta, Marietta, Gwinnett County, and all cities within 50 miles of Duluth, GA." },
     ],
   },
@@ -612,9 +612,9 @@ bun run build:client
 2. Open `http://localhost:5173/services/home-office-setup` and `http://localhost:5173/services/pos-system-setup`.
 3. Check mobile resolution (<640px):
    - Phone button is glowing orange `btn-ignite`.
-   - `Call (470) 502-9543` never breaks into two lines.
+   - `Call (678) 558-4327` never breaks into two lines.
    - Sticky bottom bar shows `Call now` (orange) and `Book online` (slate).
 4. Check desktop resolution (>640px):
    - "Book online" is glowing orange `btn-ignite`.
    - Clicking "Book online" opens the native Cal.com calendar modal with month view and dark teal brand theme.
-   - `Call (470) 502-9543` is clean slate `btn-chrome`.
+   - `Call (678) 558-4327` is clean slate `btn-chrome`.

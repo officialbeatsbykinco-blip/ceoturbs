@@ -4,7 +4,7 @@ Landing page: https://www.ceoturbo.com/car-battery
 Prices on page: jump start from $59, installed battery from $169, fleet from $149/vehicle (edit in src/content/pricing.ts).
 
 ## Setup
-- Campaign type: Search, goal Calls + Leads. Call ads and call asset ON with (470) 502-9543, call reporting ON.
+- Campaign type: Search, goal Calls + Leads. Call ads and call asset ON with (678) 558-4327, call reporting ON.
 - Location: Duluth/Atlanta, 40 mile radius, "Presence" only (people in the area).
 - Schedule: all hours (batteries die at night too) if you can answer; otherwise 6am-11pm.
 - Bidding: start Manual CPC or Maximize Clicks with a CPC cap, switch to Maximize Conversions after ~15 calls.
@@ -26,7 +26,7 @@ free, diy, how to, youtube, jobs, hiring, salary, course, class, tow, towing, lo
 - Batteries Installed From $169
 - Price Confirmed Before We Start
 - Fleet And Company Trucks
-- Call Or Text (470) 502-9543
+- Call Or Text (678) 558-4327
 - Duluth And Atlanta Area
 
 Descriptions (max 90 characters):

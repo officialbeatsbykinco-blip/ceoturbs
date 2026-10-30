@@ -4,7 +4,7 @@
 > **CONFIDENTIAL & HIGH PRIORITY — CEO TURBO (ceoturbo.com)**  
 > **Target Google Ads Account:** `AW-18468746701` / Account ID: `232-066-4335`  
 > **Target Business:** CEO Turbo (In-Home Computer, Desk Assembly & Office Tech Installations)  
-> **Direct Line:** `(470) 502-9543`  
+> **Direct Line:** `(678) 558-4327`  
 > **Booking Calendar:** `https://cal.com/stackmodechris/ceo-turbo-office-studio-setup`  
 > **Target Service Landing Pages:**
 > 1. `https://www.ceoturbo.com/services/home-office-setup`
@@ -30,7 +30,7 @@ Before spending even **$1.00** on Google Ads, the Google Ads Smart Bidding algor
 |---|---|---|---|---|---|---|
 | **Booked call** | Book appointment | Website (Google Tag) | **Primary** | **$150.00** | One | Fires when a visitor books a slot on Cal.com (via inline embed on all 7 service pages, booking modal, or `/booked` redirect). Enhanced conversions send hashed email & phone. Matches label `5K_sCJuH55odEM3ryuZE`. |
 | **Calls from ads** | Phone call leads | Google Hosted (Calls from ads) | **Primary** | **$100.00** | One | Fires when a mobile or desktop user clicks the Google Call Asset or Call-Only ad and speaks on the phone for **≥ 60 seconds**. |
-| **Calls to website number** | Phone call leads | Phone calls (Website forwarding number) | **Primary** | **$100.00** | One | Fires when a visitor clicks a Google Ad to any of the 7 service pages, sees the Google dynamic forwarding number replacing `(470) 502-9543`, and calls for **≥ 60 seconds**. |
+| **Calls to website number** | Phone call leads | Phone calls (Website forwarding number) | **Primary** | **$100.00** | One | Fires when a visitor clicks a Google Ad to any of the 7 service pages, sees the Google dynamic forwarding number replacing `(678) 558-4327`, and calls for **≥ 60 seconds**. |
 | **Phone call click** | Contact | Website (Google Tag) | **Secondary** | None | One | Fires whenever a mobile visitor taps any `tel:` button on the site. Kept **Secondary** so it provides observation data without double-counting actual connected phone calls. Matches label `eAzECKGH55odEM3ryuZE`. |
 | **Lead** | Submit lead form | Website (Google Tag) | **Primary** | **$25.00** | One | Fires on form quotes, office intakes, and free audit submissions. Matches label `6XuTCJ6H55odEM3ryuZE`. |
 
@@ -54,7 +54,7 @@ You are an Elite Google Ads Tracking Engineer and Autonomous Browser Execution A
 ACCOUNT CONTEXT:
 - Website: https://www.ceoturbo.com
 - Google Ads Account Tag: AW-18468746701
-- Phone Number: (470) 502-9543
+- Phone Number: (678) 558-4327
 - Target Services: Home office setup, office transformation, apartment office setup, school computer room setup, DJ studio setup, custom computer build setup, POS system setup.
 
 ============================================================
@@ -147,7 +147,7 @@ This action tracks visitors who click your ad, visit any of the 7 service pages 
      * Goal and action optimization: "Phone call leads" -> "Primary action".
      * Value: "Use the same value for each conversion" -> enter 100 -> Currency: USD.
      * Count: "One".
-     * Phone number: Enter 4705029543 (Displayed as (470) 502-9543).
+     * Phone number: Enter 6785584327 (Displayed as (678) 558-4327).
      * Call length: Enter 60 seconds.
      * Click-through conversion window: 30 days.
      * Click "Create and continue" -> click "Done".
@@ -193,20 +193,20 @@ Enhanced conversions improve attribution accuracy by securely hashing customer e
    - Click "Save".
 
 ============================================================
-STEP 7: VERIFY CALL ASSET LINKAGE TO (470) 502-9543
+STEP 7: VERIFY CALL ASSET LINKAGE TO (678) 558-4327
 ============================================================
 
 1. In the left navigation, click "Campaigns" -> "Assets" (or "Ads & assets" -> "Assets").
 2. Filter or select asset type: "Call".
 3. Verify that a Call asset exists with:
-   - Phone Number: United States (+1) (470) 502-9543
+   - Phone Number: United States (+1) (678) 558-4327
    - Status: "Approved" or "Eligible"
    - Advanced settings / Call reporting: "Turn ON call reporting" must be CHECKED.
    - Conversion action: Linked to "Calls from ads" (or Account-level phone call conversion).
 4. If no Call asset exists, click "+ Call":
    - Add to: Account or Campaign.
    - Country: United States (+1).
-   - Phone number: (470) 502-9543.
+   - Phone number: (678) 558-4327.
    - Check [x] "Call reporting: On".
    - Conversion action: "Calls from ads".
    - Click "Save".
@@ -224,7 +224,7 @@ Review all settings and output a concise structured verification summary:
    - Value ($) and Count (One/Every)
    - Tracking Source
 3. Enhanced Conversions status (ON / OFF).
-4. Call Asset status for (470) 502-9543 (Active / Reporting ON).
+4. Call Asset status for (678) 558-4327 (Active / Reporting ON).
 5. Confirmation statement that Google Ads is 100% prepared to track booked calls and real phone calls before ad traffic is enabled.
 
 === END MANUS BROWSER ONE-SHOT PROMPT ===

@@ -61,7 +61,7 @@ jobs, job, career, careers, hiring, salary, intern, internship, resume, course, 
 - **Bidding:** start with **Maximize clicks** with a **max CPC limit** (caps from the table). After about 15–30 conversions, switch to **Maximize conversions**, and later to target CPA.
 - **Conversion goals:** use only **Booked call + Lead** as Primary for this campaign. Untick Page views and Phone call click (Secondary) so the algorithm doesn't chase clicks.
 - **Ad schedule:** Mon–Sat, 7am–9pm. Business owners rarely book at 2am.
-- **Assets:** sitelinks (Pricing, Free check, Results, Book a call), callouts ("No contracts", "You own everything", "Talk to the founder"), call asset (470) 502-9543, and a price asset (Turbo Start $697 · Turbo Launch $1,697 · Turbo Care $197/mo).
+- **Assets:** sitelinks (Pricing, Free check, Results, Book a call), callouts ("No contracts", "You own everything", "Talk to the founder"), call asset (678) 558-4327, and a price asset (Turbo Start $697 · Turbo Launch $1,697 · Turbo Care $197/mo).
 - **Customer Match:** upload your past-customer email list as an audience in **Observation** mode.
 
 ### Microsoft Ads (account 189366985)

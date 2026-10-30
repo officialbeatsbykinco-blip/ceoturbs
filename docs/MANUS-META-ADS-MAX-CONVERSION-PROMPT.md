@@ -2,7 +2,7 @@
 ## Master Autonomous Prompt for Manus Browser Agent (Facebook & Instagram)
 
 > **CONFIDENTIAL & PROPRIETARY — CEO TURBO (ceoturbo.com)**  
-> **Campaign Goal:** Convert Meta (Facebook & Instagram) scrolling attention into immediate inbound phone calls to `(470) 502-9543` and online bookings at `https://www.ceoturbo.com/services/home-office-setup`.  
+> **Campaign Goal:** Convert Meta (Facebook & Instagram) scrolling attention into immediate inbound phone calls to `(678) 558-4327` and online bookings at `https://www.ceoturbo.com/services/home-office-setup`.  
 > **Format:** 1080 × 1350 (4:5 Aspect Ratio — Maximum Mobile Feed Screen Real Estate).  
 > **Testing Strategy:** 2 Completely Distinct Creative Styles (Style 1: Visual Before & After Transformation vs. Style 2: Native Local Price Menu & Checklist).
 
@@ -38,7 +38,7 @@ To convert on Meta in Atlanta and Gwinnett, your ad must pass **The 3-Second Thu
 
 ROLE & OBJECTIVE:
 You are an Elite Meta Ads Creative Director and Autonomous Performance Marketing Agent. Your job is to create two 1080x1350 (4:5 ratio) ad creatives and deploy a high-converting Meta Ads campaign (Facebook & Instagram) for "CEO Turbo" (https://www.ceoturbo.com).
-Business Phone: (470) 502-9543
+Business Phone: (678) 558-4327
 Home Base: Duluth, Georgia (Serving Duluth, Atlanta, Buckhead, Alpharetta, Marietta, Athens & 50-mile perimeter)
 Primary Services: Home Office & Computer Setup ($99-$169), POS System Setup ($149-$399), Desk Assembly, Monitor Mounting, Wire Cleanup.
 
@@ -73,7 +73,7 @@ Design Specifications:
   * Right Side (Giant Call-To-Action Button):
     - Button: High-visibility Orange gradient (#FF6B00 to #EA580C) with rounded corners.
     - Button Text Line 1: "📞 CALL OR TEXT CHRIS" (Bold 26px, White).
-    - Button Text Line 2: "(470) 502-9543" (Extra Bold 32px, White).
+    - Button Text Line 2: "(678) 558-4327" (Extra Bold 32px, White).
     - Subtext underneath: "Book Online: CEOTurbo.com" (20px, #94A3B8).
 
 ------------------------------------------------------------
@@ -108,7 +108,7 @@ Design Specifications:
   * GIANT CALL BOX:
     - Glowing background box with #FF5500 accent.
     - Headline: "CALL OR TEXT NOW FOR AVAILABILITY:" (22px, #FFD0B0).
-    - Phone Number: "(470) 502-9543" (Giant Bold 44px, White).
+    - Phone Number: "(678) 558-4327" (Giant Bold 44px, White).
     - Website: "Visit: www.CEOTurbo.com/services/home-office-setup" (22px, #00CFFF).
 
 ============================================================
@@ -162,11 +162,11 @@ CEO Turbo comes to your home or office across greater Atlanta, Gwinnett, and Ath
 Serving Duluth, Atlanta, Buckhead, Alpharetta, Marietta, Athens, and the entire 50-mile perimeter.
 
 👇 Tap below to book online or call Chris directly today!
-📞 (470) 502-9543
+📞 (678) 558-4327
 🌐 https://www.ceoturbo.com/services/home-office-setup
 
 Headline: We Build Your Desk & Setup PCs · From $99
-Description: Flat Rates · Atlanta, Duluth & Athens · Call (470) 502-9543
+Description: Flat Rates · Atlanta, Duluth & Athens · Call (678) 558-4327
 CTA Button: Call Now (or Book Now)
 Destination URL: https://www.ceoturbo.com/services/home-office-setup
 
@@ -194,11 +194,11 @@ Great for:
 Based in Duluth, GA. Serving Atlanta, North Fulton, Cobb, Gwinnett, and Athens.
 
 Tap below to lock in your setup day:
-📞 Call or Text: (470) 502-9543
+📞 Call or Text: (678) 558-4327
 📅 Book Online: https://www.ceoturbo.com/services/home-office-setup
 
 Headline: Atlanta In-Home Computer & Desk Setup ($99 Flat)
-Description: Local Techs · Duluth Base · Call (470) 502-9543
+Description: Local Techs · Duluth Base · Call (678) 558-4327
 CTA Button: Book Now (or Call Now)
 Destination URL: https://www.ceoturbo.com/services/home-office-setup
 
@@ -208,7 +208,7 @@ PHASE 3: VERIFICATION & PUBLISH
 
 1. Check that both 1080x1350 images are properly cropped with zero text cut-off on mobile previews.
 2. Confirm destination URL is 200 OK: https://www.ceoturbo.com/services/home-office-setup
-3. Confirm Phone Number is correct: (470) 502-9543 (+14705029543).
+3. Confirm Phone Number is correct: (678) 558-4327 (+16785584327).
 4. Review daily budget ($5 - $10/day).
 5. Present confirmation to the user and publish!
 

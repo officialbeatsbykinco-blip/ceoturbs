@@ -12,7 +12,7 @@ Everything in the code is done. This is the account-side setup, in order. Each s
 | **Developer lead** | `/app-marketing` intake form | `Lead` (value by budget, `lead_source=reddit-dev-intake`): Pixel + CAPI | `generate_lead` | `submit_lead_form` | `Lead` (and Reddit `Lead`, `BookedCall` later) |
 | **Card purchase** | Shopify checkout | `Purchase` from the Facebook & Instagram app (Pixel + CAPI) | `purchase` from the Shopify custom pixel | `purchase` from the Shopify custom pixel | TikTok app on Shopify |
 | **Shirt purchase** | Shopify checkout (company t-shirts `CT-TEE-*` and artist merch `CT-MERCH-*`) | `Purchase` from the Facebook & Instagram app; `CustomizeProduct` / `AddToCart` / `InitiateCheckout` from the designer (Pixel + CAPI) | `purchase` from the Shopify custom pixel | `purchase`; `customize_product` from the designer | `CustomizeProduct` / Shopify app |
-| **Phone call click** | every `tel:` link ((470) 502-9543) | `Contact`: Pixel + CAPI (`/api/track`), deduped | `click_to_call` via the Google tag → Ads conversion *Phone call click* | `contact` | — |
+| **Phone call click** | every `tel:` link ((678) 558-4327) | `Contact`: Pixel + CAPI (`/api/track`), deduped | `click_to_call` via the Google tag → Ads conversion *Phone call click* | `contact` | — |
 | Funnel steps | site | ViewContent, AddToCart, InitiateCheckout, BookingOpen, QuizStart | view_item, add_to_cart, begin_checkout, booking_open, quiz_start, quiz_step | view_item, add_to_cart, begin_checkout | ViewContent, AddToCart, InitiateCheckout |
 
 **Lead values** (set in `src/content/quiz.ts`): the quiz Lead is worth $10 / $50 / $150 / $300 by budget answer ($10 for "Not sure yet"), and a booked call from the quiz is worth 3× that. Ad platforms use these to find higher-budget leads. The free check Lead is worth $10. Change them once you know your close rates.
@@ -70,7 +70,7 @@ The Google Ads tag loads with GA4 from `src/lib/ga.ts` on every page, so remarke
    | Purchase | Purchase | Use different values | Every | **Primary** |
 2. On each one → **Tag setup → Use Google tag → Install the tag yourself**. Copy the label: the part after the slash in `send_to: 'AW-18468746701/XXXXXXXX'`. **Send me the 4 labels.** I paste them into `GOOGLE_ADS_LABELS` in `src/lib/ga.ts` and into `ADS_PURCHASE_LABEL` in `docs/shopify-custom-pixel.js`.
 3. **Enhanced conversions:** Goals → Settings → **Enhanced conversions for web** → on → method **Google tag**. Accept the customer data terms.
-4. **Real phone calls:** Assets → **Call** asset with (470) 502-9543, and Conversions → **Phone calls → Calls from ads** (calls ≥ 60 s, Primary).
+4. **Real phone calls:** Assets → **Call** asset with (678) 558-4327, and Conversions → **Phone calls → Calls from ads** (calls ≥ 60 s, Primary).
 5. Check it: Google Ads → Goals → Conversions shows each action as "Recording conversions" within about 3 hours of a test lead.
 
 GTM (GTM-KRPRZ67Z) stays on the site for anything you add later. Its old Google Ads container file (`docs/gtm-container.json`) is no longer needed.

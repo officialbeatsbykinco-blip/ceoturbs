@@ -1,6 +1,6 @@
 # CEO Turbo: high-converting captions (Instagram, X, LinkedIn)
 
-Offer: Google, Microsoft and Meta ads + Google review cards for local service businesses. One action: book the free 30-min call or call 470-502-9543. Use only real numbers you can show (ad dashboards, review counts).
+Offer: Google, Microsoft and Meta ads + Google review cards for local service businesses. One action: book the free 30-min call or call 678-558-4327. Use only real numbers you can show (ad dashboards, review counts).
 
 Formula used: hook (pain in the owner's words) > one proof line > one action. Comment keyword triggers a DM.
 

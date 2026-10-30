@@ -2,7 +2,7 @@
 ## Ready-to-Run Autonomous Prompt for Manus Browser Agent
 
 > **CAMPAIGN BUDGET:** **$5.00/day** ($1.50 Max CPC Bid Limit)  
-> **PRIMARY PHONE:** **(470) 502-9543**  
+> **PRIMARY PHONE:** **(678) 558-4327**  
 > **LANDING PAGE:** [https://www.ceoturbo.com/services/home-office-setup](https://www.ceoturbo.com/services/home-office-setup)  
 > **ONLINE BOOKING:** [https://cal.com/stackmodechris/ceo-turbo-office-studio-setup](https://cal.com/stackmodechris/ceo-turbo-office-studio-setup)  
 > **LOCATION:** Metro Atlanta (Duluth HQ + 50-mile radius + Athens, GA) — **Presence Only**
@@ -24,7 +24,7 @@ ROLE & OBJECTIVE:
 You are an Elite Google Ads PPC Specialist and Autonomous Browser Execution Agent. Your task is to build, configure, and publish a high-converting, call-first Google Search Campaign for "CEO Turbo" (https://www.ceoturbo.com).
 
 PRIMARY GOAL:
-Drive maximum direct phone calls to (470) 502-9543 and instant online bookings from local residents, seniors, remote workers, and businesses needing in-home computer setup, desk assembly, monitor mounting, and cable management in Metro Atlanta, Duluth, Alpharetta, Marietta, and surrounding Georgia areas.
+Drive maximum direct phone calls to (678) 558-4327 and instant online bookings from local residents, seniors, remote workers, and businesses needing in-home computer setup, desk assembly, monitor mounting, and cable management in Metro Atlanta, Duluth, Alpharetta, Marietta, and surrounding Georgia areas.
 
 CAMPAIGN PARAMETERS:
 - Campaign Name: CEO Turbo | In-Home Office & PC Setup | Calls & Leads
@@ -36,7 +36,7 @@ CAMPAIGN PARAMETERS:
 - Locations: Metro Atlanta (Duluth HQ base + 50-mile radius + Athens, GA)
 - Location Target Setting: "Presence: People in or regularly in your targeted locations" (CRITICAL: Do NOT use "Presence or interest")
 - Language: English
-- Phone Number: (470) 502-9543
+- Phone Number: (678) 558-4327
 - Final Landing Page URL: https://www.ceoturbo.com/services/home-office-setup
 - Booking URL: https://cal.com/stackmodechris/ceo-turbo-office-studio-setup
 
@@ -48,7 +48,7 @@ STEP 1: CAMPAIGN CREATION & BIDDING SETTINGS
 2. Under campaign goal, select "Create a campaign without a goal's guidance" (or select "Leads" -> Continue).
 3. Select Campaign type: "Search".
 4. Select results to get:
-   - Check [x] "Phone calls" -> Country: United States (+1) -> Enter: 4705029543
+   - Check [x] "Phone calls" -> Country: United States (+1) -> Enter: 6785584327
    - Check [x] "Website visits" -> Enter: https://www.ceoturbo.com/services/home-office-setup
 5. Campaign Name:
    CEO Turbo | In-Home Office & PC Setup | Calls & Leads
@@ -186,7 +186,7 @@ Display Path: /Home-Office /Setup
 10. From $99 Flat Labor Rate (24 chars)
 11. Flat Price Confirmed 1st (24 chars)
 12. Finished in 2 to 4 Hours (24 chars)
-13. Call (470) 502-9543 (19 chars)
+13. Call (678) 558-4327 (19 chars)
    -> ACTION: Click Pin Icon 📌 -> Select "Show only in position 2"
    * POLICY FALLBACK: If Google flags "Phone number in headline text", replace Headline 13 with:
      "Call Today For Fast Setup" (25 chars) pinned to Position 2.
@@ -195,7 +195,7 @@ Display Path: /Home-Office /Setup
 
 --- DESCRIPTIONS (All ≤ 90 characters) ---
 1. We assemble your desk, mount monitors, connect Wi-Fi & hide every wire. Flat from $99. (88 chars)
-2. Serving Atlanta, Duluth & 50-mile radius. Call (470) 502-9543 to get scheduled today! (88 chars)
+2. Serving Atlanta, Duluth & 50-mile radius. Call (678) 558-4327 to get scheduled today! (88 chars)
 3. Don't waste your weekend in boxes. We setup hardware, monitors & cables fast in 2-4 hrs. (89 chars)
 4. Transparent flat rates confirmed up front. Seniors, remote workers & new movers love us. (89 chars)
 
@@ -204,13 +204,13 @@ STEP 4: DEDICATED CALL-ONLY AD (FOR MOBILE PHONES)
 ============================================================
 
 Create a Call Ad inside the ad group:
-- Phone Number: (470) 502-9543
+- Phone Number: (678) 558-4327
 - Country: United States (+1)
 - Business Name: CEO Turbo
 - Headline 1: Home Office Setup Atlanta (25 chars)
 - Headline 2: From $99 Flat Labor Rate (24 chars)
 - Description 1: We assemble desks, mount dual monitors, connect PCs & hide wires cleanly. (80 chars)
-- Description 2: Fast in-home setup across Atlanta & Duluth. Call (470) 502-9543 now for a flat quote! (89 chars)
+- Description 2: Fast in-home setup across Atlanta & Duluth. Call (678) 558-4327 now for a flat quote! (89 chars)
 - Final URL: https://www.ceoturbo.com/services/home-office-setup
 - Verification URL: https://www.ceoturbo.com
 - Call Reporting: ON
@@ -220,7 +220,7 @@ STEP 5: ASSETS (EXTENSIONS)
 ============================================================
 
 1. CALL ASSET (CRITICAL):
-   - Phone Number: (470) 502-9543
+   - Phone Number: (678) 558-4327
    - Country: United States (+1)
    - Schedule: Monday to Saturday 8:00 AM – 8:00 PM, Sunday 10:00 AM – 6:00 PM Eastern
    - Call Reporting: ON
@@ -258,7 +258,7 @@ STEP 5: ASSETS (EXTENSIONS)
      * Final URL: https://www.ceoturbo.com/services/pos-system-setup
 
 3. CALLOUT ASSETS (Add all 8):
-   - "Call (470) 502-9543"
+   - "Call (678) 558-4327"
    - "From $99 Flat Labor"
    - "Zero Hidden Fees"
    - "Finished In 2-4 Hours"
@@ -340,7 +340,7 @@ STEP 8: FINAL AUDIT & PUBLISH
 1. Verify:
    - Daily budget is set to $5.00/day
    - Location targeting is set to "Presence"
-   - Call extension (470) 502-9543 is attached
+   - Call extension (678) 558-4327 is attached
    - Pinned Headline 1 ("Home Office Setup Atlanta") and Pinned Headline 2 are active
 2. Click "Publish Campaign".
 

@@ -34,7 +34,7 @@
 
 **Implementation:**
 1. **Hero Section:**
-   - Large phone button: "Call 470-502-9543"
+   - Large phone button: "Call 678-558-4327"
    - Secondary text button: "Text for Quote"
    - Booking button smaller or moved down
 
@@ -66,7 +66,7 @@
 **Implementation:**
 1. **Hero Section:**
    - Large booking button: "Book Free Consultation"
-   - Secondary phone button: "Or call 470-502-9543"
+   - Secondary phone button: "Or call 678-558-4327"
    - Text option smaller
 
 2. **Pricing Section:**

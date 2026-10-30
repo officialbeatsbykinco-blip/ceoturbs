@@ -35,7 +35,7 @@ Sources: https://www.attnagency.com/blog/static-image-ad-design-principles, http
 No "guaranteed", "#1", "rank higher", "official" or "by Google"; no incentive for reviews; no invented review counts or earnings. The card has no QR code, so none appears in card ads; only the stand and combo ads show one, because the stand has NFC and a QR code.
 
 ## Competitor angles (docs/competitor-ads-notes.md)
-Merchynt leads with a free NFC card and no monthly fee; ZappyCards leads with competitor review-count comparison and a guarantee; Tap Grow sells done-for-you setup at $50. Our edge to keep testing: a human at (470) 502-9543, free setup guide, and the website + ads upsell.
+Merchynt leads with a free NFC card and no monthly fee; ZappyCards leads with competitor review-count comparison and a guarantee; Tap Grow sells done-for-you setup at $50. Our edge to keep testing: a human at (678) 558-4327, free setup guide, and the website + ads upsell.
 
 ## Quality notes
 - Product photos are 2048px; the stand is redrawn as vector art (the supplied photo was 620px) with a real QR code to the shop page.

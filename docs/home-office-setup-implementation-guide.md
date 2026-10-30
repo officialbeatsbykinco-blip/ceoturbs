@@ -4,7 +4,7 @@
 **Service Name:** Home Office & Computer Setup
 **Slug:** home-office-setup
 **Target Audience:** Atlanta metro area residents, businesses, and schools within 50-mile radius
-**Phone:** 470-502-9543
+**Phone:** 678-558-4327
 
 ---
 
@@ -288,7 +288,7 @@
 ### New Booking Link Requirements
 
 **Booking URL:** Create separate Cal.com event type for home office setup
-**Phone:** 470-502-9543
+**Phone:** 678-558-4327
 **Event Type Name:** "Home Office Setup Consultation"
 
 ### Optimized Booking Questions (Max Conversions)
@@ -362,7 +362,7 @@
 
 **Events to Track for Home Office Setup:**
 - `view_item` - When user views home office setup service page
-- `contact` - When user clicks phone number (470-502-9543)
+- `contact` - When user clicks phone number (678-558-4327)
 - `schedule` - When user books consultation via Cal.com
 - `lead` - When user submits contact form
 
@@ -423,7 +423,7 @@
 1. ✅ Service page added to services.ts
 2. ✅ Pricing added to pricing.ts
 3. ⏳ Create Cal.com booking event with optimized questions
-4. ⏳ Add phone number (470-502-9543) to service page
+4. ⏳ Add phone number (678-558-4327) to service page
 5. ⏳ Test tracking events on new service page
 6. ⏳ Create Google Ads campaign with compliant keywords
 7. ⏳ Create Microsoft Ads campaign

@@ -155,7 +155,7 @@ Free 15-minute consultation to discuss your home office or business setup needs.
 
 **Success Message:**
 ```
-Your consultation is booked! We'll call you at the scheduled time at 470-502-9543. If you need to reschedule, use the link in your confirmation email.
+Your consultation is booked! We'll call you at the scheduled time at 678-558-4327. If you need to reschedule, use the link in your confirmation email.
 ```
 
 ---
@@ -164,7 +164,7 @@ Your consultation is booked! We'll call you at the scheduled time at 470-502-954
 
 **In the event description or confirmation page, add:**
 ```
-📞 Direct Line: 470-502-9543
+📞 Direct Line: 678-558-4327
 Need immediate help? Call us directly.
 ```
 
@@ -313,7 +313,7 @@ When creating Google/Microsoft/Meta ads:
 Home Office Setup Atlanta - From $89
 Professional desk assembly, computer setup, 
 and network configuration. Book free consultation.
-470-502-9543 | ceoturbo.com/home-office-setup
+678-558-4327 | ceoturbo.com/home-office-setup
 ```
 
 ---

@@ -32,7 +32,7 @@ export const SERVICES: Service[] = [
     icon: "layout",
     metaTitle: "Home Office & Computer Setup — Atlanta Metro Area",
     metaDescription:
-      "Home office, computer, desk, Wi-Fi and device setup in Atlanta, Gwinnett and Athens. From $99. Call 470-502-9543.",
+      "Home office, computer, desk, Wi-Fi and device setup in Atlanta, Gwinnett and Athens. From $99. Call 678-558-4327.",
     h1: "Home office and computer setup — we build your workspace so you can get to work",
     answer:
       "CEO Turbo provides complete home office and computer setup services for Atlanta metro area residents and businesses. We assemble desks and chairs, set up monitors and computers, configure internet and networks, install software, connect tablets and devices, and organize your entire workspace. Built for new home offices, business setups, school computer labs, and anyone who needs a professional tech workspace without the hassle.",
@@ -74,7 +74,7 @@ export const SERVICES: Service[] = [
     icon: "layout",
     metaTitle: "Office Build-Out & Setup Labor — Atlanta Metro Area",
     metaDescription:
-      "Office build-out, network and POS system install from $1,599. Framing, cameras, computers, cleanup. Atlanta metro. Call 470-502-9543.",
+      "Office build-out, network and POS system install from $1,599. Framing, cameras, computers, cleanup. Atlanta metro. Call 678-558-4327.",
     h1: "Office transformation — we build your entire workspace from frame to finish",
     answer:
       "We turn empty offices into ready-to-work spaces. We do the work: build walls, install cameras, install your network and POS system, set up internet, build computers, and clean up. You pay once for our labor. No monthly fees. You buy the materials, or pay us up front and we buy them for you. We serve Atlanta and nearby cities.",
@@ -102,7 +102,7 @@ export const SERVICES: Service[] = [
     notFor: "Ongoing IT maintenance contracts — we specialize in one-time transformation projects. For monthly managed services, we can refer trusted partners.",
     audiences: ["local"],
     faqs: [
-      { q: "What areas do you serve?", a: "We serve Atlanta and cities within 2 hours of Duluth. Call 470-502-9543 and we'll tell you the same day if we can help." },
+      { q: "What areas do you serve?", a: "We serve Atlanta and cities within 2 hours of Duluth. Call 678-558-4327 and we'll tell you the same day if we can help." },
       { q: "How much does office transformation cost?", a: "Labor only, paid once: Basic from $1,599 (1-2 workstations), Standard from $2,299 (3-5 workstations), Complete from $3,199 (6+ workstations). You get a written price before we start. No monthly fees." },
       { q: "What's included in the one-time price?", a: "All our labor: walls, cameras, internet, computers, wires, and cleanup. Materials and equipment cost extra." },
       { q: "Do you provide the equipment?", a: "You buy the materials. Or pay us up front and we buy them at cost and show you the receipts." },
@@ -117,7 +117,7 @@ export const SERVICES: Service[] = [
     short: "Apartment office setup",
     icon: "layout",
     metaTitle: "Apartment & Home Office Setup — Atlanta Metro | From $99",
-    metaDescription: "We build your desk, mount monitors, connect everything and hide the cables. Apartments and homes in the Atlanta metro. From $99. Call 470-502-9543.",
+    metaDescription: "We build your desk, mount monitors, connect everything and hide the cables. Apartments and homes in the Atlanta metro. From $99. Call 678-558-4327.",
     h1: "Apartment and home office setup — desk built, monitors up, cables hidden",
     answer: "CEO Turbo comes to your apartment or home, assembles your desk and chair, mounts and aligns monitors, connects your computer, printer and Wi-Fi, and routes every cable out of sight. You supply the furniture and equipment. We do the building and wiring, usually in 2 to 4 hours, at a flat price confirmed before we start.",
     outcome: "A clean, working desk setup finished in one visit, with nothing left in boxes.",
@@ -134,7 +134,7 @@ export const SERVICES: Service[] = [
     faqs: [
       { q: "Do you bring the desk and monitors?", a: "No. You provide the furniture and equipment. We assemble and install it. If you want us to order items, we need the funds up front and we send receipts." },
       { q: "How much does it cost?", a: "Basic computer setup is $99, standard with desk assembly is $129, and the complete setup is $169. The exact price is confirmed before we begin." },
-      { q: "Will you come to my apartment?", a: "Yes, anywhere in the Atlanta metro area. Call 470-502-9543 to confirm your address." },
+      { q: "Will you come to my apartment?", a: "Yes, anywhere in the Atlanta metro area. Call 678-558-4327 to confirm your address." },
       { q: "How long does it take?", a: "Most apartment and home offices take 2 to 4 hours." },
     ],
   },
@@ -144,7 +144,7 @@ export const SERVICES: Service[] = [
     short: "Computer room setup",
     icon: "layout",
     metaTitle: "School & Computer Room Setup — Atlanta Metro | From $329",
-    metaDescription: "Computer labs, classrooms and training rooms: furniture assembly, workstation setup, networking and cable management. From $329. Call 470-502-9543.",
+    metaDescription: "Computer labs, classrooms and training rooms: furniture assembly, workstation setup, networking and cable management. From $329. Call 678-558-4327.",
     h1: "School and computer room setup — every station built, connected and organized",
     answer: "CEO Turbo sets up computer rooms for schools, churches, nonprofits, tutoring centers and offices. We assemble tables and chairs, place and connect each workstation, configure the network and shared printers, and organize cables so the room is easy to run and easy to clean. You supply the equipment; we do the installation labor at a flat quoted price.",
     outcome: "A computer room that is ready for the first class, with every station working.",
@@ -161,7 +161,7 @@ export const SERVICES: Service[] = [
     faqs: [
       { q: "How many stations can you do?", a: "Our lab price covers up to 10 stations. Larger rooms are quoted by the station count." },
       { q: "Do you supply the computers?", a: "No, you provide them. If you fund an order up front we can purchase what is needed and send receipts." },
-      { q: "Can you work after hours?", a: "Yes. Call 470-502-9543 and we will schedule around your hours." },
+      { q: "Can you work after hours?", a: "Yes. Call 678-558-4327 and we will schedule around your hours." },
     ],
   },
   {
@@ -169,8 +169,8 @@ export const SERVICES: Service[] = [
     name: "DJ, studio & monitor setup",
     short: "DJ & studio setup",
     icon: "layout",
-    metaTitle: "DJ & Home Studio Setup — Atlanta Metro | Call 470-502-9543",
-    metaDescription: "We set up DJ rigs, producer desks and home studios: gear placement, monitors, cabling and software. Atlanta metro. Call 470-502-9543.",
+    metaTitle: "DJ & Home Studio Setup — Atlanta Metro | Call 678-558-4327",
+    metaDescription: "We set up DJ rigs, producer desks and home studios: gear placement, monitors, cabling and software. Atlanta metro. Call 678-558-4327.",
     h1: "DJ and home studio setup — gear placed, wired clean and ready to play",
     answer: "CEO Turbo builds DJ booths, producer desks and home studio rooms. We assemble tables and stands, position studio monitors, connect controllers, interfaces and speakers, route and label every cable, and install your software so the rig works the first time you sit down. You supply the gear; we do the setup labor at a flat quoted price.",
     outcome: "A rig that is wired cleanly, sounds right in the room and is ready to perform or record.",
@@ -187,7 +187,7 @@ export const SERVICES: Service[] = [
     faqs: [
       { q: "Do you sell DJ gear?", a: "No. You supply the gear, or fund an order up front and we purchase it with receipts." },
       { q: "How much does it cost?", a: "Pricing starts at $149 for a desk and gear setup and is confirmed in writing before we begin." },
-      { q: "Do you travel to venues?", a: "Yes, within the Atlanta metro area. Call 470-502-9543 to confirm." },
+      { q: "Do you travel to venues?", a: "Yes, within the Atlanta metro area. Call 678-558-4327 to confirm." },
     ],
   },
   {
@@ -195,8 +195,8 @@ export const SERVICES: Service[] = [
     name: "Custom computer build & setup",
     short: "Computer build",
     icon: "layout",
-    metaTitle: "Custom Computer Build & Setup — Atlanta Metro | Call 470-502-9543",
-    metaDescription: "We assemble your PC from the parts you choose, install Windows and drivers, and get it ready to use. Labor only, Atlanta metro. Call 470-502-9543.",
+    metaTitle: "Custom Computer Build & Setup — Atlanta Metro | Call 678-558-4327",
+    metaDescription: "We assemble your PC from the parts you choose, install Windows and drivers, and get it ready to use. Labor only, Atlanta metro. Call 678-558-4327.",
     h1: "Custom computer build — we assemble it, install it and hand it over ready to use",
     answer: "CEO Turbo assembles custom desktop computers for homes, offices, studios and gaming setups in the Atlanta metro area. You choose the parts, or fund an order up front and we purchase them with receipts. We assemble the machine, route the cables, install the operating system and drivers, test it under load, and set up your monitors and peripherals. You pay a flat labor price confirmed in writing before we begin.",
     outcome: "A tested, quiet, clean-built computer that is ready to use the day we hand it over.",
@@ -224,7 +224,7 @@ export const SERVICES: Service[] = [
     icon: "layout",
     metaTitle: "POS System Installation — Atlanta Metro | Square, Toast, Clover",
     metaDescription:
-      "We install Square, Toast, Clover, Stripe, DoorDash & UberEats POS systems, terminals, kitchen printers and cash drawers. From $149. Call 470-502-9543.",
+      "We install Square, Toast, Clover, Stripe, DoorDash & UberEats POS systems, terminals, kitchen printers and cash drawers. From $149. Call 678-558-4327.",
     h1: "POS system installation — terminals wired, printers connected, orders flowing",
     answer:
       "CEO Turbo installs and configures complete Point of Sale (POS) systems for restaurants, food trucks, retail stores, and salons across the Atlanta metro area. We mount card readers, wire cash drawers and receipt printers, configure network switches, integrate DoorDash and UberEats delivery tablets, and test credit card processing on Square, Toast, Clover, and Stripe. You supply the hardware; we do the installation and cabling at a transparent flat price.",
@@ -260,7 +260,7 @@ export const SERVICES: Service[] = [
       { q: "What POS systems do you support?", a: "We install and configure all major systems: Square, Toast, Clover, Stripe Terminal, Shopify POS, Lightspeed, TouchBistro, Revel, as well as delivery tablets for DoorDash, UberEats, and Grubhub." },
       { q: "How much does POS system installation cost?", a: "Flat labor pricing: Basic (1 terminal, printer, reader) is $149; Standard (2-3 terminals, delivery tablets, kitchen printer, cash drawer) is $249; Complete multi-station restaurant/retail setup is $399. Confirmed before we start." },
       { q: "Do you provide the POS hardware?", a: "No. You supply the hardware ordered from your processor (Square, Toast, etc.). If you need us to procure mounts, cables, or switches up front, we provide itemized receipts with zero markup." },
-      { q: "Can you install after business hours?", a: "Yes. We regularly install after closing or before opening so your business has zero downtime. Call 470-502-9543 to schedule." },
+      { q: "Can you install after business hours?", a: "Yes. We regularly install after closing or before opening so your business has zero downtime. Call 678-558-4327 to schedule." },
       { q: "What areas do you serve?", a: "Atlanta, Buckhead, Midtown, Decatur, Sandy Springs, Duluth, Norcross, Alpharetta, Marietta, Gwinnett County, and all cities within 50 miles of Duluth, GA." },
     ],
   },

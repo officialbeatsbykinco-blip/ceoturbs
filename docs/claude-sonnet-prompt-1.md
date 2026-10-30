@@ -23,7 +23,7 @@ CEO Turbo provides office transformation and home office setup services in the A
 
 **Target Cities:** Atlanta metro + up to 2 hours from Duluth (Athens, Gainesville, Newnan, Covington, etc.)
 
-**Phone:** 470-502-9543
+**Phone:** 678-558-4327
 
 ---
 
@@ -308,6 +308,6 @@ Execute tasks in this exact order:
 - Budget: $5/day Google Ads (low budget = high efficiency needed)
 - Pricing: Labor-only, materials not included
 - Warranty: 30-day installation warranty
-- Phone: 470-502-9543
+- Phone: 678-558-4327
 
 Begin implementation now.

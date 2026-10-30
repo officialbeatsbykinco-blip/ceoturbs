@@ -2,17 +2,17 @@
 ## Master Autonomous Prompt for Manus Browser Agent
 
 > **CONFIDENTIAL & PROPRIETARY — CEO TURBO (ceoturbo.com)**  
-> **Campaign Goal:** Maximum Phone Calls to `(470) 502-9543` & Cal.com Bookings on a strict **$5.00/day** ($150/month) budget across Atlanta, Gwinnett (Duluth base), North Fulton, Cobb, South/West Metro, and Athens, GA.
+> **Campaign Goal:** Maximum Phone Calls to `(678) 558-4327` & Cal.com Bookings on a strict **$5.00/day** ($150/month) budget across Atlanta, Gwinnett (Duluth base), North Fulton, Cobb, South/West Metro, and Athens, GA.
 
 ---
 
 ### CRITICAL GOOGLE ADS POLICY RULE: PHONE NUMBERS
-> **POLICY ALERT:** Google Ads Editorial Policy explicitly prohibits raw phone number digits (e.g. `470-502-9543`) inside the text of headlines and descriptions. Putting phone digits directly in headline text will cause Google's automated review bot to immediately **DISAPPROVE** the ad for *"Phone number in ad text"*.  
+> **POLICY ALERT:** Google Ads Editorial Policy explicitly prohibits raw phone number digits (e.g. `678-558-4327`) inside the text of headlines and descriptions. Putting phone digits directly in headline text will cause Google's automated review bot to immediately **DISAPPROVE** the ad for *"Phone number in ad text"*.  
 > 
 > **THE WINNING STRATEGY:**  
 > 1. In **Headline 2 (Pinned to Position 2)**, we use: **`Call Today For Fast Setup`** *(25 chars)*.  
-> 2. We enable the official **Google Ads Call Asset** with phone number **`(470) 502-9543`**.  
-> On mobile and desktop search results, Google displays the big, clickable blue **Call (470) 502-9543** button directly beside the headline. This gives users the 1-tap dialer while keeping the ad 100% policy-compliant and active.
+> 2. We enable the official **Google Ads Call Asset** with phone number **`(678) 558-4327`**.  
+> On mobile and desktop search results, Google displays the big, clickable blue **Call (678) 558-4327** button directly beside the headline. This gives users the 1-tap dialer while keeping the ad 100% policy-compliant and active.
 
 ---
 
@@ -36,7 +36,7 @@ Focus 100% of this $5/day campaign on the TWO HIGHEST BOOKED-RATE SERVICES:
 2. POS System Setup & Restaurant Terminals (High urgency, Toast/Square/Clover, high B2B booking rate, flat $149–$399).
 
 PRIMARY CONVERSIONS:
-1. PHONE CALLS to (470) 502-9543 (Older people, local business owners, and urgent buyers love click-to-call).
+1. PHONE CALLS to (678) 558-4327 (Older people, local business owners, and urgent buyers love click-to-call).
 2. ONLINE BOOKINGS via Cal.com (https://cal.com/stackmodechris/ceo-turbo-office-studio-setup).
 3. ON-PAGE QUOTE REQUESTS.
 
@@ -50,7 +50,7 @@ CRITICAL CAMPAIGN RULES:
 3. UNCHECK "Include Google Display Network" (Zero display bleed).
 4. LOCATION SETTINGS: Target by "Presence: People in or regularly in your targeted locations". DO NOT use "Presence or interest".
 5. BIDDING STRATEGY: "Maximize Clicks" with a "Maximum CPC bid limit" of $1.50 (Guarantees the $5/day budget gets 3 to 6 targeted clicks rather than 1 accidental click).
-6. CALL ASSETS: (470) 502-9543 MUST be active and attached to all ads with Call Reporting enabled.
+6. CALL ASSETS: (678) 558-4327 MUST be active and attached to all ads with Call Reporting enabled.
 
 ============================================================
 STEP-BY-STEP BROWSER ACTIONS FOR MANUS
@@ -64,7 +64,7 @@ STEP 1: NAVIGATE TO GOOGLE ADS
 4. Select Campaign Type: "Search".
 5. Under "Select the results you want to get from this campaign", check:
    - [x] Website visits: https://www.ceoturbo.com
-   - [x] Phone calls: United States (+1) | 4705029543
+   - [x] Phone calls: United States (+1) | 6785584327
 6. Campaign Name:
    "CEO Turbo | Search | Max Conversion Engine | GA"
 7. Click "Continue".
@@ -248,7 +248,7 @@ HEADLINES (Add all 15 exactly as written — all ≤ 30 chars):
 
 DESCRIPTIONS (Add all 4):
 1. We assemble your desk, mount monitors, connect Wi-Fi and hide every wire cleanly. From $99.
-2. Serving Atlanta, Duluth, Athens & 50-mile perimeter. Call (470) 502-9543 to get scheduled today!
+2. Serving Atlanta, Duluth, Athens & 50-mile perimeter. Call (678) 558-4327 to get scheduled today!
 3. Don't waste your weekend in boxes. We setup hardware, furniture, monitors and software for you.
 4. Transparent flat rates confirmed up front. Seniors, remote workers & new homeowners love us.
 
@@ -286,7 +286,7 @@ STEP 6: ASSETS (EXTENSIONS) CONFIGURATION
 ============================================================
 
 1. CALL ASSET (HIGHEST PRIORITY):
-   - Phone Number: (470) 502-9543
+   - Phone Number: (678) 558-4327
    - Country: United States (+1)
    - Call reporting: ON
    - Conversion Action: Calls from ads (or primary phone lead)
@@ -315,7 +315,7 @@ STEP 6: ASSETS (EXTENSIONS) CONFIGURATION
      * Final URL: https://www.ceoturbo.com/services/dj-studio-setup
 
 3. CALLOUT ASSETS (Add 6 Callouts):
-   - "Call (470) 502-9543"
+   - "Call (678) 558-4327"
    - "Flat Transparent Pricing"
    - "Atlanta & 50-Mile Radius"
    - "Duluth Home Base & Athens"
@@ -399,7 +399,7 @@ Before clicking "Publish Campaign", verify on screen:
 [x] Location Target: Presence only (50-mile radius Atlanta, Duluth, Athens, Gwinnett, Fulton, Cobb)
 [x] Bidding: Maximize Clicks with $1.50 Max CPC cap
 [x] Headlining Pinning: Headline 1 pinned to Pos 1, Headline 2 pinned to Pos 2
-[x] Call Asset: (470) 502-9543 configured and enabled
+[x] Call Asset: (678) 558-4327 configured and enabled
 [x] Landing Pages: Working 200 OK URLs (ceoturbo.com)
 [x] Negative Keywords: 45+ negative terms saved to campaign
 

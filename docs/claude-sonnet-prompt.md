@@ -18,7 +18,7 @@ CEO Turbo is a digital marketing agency that also provides local services. We're
 - Booking tracking already implemented (book_call events)
 
 ⏳ **REMAINING TASKS:**
-1. Add phone number (470-502-9543) to the service page with click-to-call tracking
+1. Add phone number (678-558-4327) to the service page with click-to-call tracking
 2. Create Cal.com booking event with optimized conversion questions
 3. Add smooth animations and UX enhancements to the service page
 4. Ensure mobile-responsive design is optimized
@@ -33,8 +33,8 @@ CEO Turbo is a digital marketing agency that also provides local services. We're
 **Location:** The service detail page component (you'll need to find/create it)
 
 **Requirements:**
-- Add phone number: 470-502-9543
-- Use tel: link format: `tel:4705029543`
+- Add phone number: 678-558-4327
+- Use tel: link format: `tel:6785584327`
 - Add data attribute: `data-call-location="home-office-service-page"`
 - The existing tracking system in `src/lib/track.ts` will automatically fire `click_to_call` event
 - Style prominently on mobile (tap-to-call button)
@@ -42,8 +42,8 @@ CEO Turbo is a digital marketing agency that also provides local services. We're
 
 **Implementation:**
 ```tsx
-<a href="tel:4705029543" data-call-location="home-office-service-page" className="tap-to-call-button">
-  470-502-9543
+<a href="tel:6785584327" data-call-location="home-office-service-page" className="tap-to-call-button">
+  678-558-4327
 </a>
 ```
 
@@ -55,7 +55,7 @@ CEO Turbo is a digital marketing agency that also provides local services. We're
 - Create a NEW Cal.com event type (separate from existing Brand Boost booking)
 - Event name: "Home Office Setup Consultation"
 - Duration: 15 minutes
-- Phone: 470-502-9543
+- Phone: 678-558-4327
 
 **Booking Questions (Copy These Exactly):**
 
@@ -165,8 +165,8 @@ import { motion } from "framer-motion";
 ```tsx
 {/* Mobile sticky booking button */}
 <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t border-border md:hidden">
-  <a href="tel:4705029543" className="block w-full py-3 text-center bg-primary text-primary-foreground rounded-lg font-semibold">
-    Call 470-502-9543
+  <a href="tel:6785584327" className="block w-full py-3 text-center bg-primary text-primary-foreground rounded-lg font-semibold">
+    Call 678-558-4327
   </a>
 </div>
 ```
@@ -244,7 +244,7 @@ import { motion } from "framer-motion";
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "CEO Turbo - Home Office Setup",
-  "telephone": "470-502-9543",
+  "telephone": "678-558-4327",
   "areaServed": [
     "@type": "City",
     "name": "Atlanta"

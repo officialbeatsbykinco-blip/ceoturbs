@@ -2,7 +2,7 @@
 ## Master Autonomous Execution Prompt for Manus Browser Agent
 
 > **CONFIDENTIAL & HIGH PRIORITY — CEO TURBO (ceoturbo.com)**  
-> **Campaign Mission:** Maximum Inbound Phone Calls to `(470) 502-9543` and Instant Cal.com Bookings for **In-Home Computer, Desk Assembly & Home Office Setup** across Atlanta, Duluth (Gwinnett base), North Fulton, Cobb, and Metro Georgia.  
+> **Campaign Mission:** Maximum Inbound Phone Calls to `(678) 558-4327` and Instant Cal.com Bookings for **In-Home Computer, Desk Assembly & Home Office Setup** across Atlanta, Duluth (Gwinnett base), North Fulton, Cobb, and Metro Georgia.  
 > **Budget:** Scalable starting at **$5.00/day** ($150/month) or $10.00/day with Max CPC cap of **$1.50**.
 
 ---
@@ -11,7 +11,7 @@
 
 When a senior, remote worker, or busy homeowner in Atlanta searches on their phone, they do **not** want to read an essay. They want 3 things in under 2 seconds:
 1. **Validation:** You do exactly what they searched for (*"Home Office Setup Atlanta"*).
-2. **Immediate Action:** The phone number right in front of them (*"Call (470) 502-9543"*).
+2. **Immediate Action:** The phone number right in front of them (*"Call (678) 558-4327"*).
 3. **No-Hesitation Price:** Transparent flat rate (*"From $99 Flat Labor Rate"*).
 
 ### The Pinned Headline Secret Weapon
@@ -19,16 +19,16 @@ When a senior, remote worker, or busy homeowner in Atlanta searches on their pho
 In Google Ads Responsive Search Ads (RSAs), Google rotates 15 headlines randomly by default. **Randomness kills phone calls.**  
 By using the **📌 Pin Icon**:
 - **Pin to Position 1:** `Home Office Setup Atlanta` (Matches the search query 100%)
-- **Pin to Position 2:** `Call (470) 502-9543` (Guarantees the phone number is displayed first on mobile)
+- **Pin to Position 2:** `Call (678) 558-4327` (Guarantees the phone number is displayed first on mobile)
 - **Position 3 (Auto-rotated):** Google dynam![alt textsit](image.png)ically rotates high-converting hooks like `From $99 Flat Labor Rate`, `Clean, Cable-Free Setup`, or `Finished in 2 to 4 Hours`.
 
 The ad appears in Google Search as:
 ```
-Home Office Setup Atlanta | Call (470) 502-9543 | From $99 Flat Labor Rate
+Home Office Setup Atlanta | Call (678) 558-4327 | From $99 Flat Labor Rate
 ceoturbo.com/services/home-office-setup
 ⭐⭐⭐⭐⭐ Rating: 5.0 · Licensed & Insured local setup pros
 We assemble your desk, mount monitors, connect Wi-Fi & hide every wire. Flat from $99.
-[ 📞 Call (470) 502-9543 ]  [ 📅 Book Online Instantly ]  [ 🛠️ Pricing Guide ]
+[ 📞 Call (678) 558-4327 ]  [ 📅 Book Online Instantly ]  [ 🛠️ Pricing Guide ]
 ```
 
 ---
@@ -38,12 +38,12 @@ We assemble your desk, mount monitors, connect Wi-Fi & hide every wire. Flat fro
 > ⚠️ **CRITICAL POLICY INSTRUCTION FOR MANUS:**  
 > Google Ads Editorial Guidelines strictly review phone number digits inside headline text.
 > 
-> 1. **Primary Attempt:** Manus enters `Call (470) 502-9543` into Headline 13 and pins it to **Position 2**.
+> 1. **Primary Attempt:** Manus enters `Call (678) 558-4327` into Headline 13 and pins it to **Position 2**.
 > 2. **Automated Safety Fallback:** If Google Ads displays the red error *"Phone number in ad text is not allowed"* upon saving:
 >    - Switch Headline 13 to: **`Call Today For Fast Setup`** (25 chars) pinned to **Position 2**.
 >    - Add Headline 13b alternative: **`Call For In-Home Tech Help`** (27 chars).
-> 3. **Mandatory Call Assets:** Manus MUST attach the **Google Ads Call Asset** with phone number **`(470) 502-9543`** at the campaign level with **Call Reporting: ON**. This displays the large, dedicated blue Click-to-Call button directly under the headline on mobile search results.
-> 4. **Call-Only Ad Deployment:** Manus also creates an explicit **Call Ad (Call-Only)** in the ad group, which renders `(470) 502-9543` natively as the clickable primary link on smartphones.
+> 3. **Mandatory Call Assets:** Manus MUST attach the **Google Ads Call Asset** with phone number **`(678) 558-4327`** at the campaign level with **Call Reporting: ON**. This displays the large, dedicated blue Click-to-Call button directly under the headline on mobile search results.
+> 4. **Call-Only Ad Deployment:** Manus also creates an explicit **Call Ad (Call-Only)** in the ad group, which renders `(678) 558-4327` natively as the clickable primary link on smartphones.
 
 ---
 
@@ -63,7 +63,7 @@ ROLE & OBJECTIVE:
 You are an Elite Google Ads PPC Specialist and Autonomous Browser Execution Agent. Your task is to build, configure, and publish a high-converting, call-first Google Search Campaign for "CEO Turbo" (https://www.ceoturbo.com).
 
 PRIMARY GOAL:
-Drive maximum direct phone calls to (470) 502-9543 and instant online bookings from local residents, seniors, remote workers, and businesses needing in-home computer setup, desk assembly, monitor mounting, and cable management.
+Drive maximum direct phone calls to (678) 558-4327 and instant online bookings from local residents, seniors, remote workers, and businesses needing in-home computer setup, desk assembly, monitor mounting, and cable management.
 
 CAMPAIGN ARCHITECTURE:
 - Campaign Name: CEO Turbo | In-Home Office & PC Setup | Calls & Leads
@@ -75,7 +75,7 @@ CAMPAIGN ARCHITECTURE:
 - Locations: Metro Atlanta (Duluth HQ base + 50-mile radius + Athens, GA)
 - Location Option: "Presence: People in or regularly in your targeted locations" (CRITICAL: Do NOT use "Presence or interest")
 - Language: English
-- Phone Number: (470) 502-9543
+- Phone Number: (678) 558-4327
 - Final Landing Page: https://www.ceoturbo.com/services/home-office-setup
 - Booking URL: https://cal.com/stackmodechris/ceo-turbo-office-studio-setup
 
@@ -87,7 +87,7 @@ STEP 1: CAMPAIGN CREATION & BIDDING SETTINGS
 2. If prompted for a goal, select "Create a campaign without a goal's guidance" (or select "Leads" -> Continue).
 3. Select Campaign type: "Search".
 4. Select results to get:
-   - Check [x] "Phone calls" -> Country: United States (+1) -> Enter: 4705029543
+   - Check [x] "Phone calls" -> Country: United States (+1) -> Enter: 6785584327
    - Check [x] "Website visits" -> Enter: https://www.ceoturbo.com/services/home-office-setup
 5. Campaign Name:
    CEO Turbo | In-Home Office & PC Setup | Calls & Leads
@@ -242,7 +242,7 @@ Tier 3: Price & Speed (Destroys Hesitation)
 12. Finished in 2 to 4 Hours (24 chars)
 
 Tier 4: Direct Call-To-Action & Trust (Drives The Call)
-13. Call (470) 502-9543 (19 chars)
+13. Call (678) 558-4327 (19 chars)
    -> ACTION: Click Pin Icon 📌 -> Select "Show only in position 2"
    * POLICY NOTICE: If Google UI flags "Phone number in headline text", immediately replace with:
      "Call Today For Fast Setup" (25 chars) pinned to Position 2.
@@ -253,7 +253,7 @@ Tier 4: Direct Call-To-Action & Trust (Drives The Call)
 THE 4 DESCRIPTIONS (ALL ≤ 90 CHARACTERS):
 ------------------------------------------------------------
 1. We assemble your desk, mount monitors, connect Wi-Fi & hide every wire. Flat from $99. (88 chars)
-2. Serving Atlanta, Duluth & 50-mile radius. Call (470) 502-9543 to get scheduled today! (88 chars)
+2. Serving Atlanta, Duluth & 50-mile radius. Call (678) 558-4327 to get scheduled today! (88 chars)
 3. Don't waste your weekend in boxes. We setup hardware, monitors & cables fast in 2-4 hrs. (89 chars)
 4. Transparent flat rates confirmed up front. Seniors, remote workers & new movers love us. (89 chars)
 
@@ -262,13 +262,13 @@ STEP 4: DEDICATED CALL-ONLY AD (FOR MOBILE SEARCHERS)
 ============================================================
 
 Inside Ad Group 1, click "+ Add Ad" -> Select "Call Ad" (Call-Only):
-- Phone Number: (470) 502-9543
+- Phone Number: (678) 558-4327
 - Country: United States (+1)
 - Business Name: CEO Turbo
 - Headline 1: Home Office Setup Atlanta (25 chars)
 - Headline 2: From $99 Flat Labor Rate (24 chars)
 - Description 1: We assemble desks, mount dual monitors, connect PCs & hide wires cleanly. (80 chars)
-- Description 2: Fast in-home setup across Atlanta & Duluth. Call (470) 502-9543 now for a flat quote! (89 chars)
+- Description 2: Fast in-home setup across Atlanta & Duluth. Call (678) 558-4327 now for a flat quote! (89 chars)
 - Final URL (optional/verification): https://www.ceoturbo.com/services/home-office-setup
 - Verification URL: https://www.ceoturbo.com
 - Call Reporting: ON
@@ -278,7 +278,7 @@ STEP 5: ASSETS (EXTENSIONS) CONFIGURATION (MANDATORY)
 ============================================================
 
 1. CALL ASSET (HIGHEST PRIORITY):
-   - Phone Number: (470) 502-9543
+   - Phone Number: (678) 558-4327
    - Country: United States (+1)
    - Use account setting or campaign setting: Campaign Level
    - Call reporting: ON
@@ -318,7 +318,7 @@ STEP 5: ASSETS (EXTENSIONS) CONFIGURATION (MANDATORY)
      * Final URL: https://www.ceoturbo.com/services/apartment-home-office-setup
 
 3. CALLOUT ASSETS (Add 8 Callouts):
-   - "Call (470) 502-9543"
+   - "Call (678) 558-4327"
    - "From $99 Flat Labor"
    - "Zero Hidden Fees"
    - "Finished In 2-4 Hours"
@@ -403,10 +403,10 @@ STEP 8: FINAL AUDIT & PUBLISH
    - Daily Budget: $5.00/day ($1.50 Max CPC cap)
    - Search Partners & Display Network: OFF
    - Location Targeting: "Presence" enabled
-   - Call Asset: (470) 502-9543 Active
+   - Call Asset: (678) 558-4327 Active
    - Pinned Headlines:
      * Position 1: "Home Office Setup Atlanta"
-     * Position 2: "Call (470) 502-9543" (or "Call Today For Fast Setup")
+     * Position 2: "Call (678) 558-4327" (or "Call Today For Fast Setup")
 2. Click "Publish Campaign".
 3. Verify status shows "Eligible" or "Under Review".
 4. Output a confirmation summary report with:
@@ -439,7 +439,7 @@ For quick manual inspection or updating ads in Google Ads Editor / web console:
 | **From $99 Flat Labor Rate** | 24 chars | Tier 3: Price & Speed | Position 3 Candidate | Destroys price fear with an irresistible low anchor |
 | **Flat Price Confirmed 1st** | 24 chars | Tier 3: Price & Speed | Position 3 Candidate | Eliminates fear of hourly fee gouging |
 | **Finished in 2 to 4 Hours** | 24 chars | Tier 3: Price & Speed | Position 3 Candidate | High speed turnaround promised upfront |
-| **Call (470) 502-9543** | 19 chars | Tier 4: Direct CTA | **Position 2 📌** | Immediate frictionless 1-tap dial action |
+| **Call (678) 558-4327** | 19 chars | Tier 4: Direct CTA | **Position 2 📌** | Immediate frictionless 1-tap dial action |
 | **Great For Seniors & WFH** | 23 chars | Tier 4: Trust Hook | Unpinned | Welcoming to older demographics & WFH pros |
 | **Serving Atlanta & Duluth** | 24 chars | Tier 4: Trust Hook | Unpinned | Local neighborhood trust (Gwinnett + Metro) |
 
@@ -447,18 +447,18 @@ For quick manual inspection or updating ads in Google Ads Editor / web console:
 
 ## 4-STEP VERIFICATION & TROUBLESHOOTING CHECKLIST
 
-### 1. What if Google disapproves the headline "Call (470) 502-9543"?
+### 1. What if Google disapproves the headline "Call (678) 558-4327"?
 - **Why:** Google's automated ad review system checks for phone number formatting in text ads under the *"Phone number in ad text"* policy.
 - **The Fix:**
   1. Change Headline 13 to `Call Today For Fast Setup` (25 chars) and keep it pinned to **Position 2**.
-  2. Verify the **Google Ads Call Asset** has `(470) 502-9543` active. Google will render the blue phone button directly next to the headline, giving the exact same visual result with 100% policy approval.
+  2. Verify the **Google Ads Call Asset** has `(678) 558-4327` active. Google will render the blue phone button directly next to the headline, giving the exact same visual result with 100% policy approval.
   3. Ensure the **Call Ad (Call-Only)** is active in the ad group for mobile devices.
 
 ### 2. How to confirm the Pin is working in the Google Ads UI:
 1. Go to **Ads & assets** -> **Ads**.
 2. Hover over the ad and click the **Pencil (Edit)** icon.
 3. Look at Headline 1 (`Home Office Setup Atlanta`). On the far right is a pin icon `📌`. It should show a blue badge with `1`.
-4. Look at Headline 13 (`Call (470) 502-9543` or `Call Today For Fast Setup`). It should show a blue badge with `2`.
+4. Look at Headline 13 (`Call (678) 558-4327` or `Call Today For Fast Setup`). It should show a blue badge with `2`.
 5. Check the preview window on the right side: verify that Position 1 and Position 2 stay locked while Position 3 rotates dynamically.
 
 ### 3. How to verify Call Reporting & Conversions:

@@ -38,7 +38,7 @@ Three things decide who gets the call:
 We build it, we run it, you stay focused on the work.
 
 Book a free 30-minute call: https://ceoturbo.com/book?utm_source=youtube&utm_content=ad16
-Call: (470) 502-9543
+Call: (678) 558-4327
 $297 setup, $97/mo, no contract. You own your ad account.
 
 Illustrative examples are labelled. Real dashboard shown (Appliance King, Meta ads). Results vary and your results will differ.

@@ -1,6 +1,6 @@
 # CEO Turbo: review-card profiles, captions and upsell script
 
-Offer: NFC Google review cards. Customer taps, your Google review page opens. Free US shipping. ceoturbo.com/google-review-cards | 470-502-9543.
+Offer: NFC Google review cards. Customer taps, your Google review page opens. Free US shipping. ceoturbo.com/google-review-cards | 678-558-4327.
 Rules: no promises of rankings or income. Say "can help you show up", never "will rank you #1". Never offer rewards for reviews.
 
 ## Tagline options
@@ -25,7 +25,7 @@ Tap card = Google review. Built for local businesses. Free US shipping.
 Google review cards for local businesses. One tap = one review. More reviews, more calls. Serving businesses nationwide. ceoturbo.com
 
 **Facebook About (short)**
-CEO Turbo makes NFC Google review cards for local businesses. Your customer taps the card with their phone and lands on your Google review page, no searching, no typing. More fresh reviews help you show up in Google Maps. Free shipping across the US. Call or text 470-502-9543.
+CEO Turbo makes NFC Google review cards for local businesses. Your customer taps the card with their phone and lands on your Google review page, no searching, no typing. More fresh reviews help you show up in Google Maps. Free shipping across the US. Call or text 678-558-4327.
 
 **LinkedIn About**
 Most local businesses lose customers to a competitor with more Google reviews, not a better service. The gap is usually that asking is awkward and finding the review page is a hassle.
@@ -34,7 +34,7 @@ CEO Turbo fixes that with an NFC Google review card: the customer taps their pho
 
 I'm a founder, not a call center. I help the businesses I sell cards to with setup, review requests, their Google Business Profile and, when it makes sense, ads that bring in calls.
 
-Call or text 470-502-9543 or order at ceoturbo.com/google-review-cards
+Call or text 678-558-4327 or order at ceoturbo.com/google-review-cards
 
 ## Captions (use one CTA per post)
 
@@ -65,7 +65,7 @@ Three things that move it:
 2. Hand them a card, not a request to "Google us"
 3. Make the tap open your review form directly
 
-That's what our NFC cards do. Call or text 470-502-9543.
+That's what our NFC cards do. Call or text 678-558-4327.
 
 ## Upsell call script (for people who just ordered)
 

@@ -15,7 +15,7 @@ Source: Meta Ad Library (public), US, active ads for "nfc google review card", r
 3. **First-order risk:** Merchynt's first card is free.
 
 ## Where we can win
-1. **Setup help is real:** a free setup guide, a review-link finder, a printable QR, and a human at (470) 502-9543.
+1. **Setup help is real:** a free setup guide, a review-link finder, a printable QR, and a human at (678) 558-4327.
 2. **The tutorial angle:** none of them teach. Your 9:16 tutorial (`/get-more-reviews`) explains why reviews matter before selling.
 3. **Agency upsell:** a card buyer can become a retainer client. They can't offer that.
 4. **Hooks to reuse as patterns:** the "your competitor has more reviews" envy hook (already in the /get-more-reviews poll), and "no monthly fee, no app".
