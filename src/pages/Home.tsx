@@ -158,6 +158,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section border-t border-border" aria-labelledby="different">
+        <div className="container-x">
+          <SectionHeader kicker="Why us" title={<span id="different">Not a typical agency.</span>} lede="No hidden fees, no lock-in, no screenshots from someone else's account." />
+          <div className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
+            <div className="panel p-6">
+              <p className="font-display text-lg font-bold text-muted-foreground">Typical agency</p>
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                {["Hides prices until you sit through a sales pitch", "Locks you into a long contract", "Runs ads in their account, so you can't leave with anything", "Sends a monthly report you can't check"].map((t) => (
+                  <li key={t} className="flex gap-2"><span aria-hidden>✕</span>{t}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="panel p-6 ring-1 ring-turbo/40">
+              <p className="font-display text-lg font-bold">CEO Turbo</p>
+              <ul className="mt-3 space-y-2 text-sm">
+                {["Every price is published on the pricing page", "No long-term contract", "You own your ad account, site and reviews", "Real, unedited dashboards and a leads-or-free guarantee"].map((t) => (
+                  <li key={t} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-turbo" aria-hidden />{t}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <BookButton note="Home — not a typical agency">Book my free strategy call</BookButton>
+          </div>
+        </div>
+      </section>
+
       <ReviewDuo />
 
       <GrandSlamOffer note="Home offer" />
