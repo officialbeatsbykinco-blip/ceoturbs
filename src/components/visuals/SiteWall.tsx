@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { CLIENTS, domainOf, type Client } from "@/content/clients";
 
@@ -8,16 +9,26 @@ import { CLIENTS, domainOf, type Client } from "@/content/clients";
 export function SiteWall({ clients = CLIENTS, eagerCount = 6 }: { clients?: Client[]; eagerCount?: number }) {
   const half = Math.ceil(clients.length / 2);
   const rows = [clients.slice(0, half), clients.slice(half)];
+  const wall = useRef<HTMLDivElement>(null);
+  // The wall only animates on screen, so it costs nothing while the visitor reads the rest of the page.
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting));
+    if (wall.current) io.observe(wall.current);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <div className="relative h-[340px] w-full overflow-hidden sm:h-[560px]" style={{ perspective: "1600px" }}>
+    <div ref={wall} className="relative h-[340px] w-full overflow-hidden sm:h-[560px]" style={{ perspective: "1600px" }}>
       <div
         className="absolute left-1/2 top-1/2 flex w-[180%] flex-col gap-4 sm:w-[140%] sm:gap-5"
         style={{ transform: "translate(-50%,-50%) rotateX(22deg) rotateY(-16deg) rotateZ(6deg)", transformStyle: "preserve-3d" }}
       >
         {rows.map((row, r) => (
           <div key={r} className="group/row flex overflow-visible">
-            <div className={`flex shrink-0 gap-4 pr-4 sm:gap-5 sm:pr-5 ${r === 0 ? "animate-marquee" : "animate-marquee-rev"} group-hover/row:[animation-play-state:paused]`}>
+            <div className={`flex shrink-0 gap-4 pr-4 sm:gap-5 sm:pr-5 ${r === 0 ? "animate-marquee" : "animate-marquee-rev"} group-hover/row:[animation-play-state:paused]`} style={{ animationPlayState: visible ? undefined : "paused" }}>
               {[...row, ...row].map((c, i) => (
                 <Tile
                   key={`${c.slug}-${i}`}

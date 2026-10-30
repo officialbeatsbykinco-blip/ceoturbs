@@ -36,6 +36,14 @@ export function startGa() {
   w.gtag("js", new Date());
   w.gtag("config", GA_ID, { send_page_view: true });
   w.gtag("config", GOOGLE_ADS_ID, { allow_enhanced_conversions: true });
+}
+
+/** Downloads gtag.js, which sends everything queued since startGa (page view included). */
+export function loadGa() {
+  if (typeof window === "undefined") return;
+  const w = window as GaWin & { __gaLoaded?: boolean };
+  if (w.__gaLoaded) return;
+  w.__gaLoaded = true;
   const s = document.createElement("script");
   s.async = true;
   s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}&l=gaLayer`;

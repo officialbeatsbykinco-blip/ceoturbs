@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CalendarCheck, Check, Globe, Megaphone, Music, Phone, Play, Search, Star } from "lucide-react";
+import { ArrowRight, CalendarCheck, Check, Globe, Megaphone, Music, Phone, Play, Rocket, Search, Star } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
 import { CallLink } from "@/components/site/CallLink";
 import { ProofStats, BestResults, GoogleAdProof, AdResultsGrid, AdGallery } from "@/components/blocks/Proof";
@@ -24,7 +24,7 @@ import { MobileMore } from "@/components/blocks/MobileMore";
 export default function Home() {
   return (
     <>
-      <div className="theme-soft">
+      <div className="theme-soft cv-sections">
       {/* HERO — outcome, offer, one button to the calendar (questions live on the Cal.com form). */}
       <section className="relative overflow-clip pt-24 sm:pt-28 lg:pt-32" aria-labelledby="hero">
         <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
@@ -35,8 +35,8 @@ export default function Home() {
             <h1 id="hero" className="mt-4 text-[34px] font-bold leading-[1.05] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[60px]">
               <span className="text-chrome-grad">We get you more customers, more sales</span> <span className="text-turbo-grad">and more reviews.</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground max-md:sr-only sm:mt-5 sm:text-lg">
-              An SEO, AEO and GEO website that gets you found on Google and ChatGPT, Google, Meta and YouTube ads that bring buyers to it, and a tap-to-review card so 5-star reviews keep coming. Built for local businesses, Shopify stores and restaurants. For artists and producers, we put your music in front of more listeners.
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
+              We build your website, run your ads and get you 5-star Google reviews. All three work together, so you show up on Google and ChatGPT and people call you. Artists get more listeners the same way.
             </p>
             <div className="mx-auto mt-7 flex max-w-md flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
               <BookButton note="Home hero" className="btn-shine justify-center">
@@ -46,7 +46,7 @@ export default function Home() {
                 Talk to us now
               </CallLink>
             </div>
-            <p className="mt-3 text-sm text-muted-foreground">Free 30 min · Pick any time · No pressure</p>
+            <p className="mt-3 text-balance text-sm text-muted-foreground">Free 30 min · No contract · <span className="whitespace-nowrap">Leads-or-free guarantee</span></p>
             <Link to="/results" className="mt-2 inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-turbo underline-offset-4 hover:underline">
               See real results <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
@@ -65,9 +65,10 @@ export default function Home() {
       <section className="pt-12 pb-2 sm:pt-14" aria-labelledby="who">
         <div className="container-x">
           <h2 id="who" className="h-section text-center">Pick what you need. We handle the rest.</h2>
-          <ul className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-3">
+          <ul className="mx-auto mt-8 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Megaphone, t: "Local businesses", b: "More calls, bookings and Google reviews from people searching near you.", to: "/local-business", cta: "See local business plans" },
+              { icon: Rocket, t: "Starting a business", b: "Get open and get found: your website, Google profile and first ads, set up together.", to: "/pricing", cta: "See what's included" },
               { icon: Globe, t: "Online stores", b: "More visitors and more of them buying, from Google, Meta and YouTube ads.", to: "/shopify", cta: "See store plans" },
               { icon: Music, t: "Artists & producers", b: "More listeners, more shows and more beat sales, with ads and a site that turns plays into fans.", to: "/artist", cta: "See artist plans" },
             ].map((x) => (
@@ -90,7 +91,7 @@ export default function Home() {
       </section>
 
       <div className="relative mt-12 sm:mt-14">
-        <SiteWall />
+        <SiteWall eagerCount={0} />
       </div>
 
       <section className="pt-14 pb-8" aria-labelledby="proof">

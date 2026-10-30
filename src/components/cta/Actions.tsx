@@ -1,12 +1,13 @@
-import { useState, type MouseEvent, type ReactNode } from "react";
+import { lazy, Suspense, useState, type MouseEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { InstallCalModal } from "@/components/booking/InstallCalModal";
-import { TextQuoteModal } from "@/components/cta/TextQuoteModal";
 import { BOOKING, INSTALL_BOOKING, SITE, fromPriceLabel, type CalEvent } from "@/config/site";
 import { SHOP_PATH } from "@/content/review-cards";
 import { openBooking } from "@/lib/cal";
 import { track } from "@/lib/track";
 import { cn } from "@/lib/utils";
+
+const TextQuoteModal = lazy(() => import("@/components/cta/TextQuoteModal").then((m) => ({ default: m.TextQuoteModal })));
 
 type Variant = "ignite" | "chrome" | "link";
 
@@ -140,12 +141,11 @@ export function TextQuoteButton({
       >
         {children}
       </a>
-      <TextQuoteModal
-        open={modalOpen}
-        onOpenChange={setModalOpen}
-        service={service}
-        smsText={defaultText}
-      />
+      {modalOpen && (
+        <Suspense fallback={null}>
+          <TextQuoteModal open={modalOpen} onOpenChange={setModalOpen} service={service} smsText={defaultText} />
+        </Suspense>
+      )}
     </>
   );
 }

@@ -1,4 +1,4 @@
-// Cal.com embed loader. The script loads on idle (or on first click) so it never
+// Cal.com embed loader. The script loads on the first interaction so it never
 // competes with the page's first paint, and every booking shows as an inline calendar on the page.
 import { BOOKING, INSTALL_BOOKING, type CalEvent } from "@/config/site";
 import { attribution, track, trackBooked } from "@/lib/track";
