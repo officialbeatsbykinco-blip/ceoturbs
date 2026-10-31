@@ -3,33 +3,7 @@
 // fun to give, and the visitor sees something for them before the calendar).
 import { useCallback, useEffect, useId, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Building2,
-  CalendarCheck,
-  CalendarDays,
-  Check,
-  Clock,
-  Compass,
-  Globe,
-  Loader2,
-  Lock,
-  Mic2,
-  Phone,
-  Rocket,
-  Search,
-  ShoppingBag,
-  ShoppingCart,
-  Sparkles,
-  Star,
-  Ticket,
-  TrendingUp,
-  Users,
-  Wallet,
-  Wrench,
-  Zap,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarCheck, Check, Loader2, Lock, Sparkles } from "lucide-react";
 import {
   AUDIENCES,
   BUDGETS,
@@ -57,27 +31,7 @@ import { attribution, e164, newEventId, setCallContext, track, visitorId } from 
 import { sendLead } from "@/lib/lead-outbox";
 import { CallLink } from "@/components/site/CallLink";
 import { cn } from "@/lib/utils";
-
-const ICON: Record<IconKey, typeof Wrench> = {
-  wrench: Wrench,
-  mic: Mic2,
-  bag: ShoppingBag,
-  building: Building2,
-  phone: Phone,
-  star: Star,
-  search: Search,
-  globe: Globe,
-  cart: ShoppingCart,
-  users: Users,
-  ticket: Ticket,
-  clock: Clock,
-  zap: Zap,
-  calendar: CalendarDays,
-  compass: Compass,
-  wallet: Wallet,
-  rocket: Rocket,
-  trending: TrendingUp,
-};
+import { ICON } from "./icons";
 
 const STORE = "ct_quiz_v2";
 const EMAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;

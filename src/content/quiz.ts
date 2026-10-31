@@ -155,6 +155,21 @@ const CAL_GOAL: Record<GoalKey, string> = {
 export const calGoal = (g?: GoalKey) => (g ? CAL_GOAL[g] : undefined);
 export const calBudget = (b?: Budget) => (b && b !== "unsure" ? labelOf.budget(b) : undefined);
 
+const TEXT_WHO: Record<Audience, string> = { local: "I run a local service business", artist: "I'm an artist or creator", store: "I run an online store", other: "I run a business" };
+
+/** The message the text quiz fills in for the visitor to send. */
+export function textMessage(a: Answers) {
+  const name = a.name.trim();
+  return [
+    `Hi CEO Turbo!${name ? ` I'm ${name}.` : ""}`,
+    a.audience && `${TEXT_WHO[a.audience]}${a.stage === "start" ? " and I'm just starting out" : ""}.`,
+    a.goal && `What I want: ${labelOf.goal(a.audience, a.goal, a.stage)}.`,
+    a.timeline && `Timing: ${labelOf.timeline(a.timeline)}.`,
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
 export type Move = { title: string; body: string; points: string[]; offer?: "cards" | "audit" };
 
 /** The single most valuable next step for these answers — shown before the calendar. */

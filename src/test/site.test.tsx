@@ -158,14 +158,15 @@ describe("conversion buttons", () => {
     expect(screen.getByRole("link", { name: "Book" })).toHaveAttribute("href", BOOKING.url);
   });
 
-  it("mobile bar offers a Book action on the home page and generic pages", () => {
+  it("mobile bar offers Text us and Call on the home page and generic pages", () => {
     for (const route of ["/", "/pricing"]) {
       const { unmount } = render(
         <MemoryRouter initialEntries={[route]}>
           <MobileActionBar />
         </MemoryRouter>,
       );
-      expect(screen.getByRole("link", { name: "Book a free call" })).toHaveAttribute("href", BOOKING.url);
+      expect(screen.getByRole("button", { name: "Text us" })).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: /^Call/ })).toHaveAttribute("href", "tel:+16785584327");
       unmount();
     }
   });
@@ -250,9 +251,12 @@ describe("review card store", () => {
 });
 
 describe("hero booking", () => {
-  it("sends the home and Brand Boost heroes straight to the calendar, not the quiz", () => {
+  it("leads the home hero with the text quiz and keeps the Brand Boost hero on the calendar", () => {
     const read = (f: string) => readFileSync(path.resolve(__dirname, f), "utf8");
     const home = read("../pages/Home.tsx");
+    expect(home).toContain("<AudienceTiles");
+    expect(home).toContain("<TextQuiz");
+    expect(home).toContain("Pick a time");
     expect(home).toContain("Schedule my free call");
     expect(home).not.toContain("BrandBoostQuiz");
     const boost = read("../components/blocks/Boost.tsx");

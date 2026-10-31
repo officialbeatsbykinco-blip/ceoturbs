@@ -4,6 +4,7 @@ import { InstallCalModal } from "@/components/booking/InstallCalModal";
 import { BOOKING, INSTALL_BOOKING, SITE, fromPriceLabel, type CalEvent } from "@/config/site";
 import { SHOP_PATH } from "@/content/review-cards";
 import { openBooking } from "@/lib/cal";
+import { openTextQuiz } from "@/lib/text-quiz-open";
 import { track } from "@/lib/track";
 import { cn } from "@/lib/utils";
 
@@ -27,9 +28,12 @@ export function BookButton({
   note,
   prefill,
   variant = "ignite",
+  textOnPhone = false,
   className,
 }: {
   children?: ReactNode;
+  /** On phones, opens the text quiz instead of the calendar. */
+  textOnPhone?: boolean;
   /** Internal source label, stored as hidden booking metadata. */
   note?: string;
   /** Visible text for the booking form's notes field. */
@@ -40,6 +44,7 @@ export function BookButton({
   const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
+    if (textOnPhone && window.innerWidth < 640 && openTextQuiz({ source: note })) return;
     void openBooking(note, prefill);
   };
   return (

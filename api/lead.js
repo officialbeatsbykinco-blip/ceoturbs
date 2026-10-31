@@ -55,7 +55,9 @@ export default async function handler(req, res) {
 
   const type = text(body.type, 30) || "order-request";
   const dev = type === "dev-intake" ? devFields(body) : null;
-  const { lead, error } = cleanLead(body, { phoneOptional: !!dev || type === "shirt-exit-intent", emailOptional: type === "battery" });
+  // The text quiz asks for a first name only: a phone send gives us their number when the text arrives.
+  const textQuiz = type === "brand-boost-quiz" && text(body.service, 80) === "text-quiz";
+  const { lead, error } = cleanLead(body, { phoneOptional: !!dev || type === "shirt-exit-intent" || (textQuiz && body.channel === "sms"), emailOptional: type === "battery" || textQuiz });
   if (error) return send(res, 400, { error });
 
   const battery = type === "battery" ? batteryFields(body) : null;

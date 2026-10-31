@@ -8,6 +8,8 @@ import { CallLink } from "./CallLink";
 import { REVIEWS_AD_PATH, SHOP_PATH } from "@/content/review-cards";
 import { SHIRTS_PATH } from "@/content/company-shirts";
 import { ARTIST_MERCH_PATH } from "@/content/artist-merch";
+import { smsHref } from "@/lib/sms";
+import { openTextQuiz } from "@/lib/text-quiz-open";
 
 /** Sticky bottom bar on phones: the money actions are always one tap away. The shop pages have their own buy bars. */
 export function MobileActionBar() {
@@ -29,7 +31,7 @@ export function MobileActionBar() {
     );
   if (CALL_FIRST_SLUGS.some((slug) => pathname === `/services/${slug}`)) {
     const slug = pathname.split("/").pop() || "setup";
-    const smsText = encodeURIComponent(`Hi, I'd like a quote for ${slug.replace(/-/g, " ")}. My city is: `);
+    const smsText = `Hi, I'd like a quote for ${slug.replace(/-/g, " ")}. My city is: `;
     return (
       <div className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-background/90 px-2.5 pt-2.5 backdrop-blur-xl sm:hidden">
         <div className="flex items-center gap-1.5">
@@ -41,7 +43,7 @@ export function MobileActionBar() {
             <span>Call</span>
           </CallLink>
           <a
-            href={`sms:${SITE.phone.e164}?&body=${smsText}`}
+            href={smsHref(smsText)}
             className="btn-chrome flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap !py-3.5 !px-2 !text-sm font-bold text-foreground"
           >
             <MessageSquare className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
@@ -71,7 +73,7 @@ export function MobileActionBar() {
             <span>Call now</span>
           </CallLink>
           <a
-            href={`sms:${SITE.phone.e164}?&body=${encodeURIComponent(tech.sms)}`}
+            href={smsHref(tech.sms)}
             data-call-location={`${where}-sticky-mobile-sms`}
             className="btn-chrome flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap !py-3.5 !px-2 !text-sm font-bold text-foreground"
           >
@@ -114,13 +116,14 @@ export function MobileActionBar() {
         </div>
       </div>
     );
-  // Everywhere else the booked call is the money action, with the phone one tap away.
+  // Everywhere else: three quick answers sent as a text is the money action, with the phone one tap away.
   return (
     <div className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-background/90 px-3 pt-3 backdrop-blur-xl sm:hidden">
       <div className="flex gap-2">
-        <BookButton note={pathname === "/" ? "Home mobile bar" : "Mobile bar"} className="flex-[2] !px-3 !py-3.5 !text-base">
-          Book a free call
-        </BookButton>
+        <button type="button" onClick={() => openTextQuiz({ source: pathname === "/" ? "Home mobile bar" : "Mobile bar" })} className="btn-ignite inline-flex flex-[2] items-center justify-center gap-1.5 !px-3 !py-3.5 !text-base">
+          <MessageSquare className="h-5 w-5 shrink-0" aria-hidden />
+          Text us
+        </button>
         <CallLink location="mobile bar" className="btn-chrome inline-flex flex-1 items-center justify-center gap-1.5 !px-3 !py-3.5 !text-base">
           <Phone className="h-5 w-5 shrink-0 text-turbo" aria-hidden />
           Call

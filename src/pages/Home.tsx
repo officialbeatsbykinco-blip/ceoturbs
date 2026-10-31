@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarCheck, Check, Globe, Megaphone, Music, Phone, Play, Rocket, Search, Star } from "lucide-react";
 import { BookButton } from "@/components/cta/Actions";
+import { AudienceTiles } from "@/components/quiz/AudienceTiles";
+import { TextQuiz } from "@/components/quiz/TextQuiz";
+import { openTextQuiz } from "@/lib/text-quiz-open";
 import { CallLink } from "@/components/site/CallLink";
 import { ProofStats, BestResults, GoogleAdProof, AdResultsGrid, AdGallery } from "@/components/blocks/Proof";
 import { ADS } from "@/content/ads";
@@ -17,7 +20,7 @@ import { MobileMore } from "@/components/blocks/MobileMore";
 
 /**
  * Money model, top to bottom:
- * 1. Primary action — the free 30-minute strategy call (Cal.com booking).
+ * 1. Primary action — the text quiz (three taps, then a text or a callback), with the free call beside it.
  * 2. Offer — an SEO/AEO/GEO website plus Google, Meta and YouTube ads that bring the calls.
  * 3. Add-on — NFC Google review cards, kept small so they never compete with the booking.
  */
@@ -25,32 +28,39 @@ export default function Home() {
   return (
     <>
       <div className="theme-soft cv-sections">
-      {/* HERO — outcome, offer, one button to the calendar (questions live on the Cal.com form). */}
-      <section className="relative overflow-clip pt-24 sm:pt-28 lg:pt-32" aria-labelledby="hero">
+      {/* HERO — one question up front. Phones tap a tile and finish in a sheet that texts us; bigger screens get the quiz open beside the pitch. */}
+      <section className="relative overflow-clip pt-20 sm:pt-28 lg:pt-32" aria-labelledby="hero">
         <div className="pointer-events-none absolute inset-0 bg-grid" aria-hidden />
         <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[1100px] -translate-x-1/2 glow-turbo" aria-hidden />
-        <div className="container-x relative mx-auto max-w-4xl text-center">
+        <div className="container-x relative mx-auto grid max-w-6xl items-center gap-8 text-center lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:text-left">
           <div className="hero-rise relative z-10 min-w-0">
-            <p className="chip">Websites, ads and reviews for local businesses, online stores and artists</p>
-            <h1 id="hero" className="mt-4 text-[34px] font-bold leading-[1.05] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[60px]">
+            <p className="chip">
+              Websites, ads and reviews<span className="hidden sm:inline">&nbsp;for local businesses, online stores and artists</span>
+            </p>
+            <h1 id="hero" className="mt-3 text-[32px] font-bold leading-[1.05] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[56px]">
               <span className="text-chrome-grad">We get you more customers, more sales</span> <span className="text-turbo-grad">and more reviews.</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
+            <p className="mx-auto mt-5 hidden max-w-2xl text-lg leading-relaxed text-muted-foreground lg:block">
               We build your website, run your ads and get you 5-star Google reviews. All three work together, so you show up on Google and ChatGPT and people call you. Artists get more listeners the same way.
             </p>
-            <div className="mx-auto mt-7 flex max-w-md flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
-              <BookButton note="Home hero" className="btn-shine justify-center">
-                <CalendarCheck className="h-5 w-5" aria-hidden /> Schedule my free call
-              </BookButton>
-              <CallLink location="home hero" icon className="btn-chrome justify-center">
-                Talk to us now
-              </CallLink>
+            <div className="mt-5 sm:hidden">
+              <p className="font-display text-lg font-bold">What do you do?</p>
+              <p className="mb-3 text-sm text-muted-foreground">3 quick taps, then text us your answers.</p>
+              <AudienceTiles onPick={(audience) => openTextQuiz({ source: "Home hero", audience })} />
             </div>
-            <p className="mt-3 text-balance text-sm text-muted-foreground">Free 30 min · No contract · <span className="whitespace-nowrap">Leads-or-free guarantee</span></p>
+            <div className="mx-auto mt-3 grid max-w-md grid-cols-2 gap-2 sm:mt-7 sm:flex sm:max-w-none sm:justify-center lg:justify-start">
+              <CallLink location="home hero" icon className="btn-chrome justify-center !px-3 sm:!px-6">
+                Call us
+              </CallLink>
+              <BookButton note="Home hero" variant="chrome" className="justify-center !px-3 sm:!px-6">
+                <CalendarCheck className="h-5 w-5" aria-hidden /> Pick a time
+              </BookButton>
+            </div>
+            <p className="mt-3 text-balance text-sm text-muted-foreground">Free · No contract · <span className="whitespace-nowrap">Leads-or-free guarantee</span></p>
             <Link to="/results" className="mt-2 inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-turbo underline-offset-4 hover:underline">
               See real results <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
-            <ul className="mx-auto mt-6 grid max-w-xl grid-cols-2 max-md:hidden gap-x-4 gap-y-2 text-left text-sm text-muted-foreground">
+            <ul className="mt-6 hidden max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-left text-sm text-muted-foreground lg:grid">
               {["Free 30-minute call", "Free review card with Launch", "Leads-or-free guarantee", "We work with businesses worldwide"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-turbo" aria-hidden />
@@ -59,6 +69,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
+          <TextQuiz source="Home hero card" variant="inline" className="relative z-10 mx-auto hidden w-full max-w-lg text-left sm:block" />
         </div>
       </section>
 
@@ -119,7 +130,7 @@ export default function Home() {
             <AdResultsGrid cheapestFirst />
           </MobileMore>
           <div className="mt-10 text-center">
-            <BookButton note="Home — Meta results">Get results like these. Book my free call</BookButton>
+            <BookButton note="Home — Meta results" textOnPhone>Get results like these. Book my free call</BookButton>
           </div>
         </div>
       </section>
@@ -154,7 +165,7 @@ export default function Home() {
           </ol>
           </MobileMore>
           <div className="mt-8">
-            <BookButton note="Home — how it works">Book my free strategy call</BookButton>
+            <BookButton note="Home — how it works" textOnPhone>Book my free strategy call</BookButton>
           </div>
         </div>
       </section>
@@ -181,7 +192,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <BookButton note="Home — not a typical agency">Book my free strategy call</BookButton>
+            <BookButton note="Home — not a typical agency" textOnPhone>Book my free strategy call</BookButton>
           </div>
         </div>
       </section>
@@ -220,7 +231,7 @@ export default function Home() {
               <p className="font-display text-lg font-bold">Real ad accounts, real leads.</p>
               <p className="mt-2 text-sm text-muted-foreground">Unedited Google Ads and Meta dashboards from local service businesses. Setup from {price("pkg-start")}, the full Launch package {price("pkg-launch")}, ads management from {price("growth")}/mo. You own the ad account and there's no long-term contract.</p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                <BookButton note="Home — after services">Book my free 30-min call</BookButton>
+                <BookButton note="Home — after services" textOnPhone>Book my free 30-min call</BookButton>
                 <Link to="/results" className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-turbo underline-offset-4 hover:underline">
                   See results <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
@@ -247,7 +258,7 @@ export default function Home() {
             <h2 id="final" className="h-section mt-3">The business that shows up first gets the call. Make that you.</h2>
             <p className="lede mx-auto max-w-2xl">Book a free 30-minute call. We review your site, Google profile and ads live and tell you the biggest thing holding back customers.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <BookButton note="Home final CTA">Schedule my free call</BookButton>
+              <BookButton note="Home final CTA" textOnPhone>Schedule my free call</BookButton>
               <CallLink location="home final CTA" className="btn-chrome">
                 <Phone className="h-4 w-4" aria-hidden /> Call {SITE.phone.display}
               </CallLink>
