@@ -20,20 +20,21 @@ const variantClass: Record<Variant, string> = {
 };
 
 /**
- * Opens the Brand Boost calendar (Cal.com inline embed) in an on-page dialog, tracked as booking_open and,
- * once booked, book_call. Real href so it still works without JS and is crawlable.
+ * Opens the text quiz, the shortest way to reach us, on every device; `direct` skips it and opens the Brand Boost
+ * calendar (Cal.com inline embed) in an on-page dialog, tracked as booking_open and, once booked, book_call.
+ * Real href so it still works without JS and is crawlable.
  */
 export function BookButton({
   children = "Book a free 30-min call",
   note,
   prefill,
   variant = "ignite",
-  textOnPhone = false,
+  direct = false,
   className,
 }: {
   children?: ReactNode;
-  /** On phones, opens the text quiz instead of the calendar. */
-  textOnPhone?: boolean;
+  /** Opens the calendar straight away, for people who have already chosen to pick a time. */
+  direct?: boolean;
   /** Internal source label, stored as hidden booking metadata. */
   note?: string;
   /** Visible text for the booking form's notes field. */
@@ -44,7 +45,7 @@ export function BookButton({
   const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    if (textOnPhone && window.innerWidth < 640 && openTextQuiz({ source: note })) return;
+    if (!direct && openTextQuiz({ source: note })) return;
     void openBooking(note, prefill);
   };
   return (

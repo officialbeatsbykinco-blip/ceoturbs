@@ -52,7 +52,7 @@ export default function Home() {
               <CallLink location="home hero" icon className="btn-chrome justify-center !px-3 sm:!px-6">
                 Call us
               </CallLink>
-              <BookButton note="Home hero" variant="chrome" className="justify-center !px-3 sm:!px-6">
+              <BookButton direct note="Home hero" variant="chrome" className="justify-center !px-3 sm:!px-6">
                 <CalendarCheck className="h-5 w-5" aria-hidden /> Pick a time
               </BookButton>
             </div>
@@ -130,7 +130,7 @@ export default function Home() {
             <AdResultsGrid cheapestFirst />
           </MobileMore>
           <div className="mt-10 text-center">
-            <BookButton note="Home — Meta results" textOnPhone>Get results like these. Book my free call</BookButton>
+            <BookButton note="Home — Meta results">Get results like these. Book my free call</BookButton>
           </div>
         </div>
       </section>
@@ -165,7 +165,7 @@ export default function Home() {
           </ol>
           </MobileMore>
           <div className="mt-8">
-            <BookButton note="Home — how it works" textOnPhone>Book my free strategy call</BookButton>
+            <BookButton note="Home — how it works">Book my free strategy call</BookButton>
           </div>
         </div>
       </section>
@@ -192,7 +192,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <BookButton note="Home — not a typical agency" textOnPhone>Book my free strategy call</BookButton>
+            <BookButton note="Home — not a typical agency">Book my free strategy call</BookButton>
           </div>
         </div>
       </section>
@@ -231,7 +231,7 @@ export default function Home() {
               <p className="font-display text-lg font-bold">Real ad accounts, real leads.</p>
               <p className="mt-2 text-sm text-muted-foreground">Unedited Google Ads and Meta dashboards from local service businesses. Setup from {price("pkg-start")}, the full Launch package {price("pkg-launch")}, ads management from {price("growth")}/mo. You own the ad account and there's no long-term contract.</p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                <BookButton note="Home — after services" textOnPhone>Book my free 30-min call</BookButton>
+                <BookButton note="Home — after services">Book my free 30-min call</BookButton>
                 <Link to="/results" className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-turbo underline-offset-4 hover:underline">
                   See results <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
@@ -258,7 +258,7 @@ export default function Home() {
             <h2 id="final" className="h-section mt-3">The business that shows up first gets the call. Make that you.</h2>
             <p className="lede mx-auto max-w-2xl">Book a free 30-minute call. We review your site, Google profile and ads live and tell you the biggest thing holding back customers.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <BookButton note="Home final CTA" textOnPhone>Schedule my free call</BookButton>
+              <BookButton note="Home final CTA">Schedule my free call</BookButton>
               <CallLink location="home final CTA" className="btn-chrome">
                 <Phone className="h-4 w-4" aria-hidden /> Call {SITE.phone.display}
               </CallLink>

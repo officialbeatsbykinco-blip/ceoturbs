@@ -7,7 +7,8 @@ const PIXEL_ID = pixelId();
 let started = false;
 
 export function startPixel() {
-  if (!PIXEL_ID || started || typeof window === "undefined") return;
+  // Dev servers and build runs must not reach the real pixel: fake Leads teach Meta to find the wrong people.
+  if (!PIXEL_ID || started || typeof window === "undefined" || /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) return;
   started = true;
   const w = window as unknown as { fbq?: Fbq; _fbq?: Fbq };
   if (w.fbq) return;
