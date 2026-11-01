@@ -1,13 +1,16 @@
 import { Fragment, useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, MessageSquare, Phone, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { BookButton, InstallBookButton } from "@/components/cta/Actions";
 import { techBooking } from "@/content/tech-pages";
 import { SERVICES } from "@/content/services";
 import { SITE, fromPriceLabel } from "@/config/site";
 import { CallLink } from "./CallLink";
+import { ARTIST_MERCH_PATH } from "@/content/artist-merch";
+import { SHIRTS_PATH } from "@/content/company-shirts";
 import { REVIEWS_AD_PATH, SHOP_PATH, SETUP_PATH } from "@/content/review-cards";
+import { QUICK_TEXT, smsHref } from "@/lib/sms";
 import { cn } from "@/lib/utils";
 
 type Item = { to: string; label: string; sub?: string; group?: string };
@@ -128,12 +131,19 @@ export function Header({ focus: focusProp = false }: { focus?: boolean }) {
             <Phone className="h-[18px] w-[18px]" aria-hidden />
             <span className="sr-only">Call {SITE.name} at {SITE.phone.display}</span>
           </CallLink>
+          {/* The shop pages have no bottom bar, so their Text button sits up here. */}
+          {(pathname === SHOP_PATH || pathname === SHIRTS_PATH || pathname === ARTIST_MERCH_PATH) && (
+            <a href={smsHref(QUICK_TEXT)} data-call-location={focus ? "ad page header text" : "header text"} className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-foreground ring-1 ring-white/10 hover:bg-white/5 sm:hidden">
+              <MessageSquare className="h-[18px] w-[18px]" aria-hidden />
+              <span className="sr-only">Text {SITE.name}</span>
+            </a>
+          )}
           {tech ? (
             <InstallBookButton variant="ignite" note="Tech page header" booking={tech.booking} title={tech.title} className="inline-flex whitespace-nowrap !px-3 !py-2.5 !text-[13px] sm:!px-4 sm:!text-sm">
               Book a visit
             </InstallBookButton>
           ) : pathname === REVIEWS_AD_PATH ? (
-            <a href="#buy" className="btn-ignite whitespace-nowrap !px-4 !py-2.5 !text-sm">
+            <a href="#buy" className="btn-ignite whitespace-nowrap !px-3 !py-2.5 !text-sm sm:!px-4">
               Get cards<span className="hidden sm:inline"> · {fromPriceLabel}</span>
             </a>
           ) : (

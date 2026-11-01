@@ -3,6 +3,9 @@ import { SITE } from "@/config/site";
 
 export const smsHref = (body: string) => `sms:${SITE.phone.e164}?&body=${encodeURIComponent(body)}`;
 
+/** What the phone bar's Text us button fills in. */
+export const QUICK_TEXT = "Hi CEO Turbo, I want more customers. My business is: ";
+
 /** True on a phone or tablet whose Messages app can take the link. Computers get a form instead. */
 export function canText() {
   if (typeof window === "undefined") return false;

@@ -8,8 +8,7 @@ import { CallLink } from "./CallLink";
 import { REVIEWS_AD_PATH, SHOP_PATH } from "@/content/review-cards";
 import { SHIRTS_PATH } from "@/content/company-shirts";
 import { ARTIST_MERCH_PATH } from "@/content/artist-merch";
-import { smsHref } from "@/lib/sms";
-import { openTextQuiz } from "@/lib/text-quiz-open";
+import { QUICK_TEXT, smsHref } from "@/lib/sms";
 
 /** Sticky bottom bar on phones: the money actions are always one tap away. The shop pages have their own buy bars. */
 export function MobileActionBar() {
@@ -21,6 +20,10 @@ export function MobileActionBar() {
         <div className="flex gap-2">
           <a href="#buy" className="btn-ignite flex-1 !py-3.5 !text-base">
             Get my review cards — from {fromPriceLabel}
+          </a>
+          <a href={smsHref(QUICK_TEXT)} data-call-location="review ad page mobile bar text" className="grid w-12 shrink-0 place-items-center rounded-2xl text-foreground ring-1 ring-white/15 hover:bg-white/5">
+            <MessageSquare className="h-5 w-5" aria-hidden />
+            <span className="sr-only">Text {SITE.name}</span>
           </a>
           <CallLink location="review ad page mobile bar" className="grid w-12 shrink-0 place-items-center rounded-2xl text-foreground ring-1 ring-white/15 hover:bg-white/5">
             <Phone className="h-5 w-5" aria-hidden />
@@ -95,6 +98,10 @@ export function MobileActionBar() {
           <a href="#intake" className="btn-ignite flex-1 !py-3.5 !text-base">
             Get my free growth plan
           </a>
+          <a href={smsHref(QUICK_TEXT)} data-call-location="dev page mobile bar text" className="grid w-12 shrink-0 place-items-center rounded-2xl text-foreground ring-1 ring-white/15 hover:bg-white/5">
+            <MessageSquare className="h-5 w-5" aria-hidden />
+            <span className="sr-only">Text {SITE.name}</span>
+          </a>
           <CallLink location="dev page mobile bar" className="grid w-12 shrink-0 place-items-center rounded-2xl text-foreground ring-1 ring-white/15 hover:bg-white/5">
             <Phone className="h-5 w-5" aria-hidden />
             <span className="sr-only">Call {SITE.name} at {SITE.phone.display}</span>
@@ -108,22 +115,26 @@ export function MobileActionBar() {
       <div className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-background/90 px-3 pt-3 backdrop-blur-xl sm:hidden">
         <div className="flex gap-2">
           <BookButton note="Restaurants mobile bar" prefill="Restaurant: I want more customers — help with delivery apps, menus/TV menus, Google & Apple Maps and review cards." className="flex-1 !py-3.5 !text-base">
-            Free restaurant call
+            Free call
           </BookButton>
+          <a href={smsHref(QUICK_TEXT)} data-call-location="restaurants mobile bar text" className="grid w-12 shrink-0 place-items-center rounded-2xl text-foreground ring-1 ring-white/15 hover:bg-white/5">
+            <MessageSquare className="h-5 w-5" aria-hidden />
+            <span className="sr-only">Text {SITE.name}</span>
+          </a>
           <a href="#tables" className="btn-chrome !px-3 !py-3.5 !text-sm">
             Table cards
           </a>
         </div>
       </div>
     );
-  // Everywhere else: three quick answers sent as a text is the money action, with the phone one tap away.
+  // Everywhere else: Text us opens Messages straight away, with the phone one tap away.
   return (
     <div className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-background/90 px-3 pt-3 backdrop-blur-xl sm:hidden">
       <div className="flex gap-2">
-        <button type="button" onClick={() => openTextQuiz({ source: pathname === "/" ? "Home mobile bar" : "Mobile bar" })} className="btn-ignite inline-flex flex-[2] items-center justify-center gap-1.5 !px-3 !py-3.5 !text-base">
+        <a href={smsHref(QUICK_TEXT)} data-call-location="mobile bar" className="btn-ignite inline-flex flex-[2] items-center justify-center gap-1.5 !px-3 !py-3.5 !text-base">
           <MessageSquare className="h-5 w-5 shrink-0" aria-hidden />
           Text us
-        </button>
+        </a>
         <CallLink location="mobile bar" className="btn-chrome inline-flex flex-1 items-center justify-center gap-1.5 !px-3 !py-3.5 !text-base">
           <Phone className="h-5 w-5 shrink-0 text-turbo" aria-hidden />
           Call

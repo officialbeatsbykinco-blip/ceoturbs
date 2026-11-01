@@ -165,7 +165,7 @@ describe("conversion buttons", () => {
           <MobileActionBar />
         </MemoryRouter>,
       );
-      expect(screen.getByRole("button", { name: "Text us" })).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Text us" }).getAttribute("href")).toMatch(/^sms:\+16785584327/);
       expect(screen.getByRole("link", { name: /^Call/ })).toHaveAttribute("href", "tel:+16785584327");
       unmount();
     }

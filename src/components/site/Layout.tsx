@@ -7,6 +7,7 @@ import { MobileActionBar } from "./MobileActionBar";
 import { FloatingBookButton } from "./FloatingBookButton";
 import { QuizModalHost } from "@/components/quiz/QuizModalHost";
 import { TextQuizHost } from "@/components/quiz/TextQuizHost";
+import { PhoneHost } from "./PhoneHost";
 import { BookingModalHost } from "@/components/booking/BookingModalHost";
 import { FreeCheckPopup } from "@/components/site/FreeCheckPopup";
 import { startSpotlight } from "@/lib/spotlight";
@@ -83,6 +84,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <FloatingBookButton />
       <QuizModalHost />
       <TextQuizHost />
+      <PhoneHost />
       <BookingModalHost />
       <FreeCheckPopup />
     </>
