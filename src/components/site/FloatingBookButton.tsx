@@ -5,11 +5,11 @@ import { CalendarDays, MessageSquare } from "lucide-react";
 import { BookButton, InstallBookButton, TextQuoteButton } from "@/components/cta/Actions";
 import { isInstallPath } from "@/content/services";
 import { techBooking } from "@/content/tech-pages";
-import { SHOP_PATH } from "@/content/review-cards";
+import { SETUP_PATH, SHOP_PATH } from "@/content/review-cards";
 import { SHIRTS_PATH } from "@/content/company-shirts";
 import { ARTIST_MERCH_PATH } from "@/content/artist-merch";
 
-const HIDDEN = new Set(["/book", "/booked", "/google-ads-for-local-business", SHOP_PATH, SHIRTS_PATH, ARTIST_MERCH_PATH]);
+const HIDDEN = new Set(["", SETUP_PATH, "/book", "/booked", "/google-ads-for-local-business", SHOP_PATH, SHIRTS_PATH, ARTIST_MERCH_PATH]);
 
 export function FloatingBookButton() {
   const { pathname } = useLocation();

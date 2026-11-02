@@ -178,7 +178,7 @@ export const pricingCatalog = (): JsonLd => ({
 });
 
 const CARD_DESCRIPTION =
-  "NFC Google review card for any business with a Google Business Profile. Customers tap their phone on the card and your Google review form opens — no app, no searching. Works with iPhone XS and newer and NFC Android phones. NTAG215 chip, waterproof PVC, credit-card size (85.5 × 54 mm). White “Review Us On Google” front, black NFC back. You program it once in about two minutes with the free NFC Tools app.";
+  "NFC Google review card for any business with a Google Business Profile. Customers tap their phone on the card and your Google review form opens — no app, no searching. Works with iPhone XS and newer and NFC Android phones. NTAG215 chip, waterproof PVC, credit-card size (85.5 × 54 mm). White “Review Us On Google” front, black NFC back. Program it once in about two minutes from your phone, or order it programmed and ready to tap.";
 
 const cardOffer = (p: (typeof REVIEW_CARD.packs)[number]) => ({
   "@type": "Offer",

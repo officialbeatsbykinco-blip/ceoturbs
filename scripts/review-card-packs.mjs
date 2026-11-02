@@ -85,6 +85,11 @@ await build("shop-5", "", [
   { buf: front, scale: 0.92, deg: -4, cx: S / 2 - 120, cy: cyc + 10 },
 ], { pill: false });
 
+await build("shop-10", "", [
+  ...Array.from({ length: 9 }, (_, i) => ({ buf: back, scale: 0.86, deg: 16 - i * 2.5, cx: S / 2 + 330 - i * 42, cy: cyc - 70 + i * 9 })),
+  { buf: front, scale: 0.86, deg: -6, cx: S / 2 - 150, cy: cyc + 20 },
+], { pill: false });
+
 // Front + back, clean, for the additional-image slot.
 await build("shop-both", "", [
   { buf: back, scale: 0.95, deg: 8, cx: S / 2 + 300, cy: cyc - 10 },

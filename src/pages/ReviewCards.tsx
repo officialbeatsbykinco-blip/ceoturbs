@@ -8,14 +8,13 @@ import { Breadcrumbs, FAQList, SectionHeader } from "@/components/blocks/Basics"
 import { ReviewStats } from "@/components/blocks/ReviewStats";
 import { CardUpsell } from "@/components/blocks/CardUpsell";
 import { COMPARE, RULES, SETUP_PATH, SHOP_FAQS, SHOP_PATH, USES } from "@/content/review-cards";
-import { NFC_APP, REVIEW_CARD, fromPriceLabel } from "@/config/site";
+import { REVIEW_CARD, fromPriceLabel } from "@/config/site";
 import { Reveal } from "@/components/blocks/Tutorial";
 import { recallBusiness } from "@/lib/review-link";
 import { StandBuyBox } from "@/components/shop/StandBuyBox";
-import { cn } from "@/lib/utils";
 
 const STEPS = [
-  { icon: Smartphone, title: "Customer taps", body: "They hold their phone near the card at checkout. No app, no camera, no searching." },
+  { icon: Smartphone, title: "Customer taps", body: "Hold the card out when the job's done, or leave it on the counter. They tap with no app and no searching." },
   { icon: Star, title: "Your review form opens", body: "Google's own “rate and review” screen for your business, ready for stars." },
   { icon: MapPin, title: "You climb the map", body: "More fresh reviews build trust with the next customer — and Google uses reviews in local ranking." },
 ];
@@ -23,7 +22,10 @@ const STEPS = [
 export default function ReviewCards() {
   const [business, setBusiness] = useState("");
   useEffect(() => setBusiness((b) => b || recallBusiness()), []);
-  const [tab, setTab] = useState<"stand" | "cards">(() => (typeof window !== "undefined" && new URLSearchParams(window.location.search).get("tab") === "stand" ? "stand" : "cards"));
+  // Old stand links land on the stand section further down.
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("tab") === "stand") document.getElementById("stand")?.scrollIntoView();
+  }, []);
 
   return (
     <>
@@ -32,20 +34,9 @@ export default function ReviewCards() {
         <div className="pointer-events-none absolute -top-40 right-0 h-[520px] w-[820px] glow-turbo" aria-hidden />
         <div className="container-x relative">
           <Breadcrumbs items={[{ name: "Google review cards", path: SHOP_PATH }]} className="max-sm:hidden" />
-          <div role="tablist" aria-label="Choose a product" className="inline-flex rounded-2xl bg-white/5 p-1 ring-1 ring-white/10 sm:mt-4">
-            {([["cards", "Tap cards"], ["stand", "Counter stand"]] as const).map(([k, label]) => (
-              <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={cn("rounded-xl px-4 py-2 text-sm font-semibold transition-colors sm:px-5 sm:py-2.5", tab === k ? "bg-turbo text-white" : "text-muted-foreground hover:text-foreground")}>
-                {label}
-              </button>
-            ))}
+          <div className="mt-3 pb-8 sm:mt-6">
+            <BuyBox business={business} onBusiness={setBusiness} />
           </div>
-          {tab === "cards" ? (
-            <div className="mt-3 sm:mt-6">
-              <BuyBox business={business} onBusiness={setBusiness} />
-            </div>
-          ) : (
-            <StandBuyBox business={business} />
-          )}
         </div>
       </section>
 
@@ -114,7 +105,7 @@ export default function ReviewCards() {
       <section className="section border-t border-border" aria-labelledby="setup">
         <div className="container-x grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <SectionHeader kicker="When it arrives" title={<span id="setup">Program it yourself in about 2 minutes.</span>} lede={`Copy your review link from Google Business Profile, open the free ${NFC_APP.name} app, write the link to the card. Our guide shows every tap — and checks your link for you.`} />
+            <SectionHeader kicker="When it arrives" title={<span id="setup">Ready in about 2 minutes.</span>} lede="Do it from your phone with our guide, which finds and checks your link. Or tick “Program it for me” and it arrives ready to tap." />
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to={SETUP_PATH} className="btn-chrome">
                 Open the setup guide <ArrowRight className="h-4 w-4" aria-hidden />
@@ -122,7 +113,7 @@ export default function ReviewCards() {
             </div>
           </div>
           <ol className="grid gap-3">
-            {["Find your review link in Google Business Profile", `Download ${NFC_APP.name} (free, iPhone & Android)`, "Write → Add a record → URL → paste → hold the card to your phone", "Tap to test — then stick it by the register"].map((t, i) => (
+            {["Find your Google review link", "Write it to the card from your phone", "Test one tap, then put it to work"].map((t, i) => (
               <li key={t} className="panel flex items-center gap-4 p-4">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-turbo/10 font-display text-sm font-bold text-turbo">{i + 1}</span>
                 <span className="text-[15px]">{t}</span>
@@ -146,25 +137,28 @@ export default function ReviewCards() {
         </div>
       </section>
 
-      <FAQList faqs={SHOP_FAQS} title="Review card questions" />
+      <FAQList faqs={SHOP_FAQS} title="Review card questions" lede="Still unsure? Call or text us." />
 
       <section className="section border-t border-border" aria-labelledby="last-call">
         <div className="container-x">
           <Reveal className="panel grid items-center gap-8 overflow-hidden p-6 sm:p-10 md:grid-cols-[1fr_0.9fr]">
             <div>
               <h2 id="last-call" className="h-section">Every happy customer who leaves without a review is a review you never get back.</h2>
-              <p className="lede">Put a card at the register this week. Free US shipping, {REVIEW_CARD.returnDays}-day returns, and a free setup call if you get stuck.</p>
+              <p className="lede">Get a card in your pocket this week. Free US shipping, {REVIEW_CARD.returnDays}-day returns, and a free setup call if you get stuck.</p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a href="#buy" className="btn-ignite btn-shine">
                   Get my review cards — from {fromPriceLabel} <ArrowRight className="h-4 w-4" aria-hidden />
-                </a>
-                <a href="?tab=stand" onClick={(e) => { e.preventDefault(); setTab("stand"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="btn-chrome">
-                  See the counter stand
                 </a>
               </div>
             </div>
             <img src="/img/review-cards/hd/card-tap-1600.webp" srcSet="/img/review-cards/hd/card-tap-800.webp 800w, /img/review-cards/hd/card-tap-1600.webp 1600w" sizes="(min-width: 768px) 40vw, 100vw" alt="Phone next to the review card with the Google review form open" width={1600} height={1600} loading="lazy" decoding="async" className="w-full rounded-2xl" />
           </Reveal>
+        </div>
+      </section>
+
+      <section id="stand" className="section scroll-mt-20 border-t border-border" aria-label="Counter stand">
+        <div className="container-x">
+          <StandBuyBox business={business} />
         </div>
       </section>
 

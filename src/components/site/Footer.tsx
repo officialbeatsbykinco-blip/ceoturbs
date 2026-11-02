@@ -6,7 +6,6 @@ import { SITE, fromPriceLabel } from "@/config/site";
 import { SETUP_PATH, SHOP_PATH } from "@/content/review-cards";
 import { SHIRTS_PATH, shirtFromLabel } from "@/content/company-shirts";
 import { ARTIST_MERCH_PATH, artistFromLabel } from "@/content/artist-merch";
-import { BookButton } from "@/components/cta/Actions";
 import { CallLink } from "./CallLink";
 import { SocialLinks } from "./SocialLinks";
 
@@ -34,25 +33,23 @@ export function Footer({ focus = false }: { focus?: boolean }) {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-8 border-b border-border pb-14 lg:flex-row lg:items-end">
           <p className="max-w-3xl font-display text-3xl font-bold leading-[0.95] tracking-tight sm:text-4xl lg:text-6xl">
-            <span className="text-chrome-grad">More customers.</span>
+            <span className="text-chrome-grad">One tap.</span>
             <br />
-            <span className="text-chrome-grad">More reviews.</span>
-            <br />
-            <span className="text-turbo-grad">More listeners.</span>
+            <span className="text-turbo-grad">One more review.</span>
           </p>
           <div className="flex flex-col gap-3">
-            <BookButton note="Footer" />
+            <Link to={SHOP_PATH} className="btn-ignite btn-shine">Get cards · from {fromPriceLabel}</Link>
             <p className="text-sm text-muted-foreground">
-              Free · 30 minutes · No pitch deck · or call <CallLink location="footer cta" className="font-semibold text-foreground hover:text-turbo" />
+              Free US shipping · Questions? Call <CallLink location="footer cta" className="font-semibold text-foreground hover:text-turbo" />
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-14 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-14 md:grid-cols-3 lg:grid-cols-6">
           <div className="col-span-2 md:col-span-1">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Growth agency for artists, local businesses and Shopify stores. Founded by {SITE.founder.name} ({SITE.founder.alternateName}).
+              NFC Google review cards for people who work on the move, plus websites and ads. Founded by {SITE.founder.name} ({SITE.founder.alternateName}).
             </p>
             <address className="mt-4 text-sm not-italic leading-relaxed text-muted-foreground">
               {SITE.address.streetAddress}
@@ -66,11 +63,20 @@ export function Footer({ focus = false }: { focus?: boolean }) {
             <SocialLinks className="mt-5" />
           </div>
           <FooterCol
+            title="Review cards"
+            links={[
+              { to: SHOP_PATH, label: `Shop cards, from ${fromPriceLabel}` },
+              { to: SETUP_PATH, label: "Card setup guide" },
+              { to: "/how-to-get-more-google-reviews", label: "Get more Google reviews" },
+              { to: "/barbershops", label: "For barbers" },
+              { to: "/salons", label: "For salons" },
+              { to: "/restaurants", label: "For restaurants" },
+            ]}
+          />
+          <FooterCol
             title="Who we help"
             links={[
-              { to: "/restaurants", label: "Restaurants" },
-              { to: "/salons", label: "Salons" },
-              { to: "/barbershops", label: "Barbershops" },
+              { to: "/grow", label: "Websites & ads" },
               { to: "/app-marketing", label: "Software & app developers" },
               { to: "/artist", label: "Artists" },
               { to: "/producers", label: "Producers & beatmakers" },
@@ -79,8 +85,6 @@ export function Footer({ focus = false }: { focus?: boolean }) {
               { to: "/shopify", label: "Shopify stores" },
               { to: "/atlanta", label: "Atlanta businesses" },
               { to: "/free-audit", label: "Free SEO, AEO & GEO audit" },
-              { to: SHOP_PATH, label: `Review stands & cards — from ${fromPriceLabel}` },
-              { to: SETUP_PATH, label: "Review card setup guide" },
               { to: SHIRTS_PATH, label: `Company t-shirts with your logo — from ${shirtFromLabel}` },
               { to: ARTIST_MERCH_PATH, label: `Artist merch t-shirts — from ${artistFromLabel}` },
             ]}

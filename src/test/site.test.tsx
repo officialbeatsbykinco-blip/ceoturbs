@@ -1,4 +1,5 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
+import { SETUP_PATH, SHOP_PATH } from "@/content/review-cards";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { render, screen, act } from "@testing-library/react";
@@ -158,17 +159,22 @@ describe("conversion buttons", () => {
     expect(screen.getByRole("link", { name: "Book" })).toHaveAttribute("href", BOOKING.url);
   });
 
-  it("mobile bar offers Text us and Call on the home page and generic pages", () => {
-    for (const route of ["/", "/pricing"]) {
-      const { unmount } = render(
+  it("mobile bar sells cards on generic pages, leaves the store alone and gives setup help", () => {
+    const at = (route: string) =>
+      render(
         <MemoryRouter initialEntries={[route]}>
           <MobileActionBar />
         </MemoryRouter>,
       );
-      expect(screen.getByRole("link", { name: "Text us" }).getAttribute("href")).toMatch(/^sms:\+16785584327/);
-      expect(screen.getByRole("link", { name: /^Call/ })).toHaveAttribute("href", "tel:+16785584327");
-      unmount();
-    }
+    const generic = at("/pricing");
+    expect(screen.getByRole("link", { name: /Get cards/ })).toHaveAttribute("href", SHOP_PATH);
+    expect(screen.getByRole("link", { name: /^Call/ })).toHaveAttribute("href", "tel:+16785584327");
+    generic.unmount();
+    const store = at("/");
+    expect(store.container).toBeEmptyDOMElement();
+    store.unmount();
+    at(SETUP_PATH);
+    expect(screen.getByRole("link", { name: "Text us for help" }).getAttribute("href")).toMatch(/^sms:\+16785584327/);
   });
 
   it("review card button links to the store", () => {
@@ -201,6 +207,18 @@ describe("conversion buttons", () => {
 });
 
 describe("review card store", () => {
+  it("never sells a pack below the $7 card cost", () => {
+    for (const p of REVIEW_CARD.packs) expect(p.price).toBeGreaterThan(p.qty * 7);
+  });
+
+  it("only offers the one-tap write where Web NFC exists", async () => {
+    const { canWriteNfc } = await import("@/lib/web-nfc");
+    expect(canWriteNfc()).toBe(false);
+    vi.stubGlobal("NDEFReader", class {});
+    expect(canWriteNfc()).toBe(true);
+    vi.unstubAllGlobals();
+  });
+
   it("prices packs so bigger packs always save money", () => {
     const [one, ...rest] = REVIEW_CARD.packs;
     expect(packSavings(one)).toBe(0);
@@ -209,8 +227,8 @@ describe("review card store", () => {
 
   it("maps every pack to its Shopify variant, and refuses to guess", () => {
     const v = (pack: string) => ({ id: `gid://shopify/ProductVariant/${pack}`, availableForSale: true, price: { amount: "1" }, selectedOptions: [{ name: "Pack", value: pack }] });
-    const variants = ["1 card", "2 cards", "5-Pack"].map(v);
-    expect(REVIEW_CARD.packs.map((p) => findVariant(variants, p)?.variant.id)).toEqual(["gid://shopify/ProductVariant/1 card", "gid://shopify/ProductVariant/2 cards", "gid://shopify/ProductVariant/5-Pack"]);
+    const variants = ["1 card", "2 cards", "5-Pack", "Pack of 10"].map(v);
+    expect(REVIEW_CARD.packs.map((p) => findVariant(variants, p)?.variant.id)).toEqual(["gid://shopify/ProductVariant/1 card", "gid://shopify/ProductVariant/2 cards", "gid://shopify/ProductVariant/5-Pack", "gid://shopify/ProductVariant/Pack of 10"]);
     expect(findVariant([{ ...v("x"), selectedOptions: [{ name: "Title", value: "Default Title" }] }], REVIEW_CARD.packs[0])).toBeNull();
   });
 
@@ -225,7 +243,7 @@ describe("review card store", () => {
     const xml = merchantFeed();
     expect(xml).toContain('xmlns:g="http://base.google.com/ns/1.0"');
     expect(xml).toContain(`<g:link>https://www.ceoturbo.com${packPath("5")}</g:link>`);
-    expect(xml).toContain("<g:price>39.99 USD</g:price>");
+    expect(xml).toContain("<g:price>29.99 USD</g:price>");
     expect(xml).not.toMatch(/&(?!amp;|lt;|gt;|quot;)/);
   });
 
@@ -235,7 +253,7 @@ describe("review card store", () => {
     expect(p.hasVariant).toHaveLength(REVIEW_CARD.packs.length);
     for (const v of p.hasVariant) {
       expect(Number(v.offers.price)).toBeGreaterThan(0);
-      expect(v.offers.url).toMatch(/^https:\/\/www\.ceoturbo\.com\/google-review-cards\?pack=\d$/);
+      expect(v.offers.url).toMatch(/^https:\/\/www\.ceoturbo\.com\/google-review-cards\?pack=\d+$/);
       expect(existsSync(pub(new URL(v.image).pathname))).toBe(true);
     }
   });
@@ -251,9 +269,11 @@ describe("review card store", () => {
 });
 
 describe("hero booking", () => {
-  it("leads the home hero with the text quiz and keeps the Brand Boost hero on the calendar", () => {
+  it("sells cards on the home page, keeps the agency at /grow and the Brand Boost hero on the calendar", () => {
     const read = (f: string) => readFileSync(path.resolve(__dirname, f), "utf8");
-    const home = read("../pages/Home.tsx");
+    expect(read("../pages/Home.tsx")).toContain("<BuyBox");
+    expect(read("../App.tsx")).toContain('path="/grow"');
+    const home = read("../pages/Agency.tsx");
     expect(home).toContain("<AudienceTiles");
     expect(home).toContain("<TextQuiz");
     expect(home).toContain("Pick a time");

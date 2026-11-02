@@ -79,19 +79,21 @@ Delete the old blue NFC + QR images from the product.
 | Theme template | Default product |
 
 ## 5. Variants — option name **Pack**
-Click **Add options like size or color** → Option name **`Pack`** → values exactly **`1 card`**, **`2 cards`**, **`5 cards`**.
+Click **Add options like size or color** → Option name **`Pack`** → values exactly **`1 card`**, **`2 cards`**, **`5 cards`**, **`10 cards`**.
 Then delete the old "Default Title" variant if Shopify keeps it.
 
 | Pack | Price | Compare-at | Cost per item | SKU | Barcode | Weight |
 |---|---|---|---|---|---|---|
-| 1 card | **24.99** | *(leave blank)* | 7.00 | `CT-NFC-REVIEW-1` | *(blank)* | 1 oz |
-| 2 cards | **39.99** | *(leave blank)* | 14.00 | `CT-NFC-REVIEW-2` | *(blank)* | 1.5 oz |
-| 5 cards | **79.99** | *(leave blank)* | 35.00 | `CT-NFC-REVIEW-5` | *(blank)* | 2.5 oz |
+| 1 card | **16.99** | *(leave blank)* | 7.00 | `CT-NFC-REVIEW-1` | *(blank)* | 1 oz |
+| 2 cards | **29.99** | *(leave blank)* | 14.00 | `CT-NFC-REVIEW-2` | *(blank)* | 1.5 oz |
+| 5 cards | **59.99** | *(leave blank)* | 35.00 | `CT-NFC-REVIEW-5` | *(blank)* | 2.5 oz |
+| 10 cards | **99.99** | *(leave blank)* | 70.00 | `CT-NFC-REVIEW-10` | *(blank)* | 4 oz |
 
 - **The SKUs must match exactly.** They are the same ids the website, the Merchant feed and the ad pixels use, so purchases line up across Google, Microsoft and Meta.
 - **Compare-at:** leave it blank. Showing a "was" price you never really charged is a fake discount (FTC and Merchant Center both flag it). The site already shows real pack savings.
 - **Charge tax:** Yes.
-- **Pack 1 → 2 → 5 margins** at $7 a card: about $18, $26 and $45 gross per order, before shipping and fees.
+- **Pack 1 → 2 → 5 → 10 margins** at $7 a card: about $10, $16, $25 and $30 gross per order, before shipping and fees.
+- **Card programming:** separate $5 product (`CT-PROGRAM`, published to Buy Button only). The review link prints on that order line.
 
 ## 6. Inventory
 - **Inventory tracked: Off.** Packs use different numbers of cards, so per-variant counts would be wrong. You have 30 cards; reorder when you hit about 10.
@@ -107,7 +109,7 @@ Then delete the old "Default Title" variant if Shopify keeps it.
 | Field | Value |
 |---|---|
 | Page title | `NFC Google Review Card – Tap to Review | CEO Turbo` |
-| Meta description | `Customers tap their phone and your Google review form opens. iPhone & Android, no app, no subscription. From $24.99, free US shipping.` |
+| Meta description | `Customers tap their phone and your Google review form opens. iPhone & Android, no app, no subscription. From $16.99, free US shipping.` |
 | URL handle | `nfc-google-review-card` |
 
 ## 9. Store settings that affect conversion (do these once)

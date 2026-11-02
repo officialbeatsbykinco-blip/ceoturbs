@@ -45,7 +45,7 @@ function CardCloser({ index, className = "" }: { index: number; className?: stri
     <aside className={`rounded-3xl border border-turbo/30 bg-turbo/[0.06] p-6 sm:p-8 ${className}`} aria-label="Order Google review cards">
       <p className="text-2xl font-bold leading-snug">{lines.t}</p>
       <p className="mt-2 text-sm text-muted-foreground">{lines.s}</p>
-      <ul className="mt-5 grid gap-3 sm:grid-cols-3">
+      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
         {REVIEW_CARD.packs.map((p) => (
           <li key={p.id}>
             <ShopCardsButton variant={p.popular ? "ignite" : "chrome"} className="w-full justify-between !px-4">

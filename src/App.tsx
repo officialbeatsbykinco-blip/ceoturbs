@@ -12,6 +12,7 @@ const ServicePage = lazy(() => import("./pages/ServicePage"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 const Results = lazy(() => import("./pages/Results"));
+const Agency = lazy(() => import("./pages/Agency"));
 const BrandBoost = lazy(() => import("./pages/BrandBoost"));
 const ReviewCards = lazy(() => import("./pages/ReviewCards"));
 const ReviewCardSetup = lazy(() => import("./pages/ReviewCardSetup"));
@@ -49,6 +50,7 @@ export default function App() {
       <Suspense fallback={<div className="min-h-screen" />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/grow" element={<Agency />} />
           <Route path="/artist" element={<AudiencePage slug="artist" />} />
           <Route path="/producers" element={<AudiencePage slug="producers" />} />
           <Route path="/visual-artists" element={<AudiencePage slug="visual-artists" />} />

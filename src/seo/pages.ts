@@ -41,13 +41,24 @@ function build(): PageMeta[] {
 
   pages.push({
     path: "/",
-    title: "SEO, AEO & GEO Websites + Google, Meta & YouTube Ads | CEO Turbo",
-    description:
-      "SEO, AEO and GEO websites that get you found on Google and ChatGPT, plus Google, Meta and YouTube ads that book calls. Free strategy call.",
+    title: `NFC Google Review Cards, from ${fromPriceLabel} | CEO Turbo`,
+    description: `Tap-to-review cards for barbers, lawn care, mobile repair and stores. Customers tap and your Google review form opens. From ${fromPriceLabel}, free US shipping.`,
+    ogImage: "/og/review-cards.jpg?v=2",
     priority: 1,
     changefreq: "weekly",
     group: "Core",
-    schema: [...base(), S.webPage("/", "CEO Turbo", SITE.description), S.brandBoost(), S.video("/"), S.faqPage(HOME_FAQS, "/")],
+    schema: [...base(), S.webPage("/", "CEO Turbo", SITE.description, "ItemPage"), S.reviewCardProduct(), S.faqPage(SHOP_FAQS, "/")],
+  });
+
+  pages.push({
+    path: "/grow",
+    title: "SEO, AEO & GEO Websites + Google, Meta & YouTube Ads | CEO Turbo",
+    description:
+      "SEO, AEO and GEO websites that get you found on Google and ChatGPT, plus Google, Meta and YouTube ads that book calls. Free strategy call.",
+    priority: 0.9,
+    changefreq: "weekly",
+    group: "Core",
+    schema: [...base(), S.webPage("/grow", "CEO Turbo", "Websites and ads for local businesses, online stores and artists."), S.brandBoost(), S.video("/grow"), S.faqPage(HOME_FAQS, "/grow")],
   });
 
   for (const a of [...AUDIENCES, PRODUCERS, VISUAL_ARTISTS]) {
@@ -136,7 +147,7 @@ function build(): PageMeta[] {
     path: SETUP_PATH,
     title: "Google Review Card Setup: Find Your Review Link | CEO Turbo",
     description:
-      "Set up your NFC Google review card in 5 minutes: find your review link in Google Business Profile, write it with the free NFC Tools app and test it.",
+      "Set up your NFC Google review card in about 2 minutes from your phone: find your review link, write it to the card and test the tap.",
     ogImage: "/og/review-cards.jpg?v=2",
     priority: 0.7,
     changefreq: "monthly",

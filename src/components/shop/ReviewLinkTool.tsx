@@ -5,7 +5,7 @@ import { track } from "@/lib/track";
 import { cn } from "@/lib/utils";
 
 /** Draws a crisp, print-ready QR code for the review link (generated in the browser — nothing is uploaded). */
-function QrCode({ value, label }: { value: string; label: string }) {
+export function QrCode({ value, label }: { value: string; label: string }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [png, setPng] = useState("");
 
@@ -40,7 +40,7 @@ function QrCode({ value, label }: { value: string; label: string }) {
       <canvas ref={canvas} className="h-36 w-36 shrink-0 rounded-xl bg-white" role="img" aria-label={`QR code for ${label}`} />
       <div className="text-center sm:text-left">
         <p className="text-sm font-semibold">Your review QR code</p>
-        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Print it as a counter sign or sticker, or add it to receipts, invoices and emails. Scan it with your camera to test.</p>
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Print it as a sticker for the card, table or counter, so anyone who'd rather scan can scan. It also works on receipts and invoices.</p>
         {png && (
           <a href={png} download="google-review-qr.png" className="choice mt-3 !py-2">
             <Download className="h-3.5 w-3.5" aria-hidden /> Download PNG
@@ -51,10 +51,11 @@ function QrCode({ value, label }: { value: string; label: string }) {
   );
 }
 
-export function ReviewLinkTool() {
+/** Finds and checks the link. With onValid the setup guide takes it from there; alone it also shows the copy buttons and QR. */
+export function ReviewLinkTool({ initialLink = "", onValid }: { initialLink?: string; onValid?: (url: string) => void }) {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
-  const [link, setLink] = useState("");
+  const [link, setLink] = useState(initialLink);
   const [copied, setCopied] = useState<string | null>(null);
   const uid = useId();
 
@@ -65,7 +66,10 @@ export function ReviewLinkTool() {
   const bare = good?.replace(/^https:\/\//, "");
 
   useEffect(() => {
-    if (good) track("review_link_valid");
+    if (!good) return;
+    track("review_link_valid");
+    onValid?.(good);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [good]);
 
   const copy = async (text: string, key: string) => {
@@ -132,7 +136,7 @@ export function ReviewLinkTool() {
         )}
       </div>
 
-      {good && (
+      {good && !onValid && (
         <div className="mt-6 space-y-5 border-t border-border pt-6 animate-step">
           <div>
             <p className="font-semibold">3. Write this link to your card</p>

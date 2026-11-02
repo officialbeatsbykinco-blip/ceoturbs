@@ -10,7 +10,7 @@ import { CallLink } from "./CallLink";
 import { ARTIST_MERCH_PATH } from "@/content/artist-merch";
 import { SHIRTS_PATH } from "@/content/company-shirts";
 import { REVIEWS_AD_PATH, SHOP_PATH, SETUP_PATH } from "@/content/review-cards";
-import { QUICK_TEXT, smsHref } from "@/lib/sms";
+import { CARD_TEXT, smsHref } from "@/lib/sms";
 import { cn } from "@/lib/utils";
 
 type Item = { to: string; label: string; sub?: string; group?: string };
@@ -28,7 +28,7 @@ const groupOf = (slug: string) => SERVICE_GROUPS[slug] ?? "Marketing & growth";
 const GROUP_ORDER = ["Start here", "Marketing & growth"];
 type Menu = { label: string; to: string; items: Item[]; wide?: boolean };
 
-// Home first, then three dropdowns, then the two money links. Fewer choices = more clicks on the ones that pay.
+// The cards up front; everything the agency sells sits behind one More menu.
 const MENUS: Menu[] = [
   {
     label: "Who we help",
@@ -68,16 +68,20 @@ const MENUS: Menu[] = [
       { to: "/about", label: "About Christopher", sub: "Who you'll work with" },
     ],
   },
-  {
-    label: "Review cards",
-    to: SHOP_PATH,
-    items: [
-      { to: SHOP_PATH, label: "Shop review stands & cards", sub: `Tap-to-review NFC cards — from ${fromPriceLabel}` },
-      { to: SETUP_PATH, label: "Card setup guide", sub: "Program your card in 5 minutes" },
-      { to: "/how-to-get-more-google-reviews", label: "Get more Google reviews", sub: "The playbook that works" },
-    ],
-  },
 ];
+
+/** The agency menus folded into one, for after the card sale. */
+const MORE: Menu = {
+  label: "More",
+  to: "/grow",
+  items: [
+    { to: "/grow", label: "Websites & ads", sub: "Want more calls too? Start here" },
+    { to: "/pricing", label: "Pricing", sub: "Clear prices for websites and ads" },
+    { to: "/services", label: "All services", sub: "Everything we do" },
+    { to: "/free-audit", label: "Free check", sub: "See how you show up online" },
+    ...MENUS.find((m) => m.label === "Results")!.items,
+  ],
+};
 
 const linkCls = ({ isActive }: { isActive: boolean }) =>
   cn("whitespace-nowrap rounded-lg px-2 py-2 text-[13px] font-medium transition-colors hover:bg-white/5 hover:text-foreground xl:px-2.5 xl:text-sm", isActive ? "text-foreground" : "text-muted-foreground");
@@ -113,15 +117,16 @@ export function Header({ focus: focusProp = false }: { focus?: boolean }) {
 
         {!focus && (
           <nav aria-label="Main" className="hidden items-center gap-0.5 xl:flex">
-            {MENUS.map((m) => (
-              <Dropdown key={m.label} menu={m} active={m.items.some((i) => i.to === pathname)} />
-            ))}
-            <NavLink to="/pricing" className={linkCls}>
-              Pricing
+            <NavLink to={SHOP_PATH} className={linkCls}>
+              Shop cards
             </NavLink>
-            <NavLink to="/free-audit" className={linkCls}>
-              Free check <span className="ml-1 rounded-full bg-turbo/15 px-1.5 py-0.5 text-[10px] font-semibold text-turbo">FREE</span>
+            <NavLink to={SETUP_PATH} className={linkCls}>
+              Setup guide
             </NavLink>
+            <NavLink to="/how-to-get-more-google-reviews" className={linkCls}>
+              Get more reviews
+            </NavLink>
+            <Dropdown menu={MORE} active={MORE.items.some((i) => i.to === pathname)} />
           </nav>
         )}
 
@@ -132,8 +137,8 @@ export function Header({ focus: focusProp = false }: { focus?: boolean }) {
             <span className="sr-only">Call {SITE.name} at {SITE.phone.display}</span>
           </CallLink>
           {/* The shop pages have no bottom bar, so their Text button sits up here. */}
-          {(pathname === SHOP_PATH || pathname === SHIRTS_PATH || pathname === ARTIST_MERCH_PATH) && (
-            <a href={smsHref(QUICK_TEXT)} data-call-location={focus ? "ad page header text" : "header text"} className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-foreground ring-1 ring-white/10 hover:bg-white/5 sm:hidden">
+          {(pathname === "/" || pathname === SHOP_PATH || pathname === SHIRTS_PATH || pathname === ARTIST_MERCH_PATH) && (
+            <a href={smsHref(CARD_TEXT)} data-call-location={focus ? "ad page header text" : "header text"} className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-foreground ring-1 ring-white/10 hover:bg-white/5 sm:hidden">
               <MessageSquare className="h-[18px] w-[18px]" aria-hidden />
               <span className="sr-only">Text {SITE.name}</span>
             </a>
@@ -142,15 +147,19 @@ export function Header({ focus: focusProp = false }: { focus?: boolean }) {
             <InstallBookButton variant="ignite" note="Tech page header" booking={tech.booking} title={tech.title} className="inline-flex whitespace-nowrap !px-3 !py-2.5 !text-[13px] sm:!px-4 sm:!text-sm">
               Book a visit
             </InstallBookButton>
-          ) : pathname === REVIEWS_AD_PATH ? (
+          ) : pathname === REVIEWS_AD_PATH || pathname === "/" || pathname === SHOP_PATH ? (
             <a href="#buy" className="btn-ignite whitespace-nowrap !px-3 !py-2.5 !text-sm sm:!px-4">
               Get cards<span className="hidden sm:inline"> · {fromPriceLabel}</span>
             </a>
-          ) : (
-            <BookButton note={focus ? "Ad page header" : "Header"} className={cn("inline-flex !px-3 !py-2.5 !text-[13px] sm:!px-4 sm:!text-sm", !focus && "max-sm:!hidden")}>
+          ) : focus ? (
+            <BookButton note="Ad page header" className="inline-flex !px-3 !py-2.5 !text-[13px] sm:!px-4 sm:!text-sm">
               <span className="min-[400px]:hidden">Book a call</span>
               <span className="hidden min-[400px]:inline">Book a free call</span>
             </BookButton>
+          ) : (
+            <Link to={SHOP_PATH} className="btn-ignite whitespace-nowrap !px-3 !py-2.5 !text-sm sm:!px-4 max-sm:!hidden">
+              Get cards · {fromPriceLabel}
+            </Link>
           )}
           {!focus && (
             <button
@@ -170,20 +179,20 @@ export function Header({ focus: focusProp = false }: { focus?: boolean }) {
       {open && !focus && (
         <div id="mobile-menu" className="container-x h-[calc(100dvh-4rem)] overflow-y-auto pb-32 pt-2 xl:hidden">
           <div className="grid gap-2">
-            <Link to="/book" onClick={() => setOpen(false)} className="btn-ignite justify-between !px-4 !py-4 !text-lg">
-              Book a free 30-min call
+            <Link to={SHOP_PATH} onClick={() => setOpen(false)} className="btn-ignite justify-between !px-4 !py-4 !text-lg">
+              Shop cards · from {fromPriceLabel}
               <span aria-hidden>›</span>
             </Link>
-            <Link to="/free-audit" onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
-              Free Brand Visibility Check
+            <Link to={SETUP_PATH} onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
+              Card setup guide
               <span className="text-turbo" aria-hidden>›</span>
             </Link>
-            <Link to={SHOP_PATH} onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
-              Review cards — from {fromPriceLabel}
+            <Link to="/how-to-get-more-google-reviews" onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
+              Get more Google reviews
               <span className="text-turbo" aria-hidden>›</span>
             </Link>
-            <Link to="/results" onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
-              See our results
+            <Link to="/grow" onClick={() => setOpen(false)} className="panel flex items-center justify-between px-4 py-4 text-lg font-semibold">
+              Websites & ads
               <span className="text-turbo" aria-hidden>›</span>
             </Link>
           </div>

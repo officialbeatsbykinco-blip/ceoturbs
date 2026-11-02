@@ -4,9 +4,9 @@
 export const SITE = {
   name: "CEO Turbo",
   url: "https://www.ceoturbo.com",
-  tagline: "More customers, more reviews, more listeners.",
+  tagline: "Tap-to-review Google cards for people who work on the move.",
   description:
-    "CEO Turbo builds websites, ads, Google Business Profiles and AI-search visibility for artists, local service businesses and Shopify stores — plus NFC Google review cards that make leaving a review a one-tap job.",
+    "CEO Turbo sells NFC Google review cards for barbers, lawn care crews, mobile repair techs and stores: customers tap their phone and your review form opens. We also build websites and run ads.",
   founder: {
     name: "Christopher Robinson",
     alternateName: "StackmodeChris",
@@ -106,7 +106,7 @@ export const PITCH_VIDEO = {
 } as const;
 
 /**
- * The Google review card (NFC, NTAG215) — shipped blank from Atlanta, programmed by the buyer.
+ * The Google review card (NFC, NTAG215) — shipped from Atlanta, blank or programmed by us for a fee.
  * Checkout runs on Shopify: the site's own buy box creates a Shopify cart through the
  * Storefront API and sends the buyer to Shopify checkout (src/lib/shopify.ts).
  * Variant ids are looked up by option value, so the Shopify product needs one option
@@ -120,13 +120,17 @@ export const SHOPIFY = {
   apiVersion: "2025-07",
 } as const;
 
-export type ReviewPack = { id: "1" | "2" | "5"; qty: number; price: number; label: string; note: string; shopifyOption: string; popular?: boolean };
+export type ReviewPack = { id: "1" | "2" | "5" | "10"; qty: number; price: number; label: string; note: string; shopifyOption: string; popular?: boolean };
 
 const REVIEW_PACKS: ReviewPack[] = [
-  { id: "1", qty: 1, price: 24.99, label: "1 card", note: "Your front counter", shopifyOption: "1 card" },
-  { id: "2", qty: 2, price: 39.99, label: "2 cards", note: "Counter + door, or shop + truck", shopifyOption: "2 cards", popular: true },
-  { id: "5", qty: 5, price: 79.99, label: "5 cards", note: "Every station, chair or location", shopifyOption: "5 cards" },
+  { id: "1", qty: 1, price: 16.99, label: "1 card", note: "One for your pocket", shopifyOption: "1 card" },
+  { id: "2", qty: 2, price: 29.99, label: "2 cards", note: "Pocket + truck, or counter + door", shopifyOption: "2 cards", popular: true },
+  { id: "5", qty: 5, price: 59.99, label: "5 cards", note: "Your crew, or every chair and table", shopifyOption: "5 cards" },
+  { id: "10", qty: 10, price: 99.99, label: "10 cards", note: "Bigger crews and busy shops", shopifyOption: "10 cards" },
 ];
+
+/** Optional: we write and test the buyer's review link before shipping. One fee per order, sold as its own Shopify line. */
+export const CARD_PROGRAMMING = { name: "Card programming", productId: "15477988065515", price: 5, sku: "CT-PROGRAM" } as const;
 
 export const REVIEW_CARD = {
   name: "Google Review Tap Card",

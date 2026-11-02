@@ -2,7 +2,7 @@
 // Talks to the Storefront API with the public token (what the Buy Button SDK does under the hood,
 // without its 100 KB script or its UI). Purchase conversions are tracked on Shopify's side —
 // see docs/tracking-setup.md.
-import { SHOPIFY, type ReviewPack, type ShirtProduct, type StandOption } from "@/config/site";
+import { CARD_PROGRAMMING, SHOPIFY, type ReviewPack, type ShirtProduct, type StandOption } from "@/config/site";
 import { attribution } from "@/lib/track";
 
 type Variant = { id: string; availableForSale: boolean; price: { amount: string }; selectedOptions: { name: string; value: string }[] };
@@ -116,8 +116,21 @@ async function cartCheckout(lines: CartLine[], attributes: { key: string; value:
   return u.toString();
 }
 
-/** Creates a Shopify cart for the chosen review card pack (plus the counter stand, if added) and returns the checkout URL. */
-export async function createCheckout(pack: ReviewPack, business: string, addOn?: StandOption) {
+/** What it says on the order when the buyer hasn't given us a link yet. */
+export const LINK_TO_FOLLOW = "Not given yet: contact buyer";
+
+/**
+ * The $5 "we program it" line. The review link rides on the line so it prints on the order, which also
+ * keeps these carts off the permalink fallback (it would drop the link).
+ */
+async function programmingLine(reviewLink: string): Promise<CartLine> {
+  const v = (await loadVariants(CARD_PROGRAMMING.productId))[0];
+  if (!v) throw new Error(`No Shopify variant for ${CARD_PROGRAMMING.name}`);
+  return { merchandiseId: v.id, quantity: 1, attributes: [{ key: "Review link", value: reviewLink.trim().slice(0, 250) || LINK_TO_FOLLOW }] };
+}
+
+/** Creates a Shopify cart for the chosen review card pack (plus the counter stand and programming, if added) and returns the checkout URL. */
+export async function createCheckout(pack: ReviewPack, business: string, addOn?: StandOption, reviewLink?: string) {
   const found = findVariant(await loadVariants(), pack);
   if (!found) throw new Error(`No Shopify variant for ${pack.label}`);
   const lines: CartLine[] = [{ merchandiseId: found.variant.id, quantity: found.quantity }];
@@ -128,7 +141,8 @@ export async function createCheckout(pack: ReviewPack, business: string, addOn?:
     lines.push({ merchandiseId: v.id, quantity: 1 });
     extra = Number(v.price.amount);
   }
-  const url = await cartCheckout(lines, attributionAttributes({ "Business name": business.trim(), Pack: pack.label, Product: addOn?.name }));
+  if (reviewLink !== undefined) lines.push(await programmingLine(reviewLink));
+  const url = await cartCheckout(lines, attributionAttributes({ "Business name": business.trim(), Pack: pack.label, Product: addOn?.name, Program: reviewLink !== undefined ? "Yes" : undefined }));
   return { url, variantId: numericId(found.variant.id), price: Number(found.variant.price.amount) * found.quantity + extra, available: found.variant.availableForSale };
 }
 
@@ -171,10 +185,12 @@ export async function createShirtCheckout(product: ShirtProduct, lines: ShirtLin
 }
 
 /** Checkout for the counter stand or the stand + cards kit (one default variant each). */
-export async function createStandCheckout(opt: StandOption, business: string) {
+export async function createStandCheckout(opt: StandOption, business: string, reviewLink?: string) {
   const variants = await loadVariants(opt.productId);
   const variant = variants[0];
   if (!variant) throw new Error(`No Shopify variant for ${opt.name}`);
-  const url = await cartCheckout([{ merchandiseId: variant.id, quantity: 1 }], attributionAttributes({ "Business name": business.trim(), Product: opt.name }));
+  const lines: CartLine[] = [{ merchandiseId: variant.id, quantity: 1 }];
+  if (reviewLink !== undefined) lines.push(await programmingLine(reviewLink));
+  const url = await cartCheckout(lines, attributionAttributes({ "Business name": business.trim(), Product: opt.name, Program: reviewLink !== undefined ? "Yes" : undefined }));
   return { url, variantId: numericId(variant.id), price: Number(variant.price.amount), available: variant.availableForSale };
 }

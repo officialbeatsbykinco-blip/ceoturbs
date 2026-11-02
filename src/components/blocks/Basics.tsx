@@ -62,7 +62,7 @@ export function Breadcrumbs({ items, className }: { items: { name: string; path:
 }
 
 /** Native <details> FAQ: answers are in the HTML for crawlers and work without JS. */
-export function FAQList({ faqs, title = "Frequently asked questions" }: { faqs: FAQ[]; title?: string }) {
+export function FAQList({ faqs, title = "Frequently asked questions", lede = "Still unsure? Ask it on the call — that's what it's for." }: { faqs: FAQ[]; title?: string; lede?: string }) {
   return (
     <section className="section" aria-labelledby="faq-title">
       <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
@@ -70,7 +70,7 @@ export function FAQList({ faqs, title = "Frequently asked questions" }: { faqs: 
           <h2 id="faq-title" className="h-section">
             {title}
           </h2>
-          <p className="lede">Still unsure? Ask it on the call — that's what it's for.</p>
+          <p className="lede">{lede}</p>
         </div>
         <div className="divide-y divide-border border-y border-border">
           {faqs.map((f) => (

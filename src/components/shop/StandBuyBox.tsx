@@ -49,7 +49,7 @@ export function StandBuyBox({ business }: { business: string }) {
       <ProductGallery key={id} items={STAND_GALLERY[id]} badge="NFC tap + QR code" className="lg:sticky lg:top-24 lg:self-start" />
       <div>
         <p className="chip hidden sm:inline-flex">CEO Turbo · Google review stand</p>
-        <h1 className="text-[28px] font-bold leading-[1.05] sm:mt-4 sm:text-5xl">{REVIEW_STAND.name}</h1>
+        <h2 className="text-[28px] font-bold leading-[1.05] sm:mt-4 sm:text-5xl">{REVIEW_STAND.name}</h2>
         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 sm:mt-5">
           <p className="font-display text-[32px] font-bold leading-none tabular-nums sm:text-4xl">{money2(opt.price)}</p>
           {opt.id === "kit" && <span className="badge-save">You save {money2(kitSave)}</span>}

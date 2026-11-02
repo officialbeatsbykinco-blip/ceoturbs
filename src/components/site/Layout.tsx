@@ -31,7 +31,7 @@ const updateHead = async (pathname: string) => {
 };
 
 /** Pages that use the friendly light look (the home page wraps its own sections). */
-const SOFT = /^\/(pricing|services(\/.*)?|google-review-cards|results|about|restaurants|salons|barbershops)\/?$/;
+const SOFT = /^\/(|pricing|services(\/.*)?|google-review-cards|google-review-card-setup|results|about|restaurants|salons|barbershops)\/?$/;
 
 export function Layout({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();

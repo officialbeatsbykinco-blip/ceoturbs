@@ -598,6 +598,7 @@
 /* Orange text on the light theme: the button orange is too pale for small text on cream (2–3:1). */
 .theme-soft .text-ignite, .theme-soft [class*="text-[hsl(var(--ignite-hot))]"], .theme-soft [class*="text-[hsl(var(--ignite))]"] { color: #c2410c; }
 .theme-soft .text-ok { color: #047857; }
+.theme-soft .store-btn, .theme-soft .store-btn span { color: #fff; }
 .theme-soft .trust-tile { background: hsl(var(--muted) / 0.7); }
 /* Gallery swap: opacity only, so the incoming photo is never shown washed out or shrunk. */
 @keyframes gallery-fade { from { opacity: 0.35; } to { opacity: 1; } }

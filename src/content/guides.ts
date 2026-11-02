@@ -590,7 +590,7 @@ export const GUIDES: Guide[] = [
         h2: "How much do NFC Google review cards cost?",
         answer:
           "Expect roughly $15–$40 for a single card and less per card in multi-packs. Avoid products that charge a monthly subscription just to keep your link working — a card you program yourself stores the link on the chip and keeps working forever, and you can re-program it if your link changes.",
-        body: ["CEO Turbo cards are $24.99 for one, $39.99 for two and $79.99 for five, with free US shipping and no subscription."],
+        body: ["CEO Turbo cards are $16.99 for one, $29.99 for two, $59.99 for five and $99.99 for ten, with free US shipping and no subscription."],
       },
       {
         h2: "Is using a review card allowed by Google?",

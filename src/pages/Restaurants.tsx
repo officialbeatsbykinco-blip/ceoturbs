@@ -177,16 +177,17 @@ function DiningRoom({ name }: { name: string }) {
 
 /** Cheapest set of packs that puts at least one card on every table (ties go to more cards). */
 function planPacks(tables: number) {
-  const [p1, p2, p5] = (["1", "2", "5"] as const).map((id) => REVIEW_CARD.packs.find((p) => p.id === id)!);
-  let best = { n5: 0, n2: 0, n1: tables, cards: tables, price: tables * p1.price };
-  for (let n5 = 0; n5 <= Math.ceil(tables / 5); n5++)
-    for (let n2 = 0; n2 <= Math.ceil(tables / 2); n2++) {
-      const n1 = Math.max(0, tables - 5 * n5 - 2 * n2);
-      const cards = 5 * n5 + 2 * n2 + n1;
-      const price = +(n5 * p5.price + n2 * p2.price + n1 * p1.price).toFixed(2);
-      if (price < best.price - 0.02 || (Math.abs(price - best.price) <= 0.02 && cards > best.cards)) best = { n5, n2, n1, cards, price };
-    }
-  const items = ([[p5, best.n5], [p2, best.n2], [p1, best.n1]] as [ReviewPack, number][]).filter(([, c]) => c > 0).map(([pack, count]) => ({ pack, count }));
+  const [p1, p2, p5, p10] = (["1", "2", "5", "10"] as const).map((id) => REVIEW_CARD.packs.find((p) => p.id === id)!);
+  let best = { n10: 0, n5: 0, n2: 0, n1: tables, cards: tables, price: tables * p1.price };
+  for (let n10 = 0; n10 <= Math.ceil(tables / 10); n10++)
+    for (let n5 = 0; n5 <= Math.ceil(tables / 5); n5++)
+      for (let n2 = 0; n2 <= Math.ceil(tables / 2); n2++) {
+        const n1 = Math.max(0, tables - 10 * n10 - 5 * n5 - 2 * n2);
+        const cards = 10 * n10 + 5 * n5 + 2 * n2 + n1;
+        const price = +(n10 * p10.price + n5 * p5.price + n2 * p2.price + n1 * p1.price).toFixed(2);
+        if (price < best.price - 0.02 || (Math.abs(price - best.price) <= 0.02 && cards > best.cards)) best = { n10, n5, n2, n1, cards, price };
+      }
+  const items = ([[p10, best.n10], [p5, best.n5], [p2, best.n2], [p1, best.n1]] as [ReviewPack, number][]).filter(([, c]) => c > 0).map(([pack, count]) => ({ pack, count }));
   return { ...best, items };
 }
 
