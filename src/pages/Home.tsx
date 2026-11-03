@@ -4,6 +4,8 @@ import { ArrowRight, Scissors, Smartphone, Store, Trees, Wrench } from "lucide-r
 import { BuyBox } from "@/components/shop/BuyBox";
 import { CompareTable } from "@/components/blocks/CompareTable";
 import { FAQList, SectionHeader } from "@/components/blocks/Basics";
+import { ReviewStats } from "@/components/blocks/ReviewStats";
+import { BulkBand, ContactBand, ReviewGoalCalculator, SpecsAndGuarantee, TrustStrip } from "@/components/shop/StoreSections";
 import { Reveal } from "@/components/blocks/Tutorial";
 import { TapDemo } from "@/components/visuals/ReviewVisuals";
 import { CARD_PROGRAMMING, REVIEW_CARD, fromPriceLabel, money2 } from "@/config/site";
@@ -37,6 +39,8 @@ export default function Home() {
           <BuyBox business={business} onBusiness={setBusiness} />
         </div>
       </section>
+
+      <TrustStrip />
 
       <section className="section border-t border-border" aria-labelledby="who">
         <div className="container-x">
@@ -75,6 +79,14 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section border-t border-border" aria-labelledby="why-reviews">
+        <div className="container-x">
+          <ReviewStats id="why-reviews" />
+        </div>
+      </section>
+
+      <ReviewGoalCalculator />
+
       <section className="section border-t border-border" aria-labelledby="setup">
         <div className="container-x grid gap-8 lg:grid-cols-2 lg:items-center">
           <SectionHeader kicker="Setup" title={<span id="setup">Ready in about 2 minutes.</span>} lede="All you need is your phone. Our guide finds your Google review link and walks you through writing it to the card." />
@@ -96,7 +108,13 @@ export default function Home() {
         </div>
       </section>
 
+      <SpecsAndGuarantee />
+
+      <BulkBand />
+
       <FAQList faqs={SHOP_FAQS} title="Review card questions" lede="Still unsure? Call or text us." />
+
+      <ContactBand />
 
       <section className="section border-t border-border" aria-labelledby="last-call">
         <div className="container-x">
